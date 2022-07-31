@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/defeat.mp3-df6704069d751a31ceff0f273468a9c8.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Music/defeat.mp3"
+dest_files=[ "res://.import/defeat.mp3-df6704069d751a31ceff0f273468a9c8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

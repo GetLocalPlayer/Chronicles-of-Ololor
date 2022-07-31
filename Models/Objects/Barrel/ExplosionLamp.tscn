@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="ExplosionLamp" type="Spatial"]
+
+[node name="OmniLight" type="OmniLight" parent="."]
+light_color = Color( 1, 0.894329, 0.613333, 1 )
+omni_range = 4096.0
+omni_attenuation = 409.6
