@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Models/Characters/Emma/Джинсы.material" type="Material" id=1]
 [ext_resource path="res://Models/Characters/Emma/Emma skin.material" type="Material" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Models/Characters/Emma/States/wall_sliding.gd" type="Script" id=18]
 [ext_resource path="res://Models/Characters/Emma/States/pushing.gd" type="Script" id=19]
 [ext_resource path="res://Models/Characters/Emma/States/crawling.gd" type="Script" id=20]
+[ext_resource path="res://Models/Characters/Emma/States/kneel.gd" type="Script" id=21]
 
 [sub_resource type="CylinderShape" id=76]
 radius = 0.671503
@@ -11083,13 +11084,16 @@ axis_lock_motion_x = true
 move_lock_x = true
 collision/safe_margin = 0.01
 script = ExtResource( 9 )
-push_speed = 10.0
+wall_sliding_speed = 2.0
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 10 )
 
 [node name="idle" type="Node" parent="StateMachine"]
 script = ExtResource( 11 )
+
+[node name="kneel" type="Node" parent="StateMachine"]
+script = ExtResource( 21 )
 
 [node name="run" type="Node" parent="StateMachine"]
 script = ExtResource( 16 )
@@ -11145,7 +11149,7 @@ blend_shapes/down] = 0.0
 material/0 = null
 
 [node name="EmmaMaw" type="MeshInstance" parent="."]
-transform = Transform( 0.769807, 0.00885752, 0.0548077, -0.0146029, 0.770827, -0.0205268, -0.040208, 0.00804528, 0.768868, -0.0936958, 0.0219488, -0.190517 )
+transform = Transform( 0.769807, 0.00885752, 0.0548077, -0.0146029, 0.770827, -0.0205268, -0.040208, 0.00804528, 0.768868, -0.094, 0, 0 )
 mesh = SubResource( 14 )
 skin = SubResource( 10 )
 skeleton = NodePath("../Skeleton")

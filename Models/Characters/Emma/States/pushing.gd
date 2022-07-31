@@ -8,32 +8,35 @@ onready var anim_player = owner.get_node("AnimationPlayer")
 onready var armature = owner.get_node("Skeleton")
 onready var body = owner
 
-var pushable: RigidBody
+var is_pushing: bool
 
 func _enter():
-	anim_player.play("pushing")
+	is_pushing = true
+	anim_player.play("pushing", 0.15)
 	
 	
 func _update(_delta):
 	var velocity = Vector3.ZERO
 	velocity.y = -gravity
+	var direction = Vector3.ZERO
 	if Input.is_action_pressed("run_left"):
-		velocity.z = run_speed
+		direction.z = 1
 		armature.rotation_degrees = Vector3.ZERO
 	if Input.is_action_pressed("run_right"):
-		velocity.z = -run_speed
+		direction.z = -1
 		armature.rotation_degrees = Vector3(0, 180, 0)
+	velocity += direction * run_speed
 	body.move_and_slide(velocity, Vector3.UP, false, 4, PI/4, false)
-	pushable = null
+	is_pushing = false
 	for i in body.get_slide_count():
 		var collision = body.get_slide_collision(i)
 		if collision.collider.is_in_group("pushable"):
-			pushable = collision.collider
-			var impulse = Vector3.ZERO
-			impulse.z = sign(velocity.z) * (push_speed - abs(pushable.linear_velocity.z)) * pushable.mass
-			pushable.apply_central_impulse(impulse)
+			var pushable = collision.collider
+			var normal = collision.normal
+			if pushable.is_on_floor() and normal.dot(direction) < -0.95:
+				pushable.move_and_slide(direction * push_speed, Vector3.UP, false, 4, PI/4, false)
+				is_pushing = true
 			
-	
 	
 func _transition(_delta):
 	if not body.is_on_floor():
@@ -44,7 +47,7 @@ func _transition(_delta):
 		return "idle"
 	if Input.is_action_pressed("crawling"):
 		return "crawling"
-	if pushable == null:
+	if not is_pushing:
 		return "run"
 		
 	

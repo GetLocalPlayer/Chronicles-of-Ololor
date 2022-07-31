@@ -6,27 +6,22 @@ onready var anim_player = owner.get_node("AnimationPlayer")
 onready var timer = Timer.new()
 
 
-# I should split crawling and idle as different
-# states, but there's no specific behaviour for 
-# crawlso I handle both in one state.
-
-
 func _ready():
 	add_child(timer)
 	timer.one_shot = true
 	timer.connect("timeout", self, "start_idle_anim")
-
-
-func _enter():
-	if Input.is_action_pressed("crawling"):
-		anim_player.play("kneel", 0.1)
-	else:
-		anim_player.play("stand", 0.1)
-		timer.start(time_to_idle)
-	
 	
 func start_idle_anim():
 	anim_player.play("stand_2", 0.75, 0.5)
+
+
+func _enter():
+	anim_player.play("stand", 0.1)
+	timer.start(time_to_idle)
+	
+	
+func _exit(_delta):
+	timer.stop()
 	
 	
 func _transition(_delta):	
@@ -38,6 +33,8 @@ func _transition(_delta):
 				return "crawling"
 			else:
 				return "run"
+		if Input.is_action_just_pressed("crawling"):
+			return "kneel"
 	else:
 		return "falling"
 		
@@ -46,10 +43,3 @@ func _update(_delta):
 	var gravity = owner.gravity
 	var velocity = Vector3(0, -gravity, 0)
 	owner.move_and_slide(velocity, Vector3.UP, false, 4, PI/4, false)
-	var anim = anim_player.current_animation
-	if anim in ["stand", "stand_2"] and Input.is_action_pressed("crawling"):
-		anim_player.play("kneel", 0.1)
-		timer.stop()
-	elif anim == "kneel" and not Input.is_action_pressed("crawling"):
-		anim_player.play("stand", 0.1)
-		timer.start(time_to_idle)

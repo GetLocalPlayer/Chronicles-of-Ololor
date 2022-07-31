@@ -31,6 +31,8 @@ func _transition(_delta):
 	if Input.is_action_pressed("run_left") or Input.is_action_pressed("run_right"):
 		return "run"
 	if not anim_player.is_playing():
+		if Input.is_action_pressed("crawling"):
+			return "kneel"
 		return "idle"
 
 
