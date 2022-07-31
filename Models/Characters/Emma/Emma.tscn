@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Models/Characters/Emma/Джинсы.material" type="Material" id=1]
 [ext_resource path="res://Models/Characters/Emma/Emma skin.material" type="Material" id=2]
@@ -25,9 +25,6 @@
 [sub_resource type="CylinderShape" id=76]
 radius = 0.671503
 height = 1.60232
-
-[sub_resource type="BoxShape" id=65]
-extents = Vector3( 0.565428, 0.562066, 0.469356 )
 
 [sub_resource type="ArrayMesh" id=4]
 resource_name = "test lvl_burning"
@@ -832,6 +829,20 @@ tracks/62/loop_wrap = true
 tracks/62/imported = false
 tracks/62/enabled = true
 tracks/62/keys = PoolRealArray( 0, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -3.07336e-08, -2.5495e-08, 5.12227e-09, 1, 1, 1, 1, 0.75, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -3.07336e-08, -2.5495e-08, 5.12227e-09, 1, 1, 1, 1, 0.816667, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -3.07336e-08, -2.5495e-08, 5.12227e-09, 1, 1, 1, 1 )
+tracks/63/type = "method"
+tracks/63/path = NodePath(".")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "attack" ],
+"method": "emit_signal"
+} ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "emma_attack_2"
@@ -1278,6 +1289,20 @@ tracks/62/loop_wrap = true
 tracks/62/imported = false
 tracks/62/enabled = true
 tracks/62/keys = PoolRealArray( 0, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -3.07336e-08, -2.5495e-08, 5.12227e-09, 1, 1, 1, 1, 0.75, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -3.07336e-08, -2.5495e-08, 5.12227e-09, 1, 1, 1, 1 )
+tracks/63/type = "method"
+tracks/63/path = NodePath(".")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "attack" ],
+"method": "emit_signal"
+} ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "emma_attack_3"
@@ -1723,6 +1748,20 @@ tracks/62/loop_wrap = true
 tracks/62/imported = false
 tracks/62/enabled = true
 tracks/62/keys = PoolRealArray( 0, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -3.07336e-08, -2.5495e-08, 5.12227e-09, 1, 1, 1, 1, 0.75, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -3.07336e-08, -2.5495e-08, 5.12227e-09, 1, 1, 1, 1 )
+tracks/63/type = "method"
+tracks/63/path = NodePath(".")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "attack" ],
+"method": "emit_signal"
+} ]
+}
 
 [sub_resource type="Animation" id=66]
 resource_name = "emma_attack_4"
@@ -2168,6 +2207,20 @@ tracks/62/loop_wrap = true
 tracks/62/imported = false
 tracks/62/enabled = true
 tracks/62/keys = PoolRealArray( 0, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -3.07336e-08, -2.5495e-08, 5.12227e-09, 1, 1, 1, 1, 0.75, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -3.07336e-08, -2.5495e-08, 5.12227e-09, 1, 1, 1, 1 )
+tracks/63/type = "method"
+tracks/63/path = NodePath(".")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "attack" ],
+"method": "emit_signal"
+} ]
+}
 
 [sub_resource type="Animation" id=67]
 resource_name = "emma_crawling"
@@ -11084,7 +11137,6 @@ axis_lock_motion_x = true
 move_lock_x = true
 collision/safe_margin = 0.01
 script = ExtResource( 9 )
-wall_sliding_speed = 2.0
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 10 )
@@ -11124,18 +11176,6 @@ script = ExtResource( 18 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.802971, 0 )
 shape = SubResource( 76 )
-
-[node name="AreaLeft" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.921818, 0.981936 )
-
-[node name="CollisionShape" type="CollisionShape" parent="AreaLeft"]
-shape = SubResource( 65 )
-
-[node name="AreaRight" type="Area" parent="."]
-
-[node name="CollisionShape" type="CollisionShape" parent="AreaRight"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.921818, -0.985518 )
-shape = SubResource( 65 )
 
 [node name="Burning" type="MeshInstance" parent="."]
 transform = Transform( 0, 1.33726, 0, 0, 0, -1.33727, -1.33727, 0, 0, -0.0756786, 1.96777, -0.455899 )
@@ -11518,6 +11558,12 @@ mesh = SubResource( 13 )
 skin = SubResource( 10 )
 material/0 = null
 material/1 = null
+
+[node name="RayCast" type="RayCast" parent="Skeleton"]
+transform = Transform( 1.29393, -0.0139019, -0.0926069, 0.0263073, 1.29666, 0.0327423, 0.0673907, -0.014295, 1.29543, 0.109326, 1.15002, -0.00631638 )
+enabled = true
+cast_to = Vector3( 0, 0, 1.474 )
+debug_shape_thickness = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_default_blend_time = 1.0

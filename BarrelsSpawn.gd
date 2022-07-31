@@ -15,7 +15,7 @@ func _ready():
 	add_child(spawn_timer)
 	spawn_timer.connect("timeout", self, "on_spawn_timer_expired")
 	spawn_timer.one_shot = true
-	spawn_timer.start(spawn_cooldown)
+	on_spawn_timer_expired()
 	
 
 func on_spawn_timer_expired():

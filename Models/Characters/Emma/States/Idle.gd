@@ -33,8 +33,10 @@ func _transition(_delta):
 				return "crawling"
 			else:
 				return "run"
-		if Input.is_action_just_pressed("crawling"):
+		if Input.is_action_pressed("crawling"):
 			return "kneel"
+		if Input.is_action_just_pressed("attack"):
+			return "attack"
 	else:
 		return "falling"
 		

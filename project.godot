@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody",
+"class": "Pushable",
+"language": "GDScript",
+"path": "res://Scripts/Pushable.gd"
+}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
 "path": "res://Scripts/State.gd"
 } ]
 _global_script_class_icons={
+"Pushable": "",
 "State": ""
 }
 
