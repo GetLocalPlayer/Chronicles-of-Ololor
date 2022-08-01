@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Models/Objects/Barrel/explosion.material" type="Material" id=1]
+[ext_resource path="res://Sounds/Effects/explode.wav" type="AudioStream" id=2]
 
 [sub_resource type="ArrayMesh" id=3]
 resource_name = "test lvl_Plane003"
@@ -46,7 +47,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "birth"
-length = 2.0
+length = 1.83334
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/path = NodePath("Mesh:mesh:surface_1/material:uv1_offset")
@@ -55,10 +56,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0875, 0.166667, 0.233333, 0.316667, 0.4, 0.4875, 0.566667, 0.633333, 0.716667, 0.8, 0.8875, 0.966667, 1.03333, 1.11667, 1.2, 1.2875, 1.36667, 1.43333, 1.51667, 1.6, 1.68333, 1.7625, 1.82917, 1.9125 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.0833333, 0.15, 0.233333, 0.316667, 0.4, 0.483333, 0.55, 0.633333, 0.716667, 0.8, 0.883333, 0.95, 1.03333, 1.11667, 1.2, 1.28333, 1.35, 1.43333, 1.51667, 1.6, 1.68333, 1.75, 1.83333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0.2, 0, 0 ), Vector3( 0.4, 0, 0 ), Vector3( 0.6, 0, 0 ), Vector3( 0.8, 0, 0 ), Vector3( 0, 0.2, 0 ), Vector3( 0.2, 0.2, 0 ), Vector3( 0.4, 0.2, 0 ), Vector3( 0.6, 0.2, 0 ), Vector3( 0.8, 0.2, 0 ), Vector3( 0, 0.4, 0 ), Vector3( 0.2, 0.4, 0 ), Vector3( 0.4, 0.4, 0 ), Vector3( 0.6, 0.4, 0 ), Vector3( 0.8, 0.4, 0 ), Vector3( 0, 0.6, 0 ), Vector3( 0.2, 0.6, 0 ), Vector3( 0.4, 0.6, 0 ), Vector3( 0.6, 0.6, 0 ), Vector3( 0.8, 0.6, 0 ), Vector3( 0, 0.8, 0 ), Vector3( 0.2, 0.8, 0 ), Vector3( 0.4, 0.8, 0 ), Vector3( 0.6, 0.8, 0 ), Vector3( 0.8, 0.8, 0 ) ]
+"values": [ Vector3( 0.2, 0, 0 ), Vector3( 0.4, 0, 0 ), Vector3( 0.6, 0, 0 ), Vector3( 0.8, 0, 0 ), Vector3( 0, 0.2, 0 ), Vector3( 0.2, 0.2, 0 ), Vector3( 0.4, 0.2, 0 ), Vector3( 0.6, 0.2, 0 ), Vector3( 0.8, 0.2, 0 ), Vector3( 0, 0.4, 0 ), Vector3( 0.2, 0.4, 0 ), Vector3( 0.4, 0.4, 0 ), Vector3( 0.6, 0.4, 0 ), Vector3( 0.8, 0.4, 0 ), Vector3( 0, 0.6, 0 ), Vector3( 0.2, 0.6, 0 ), Vector3( 0.4, 0.6, 0 ), Vector3( 0.6, 0.6, 0 ), Vector3( 0.8, 0.6, 0 ), Vector3( 0, 0.8, 0 ), Vector3( 0.2, 0.8, 0 ), Vector3( 0.4, 0.8, 0 ), Vector3( 0.6, 0.8, 0 ), Vector3( 0.8, 0.8, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Mesh:visible")
@@ -67,10 +68,81 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2 ),
+"times": PoolRealArray( 0, 1.83333 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "birth&queue_free"
+length = 1.83334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath("Mesh:mesh:surface_1/material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.15, 0.233333, 0.316667, 0.4, 0.483333, 0.55, 0.633333, 0.716667, 0.8, 0.883333, 0.95, 1.03333, 1.11667, 1.2, 1.28333, 1.35, 1.43333, 1.51667, 1.6, 1.68333, 1.75, 1.83333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.2, 0, 0 ), Vector3( 0.4, 0, 0 ), Vector3( 0.6, 0, 0 ), Vector3( 0.8, 0, 0 ), Vector3( 0, 0.2, 0 ), Vector3( 0.2, 0.2, 0 ), Vector3( 0.4, 0.2, 0 ), Vector3( 0.6, 0.2, 0 ), Vector3( 0.8, 0.2, 0 ), Vector3( 0, 0.4, 0 ), Vector3( 0.2, 0.4, 0 ), Vector3( 0.4, 0.4, 0 ), Vector3( 0.6, 0.4, 0 ), Vector3( 0.8, 0.4, 0 ), Vector3( 0, 0.6, 0 ), Vector3( 0.2, 0.6, 0 ), Vector3( 0.4, 0.6, 0 ), Vector3( 0.6, 0.6, 0 ), Vector3( 0.8, 0.6, 0 ), Vector3( 0, 0.8, 0 ), Vector3( 0.2, 0.8, 0 ), Vector3( 0.4, 0.8, 0 ), Vector3( 0.6, 0.8, 0 ), Vector3( 0.8, 0.8, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Mesh:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.83333 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.83333 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
 }
 
 [node name="Explosion" type="Spatial"]
@@ -84,3 +156,7 @@ material/0 = null
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 4 )
 anims/birth = SubResource( 5 )
+anims/birth&queue_free = SubResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )

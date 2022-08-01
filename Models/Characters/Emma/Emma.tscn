@@ -9,7 +9,7 @@
 [ext_resource path="res://Models/Characters/Emma/волосы.material" type="Material" id=7]
 [ext_resource path="res://Models/Characters/Emma/Ladi Bug.material" type="Material" id=8]
 [ext_resource path="res://Models/Characters/Emma/Emma.gd" type="Script" id=9]
-[ext_resource path="res://Models/Characters/Emma/StateMachine.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/StateMachine.gd" type="Script" id=10]
 [ext_resource path="res://Models/Characters/Emma/States/Idle.gd" type="Script" id=11]
 [ext_resource path="res://Models/Characters/Emma/fireemma.material" type="Material" id=12]
 [ext_resource path="res://Models/Characters/Emma/States/jump.gd" type="Script" id=13]
