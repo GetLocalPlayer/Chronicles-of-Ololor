@@ -138,6 +138,7 @@ surfaces/0 = {
 
 [node name="Barrel" type="KinematicBody" groups=["explosive", "pushable"]]
 script = ExtResource( 3 )
+kick_damp = 0.95
 
 [node name="FireArea" type="Area" parent="."]
 

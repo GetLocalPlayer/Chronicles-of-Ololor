@@ -3,8 +3,8 @@ extends Pushable
 signal detonated(affected_bodies)
 
 
-onready var anim_player = owner.get_node("AnimationPlayer")
-onready var area = owner.get_node("ExplosionAre")
+onready var anim_player = get_node("AnimationPlayer")
+onready var area = get_node("ExplosionArea")
 
 
 func detonate():

@@ -51,6 +51,7 @@ debug_shape_thickness = 5
 
 [node name="Emma" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.6124, 0 )
+kick_speed = 10.0
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 

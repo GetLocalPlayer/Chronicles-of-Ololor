@@ -11227,7 +11227,7 @@ script = ExtResource( 9 )
 push_speed = 2.0
 gravity = 4.0
 jump_speed = 45.0
-kick_speed = 8.0
+kick_speed = 12.0
 
 [node name="States" type="Node" parent="."]
 script = ExtResource( 10 )
