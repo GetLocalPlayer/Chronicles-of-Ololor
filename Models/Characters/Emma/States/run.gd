@@ -6,14 +6,21 @@ onready var anim_player = owner.get_node("AnimationPlayer")
 onready var armature = owner.get_node("Skeleton")
 onready var body = owner
 
+# How long the character must run
+# before having to play "stop" animation
+export (float) var stop_run_time = 1 
+var stop_time: float
+
 
 func _enter():
 	anim_player.play("run", 0.15)
+	stop_time = stop_run_time
 	
 	
-func _update(_delta):
+func _update(delta):
 	var velocity = Vector3.ZERO
 	velocity.y = -gravity
+	stop_time -= delta
 		
 	if Input.is_action_pressed("run_left"):
 		velocity.z = run_speed
@@ -35,9 +42,14 @@ func _transition(_delta):
 		if collision.collider.is_in_group("pushable"):
 			return "pushing"
 	if not Input.is_action_pressed("run_left") and not Input.is_action_pressed("run_right"):
-		return "idle"
+		if Input.is_action_pressed("crawling"):
+			return "kneel"
+		elif stop_time <= 0:
+			return "stop_run"
+		else:
+			return "idle"
 	if Input.is_action_pressed("crawling"):
-		return "crawling"
+			return "crawling"
 	
 
 func _exit(_delta):

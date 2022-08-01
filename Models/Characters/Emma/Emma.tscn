@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://Models/Characters/Emma/Джинсы.material" type="Material" id=1]
 [ext_resource path="res://Models/Characters/Emma/Emma skin.material" type="Material" id=2]
@@ -27,7 +27,7 @@
 [ext_resource path="res://Sounds/Effects/footsteps3.wav" type="AudioStream" id=25]
 [ext_resource path="res://Sounds/Emma VO/jump3.wav" type="AudioStream" id=26]
 [ext_resource path="res://Sounds/Emma VO/jump2.wav" type="AudioStream" id=27]
-[ext_resource path="res://Sounds/Effects/lending.wav" type="AudioStream" id=28]
+[ext_resource path="res://Sounds/Emma VO/jump.wav" type="AudioStream" id=28]
 [ext_resource path="res://Sounds/Effects/attack1.wav" type="AudioStream" id=29]
 [ext_resource path="res://Sounds/Effects/attack.wav" type="AudioStream" id=30]
 [ext_resource path="res://Sounds/Effects/lending2.wav" type="AudioStream" id=31]
@@ -40,6 +40,8 @@
 [ext_resource path="res://Sounds/Effects/attack2.wav" type="AudioStream" id=38]
 [ext_resource path="res://Sounds/Emma VO/lending.wav" type="AudioStream" id=39]
 [ext_resource path="res://Sounds/Emma VO/lending2.wav" type="AudioStream" id=40]
+[ext_resource path="res://Models/Characters/Emma/States/stop_run.gd" type="Script" id=41]
+[ext_resource path="res://Sounds/Effects/lending.wav" type="AudioStream" id=42]
 
 [sub_resource type="GDScript" id=77]
 script/source = "extends AudioStreamPlayer
@@ -59,8 +61,10 @@ func _ready():
 				
 	
 func play_random():
-	stream = samples[randi() % samples.size()]
-	play()
+	if samples.size() > 0:
+		stream = samples[randi() % samples.size()]
+		if stream != null:
+			play()
 "
 
 [sub_resource type="CylinderShape" id=76]
@@ -11234,6 +11238,9 @@ script = ExtResource( 11 )
 [node name="kneel" type="Node" parent="States"]
 script = ExtResource( 21 )
 
+[node name="stop_run" type="Node" parent="States"]
+script = ExtResource( 41 )
+
 [node name="run" type="Node" parent="States"]
 script = ExtResource( 16 )
 
@@ -11270,18 +11277,18 @@ samples = [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource
 volume_db = -20.0
 script = SubResource( 77 )
 mix_rate = 22050
-samples = [ ExtResource( 27 ), ExtResource( 26 ) ]
+stereo = false
+samples = [ ExtResource( 28 ), ExtResource( 27 ), ExtResource( 26 ) ]
 
 [node name="Landing" type="AudioStreamPlayer" parent="Sounds"]
 volume_db = -20.0
 script = SubResource( 77 )
-mix_rate = 16000
-samples = [ ExtResource( 28 ), ExtResource( 31 ), ExtResource( 32 ) ]
+samples = [ ExtResource( 42 ), ExtResource( 31 ), ExtResource( 32 ) ]
 
 [node name="LandingVoice" type="AudioStreamPlayer" parent="Sounds"]
 volume_db = -20.0
 script = SubResource( 77 )
-mix_rate = 22050
+mix_rate = 11000
 samples = [ ExtResource( 39 ), ExtResource( 40 ) ]
 
 [node name="BarrelSliding" type="AudioStreamPlayer" parent="Sounds"]
