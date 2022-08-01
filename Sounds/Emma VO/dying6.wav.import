@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/dying6.wav-9562a40f9d34b0fc9124d9a2aa03731e.sample"
+
+[deps]
+
+source_file="res://Sounds/Emma VO/dying6.wav"
+dest_files=[ "res://.import/dying6.wav-9562a40f9d34b0fc9124d9a2aa03731e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

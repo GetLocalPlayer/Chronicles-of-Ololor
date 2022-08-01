@@ -1,5 +1,6 @@
 extends State
 
+
 export (float) var time_to_idle = 10
 
 onready var anim_player = owner.get_node("AnimationPlayer")

@@ -43,4 +43,3 @@ func _transition(_delta):
 func _exit(_delta):
 	pass
 
-

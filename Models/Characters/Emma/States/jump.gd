@@ -7,6 +7,8 @@ onready var jump_speed = owner.jump_speed
 onready var anim_player = owner.get_node("AnimationPlayer")
 onready var body = owner
 onready var armature = owner.get_node("Skeleton")
+onready var audio_voice = owner.get_node("Sounds/JumpVoice")
+onready var audio_double_jump = owner.get_node("Sounds/DoubleJump")
 
 var dust = preload("res://Models/Effects/DustSmall/DustSmall.tscn")
 
@@ -36,6 +38,7 @@ func _enter():
 			instance = spawn_dust()
 			instance.set_rotation(rot)
 			instance.rotate_y(PI)
+	audio_voice.play_random()
 
 	
 func _transition(_delta):
@@ -60,6 +63,7 @@ func _update(_delta):
 	if Input.is_action_just_pressed("jump") and body.double_jump_available:
 		body.double_jump_available = false
 		velocity.y = jump_speed
+		audio_double_jump.play_random()
 	body.move_and_slide(velocity, Vector3.UP, false, 4, PI/4, false)
 
 

@@ -2,6 +2,8 @@ extends State
 
 
 onready var anim_player = owner.get_node("AnimationPlayer")
+onready var audio = owner.get_node("Sounds/Landing")
+onready var audio_voice = owner.get_node("Sounds/LandingVoice")
 onready var body = owner
 
 
@@ -23,6 +25,9 @@ func _enter():
 		anim_player.play("landing_crawling")
 	else:
 		anim_player.play("landing")
+	audio.play_random()
+	audio_voice.play_random()
+	
 		
 	
 func _transition(_delta):

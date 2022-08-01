@@ -5,6 +5,7 @@ onready var wall_sliding_speed = owner.wall_sliding_speed
 onready var run_speed = owner.run_speed
 onready var body = owner
 onready var anim_player = owner.get_node("AnimationPlayer")
+onready var audio = owner.get_node("Sounds/Landing")
 onready var armature = owner.get_node("Skeleton")
 
 
@@ -28,6 +29,7 @@ func _enter():
 	else:
 		armature.rotation_degrees.y = -180
 		sliding_type = SlidingType.RIGHT
+	audio.play_random()
 	
 	
 func _update(_delta):

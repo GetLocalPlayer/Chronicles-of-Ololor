@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://Models/Characters/Emma/Джинсы.material" type="Material" id=1]
 [ext_resource path="res://Models/Characters/Emma/Emma skin.material" type="Material" id=2]
@@ -21,6 +21,47 @@
 [ext_resource path="res://Models/Characters/Emma/States/pushing.gd" type="Script" id=19]
 [ext_resource path="res://Models/Characters/Emma/States/crawling.gd" type="Script" id=20]
 [ext_resource path="res://Models/Characters/Emma/States/kneel.gd" type="Script" id=21]
+[ext_resource path="res://Sounds/Effects/footsteps4.wav" type="AudioStream" id=22]
+[ext_resource path="res://Sounds/Effects/footsteps.wav" type="AudioStream" id=23]
+[ext_resource path="res://Sounds/Effects/footsteps2.wav" type="AudioStream" id=24]
+[ext_resource path="res://Sounds/Effects/footsteps3.wav" type="AudioStream" id=25]
+[ext_resource path="res://Sounds/Emma VO/jump3.wav" type="AudioStream" id=26]
+[ext_resource path="res://Sounds/Emma VO/jump2.wav" type="AudioStream" id=27]
+[ext_resource path="res://Sounds/Effects/lending.wav" type="AudioStream" id=28]
+[ext_resource path="res://Sounds/Effects/attack1.wav" type="AudioStream" id=29]
+[ext_resource path="res://Sounds/Effects/attack.wav" type="AudioStream" id=30]
+[ext_resource path="res://Sounds/Effects/lending2.wav" type="AudioStream" id=31]
+[ext_resource path="res://Sounds/Effects/lending3.wav" type="AudioStream" id=32]
+[ext_resource path="res://Sounds/Effects/jump1.wav" type="AudioStream" id=33]
+[ext_resource path="res://Sounds/Effects/jump2.wav" type="AudioStream" id=34]
+[ext_resource path="res://Sounds/Effects/jump3.wav" type="AudioStream" id=35]
+[ext_resource path="res://Sounds/Effects/jump4.wav" type="AudioStream" id=36]
+[ext_resource path="res://Sounds/Effects/blockmove.wav" type="AudioStream" id=37]
+[ext_resource path="res://Sounds/Effects/attack2.wav" type="AudioStream" id=38]
+[ext_resource path="res://Sounds/Emma VO/lending.wav" type="AudioStream" id=39]
+[ext_resource path="res://Sounds/Emma VO/lending2.wav" type="AudioStream" id=40]
+
+[sub_resource type="GDScript" id=77]
+script/source = "extends AudioStreamPlayer
+
+
+export (int) var mix_rate = 48000
+export (bool) var stereo = true
+export (Array, AudioStreamSample) var samples
+
+
+func _ready():
+	randomize()
+	for i in samples.size():
+		var s = samples[i]
+		s.set_stereo(stereo)
+		s.set_mix_rate(mix_rate)
+				
+	
+func play_random():
+	stream = samples[randi() % samples.size()]
+	play()
+"
 
 [sub_resource type="CylinderShape" id=76]
 radius = 0.671503
@@ -6234,6 +6275,7 @@ tracks/62/keys = PoolRealArray( 0, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -
 resource_name = "emma_pushing"
 length = 2.0
 loop = true
+step = 0.0166667
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Skeleton:colen.L")
 tracks/0/interp = 1
@@ -6675,11 +6717,34 @@ tracks/62/loop_wrap = true
 tracks/62/imported = false
 tracks/62/enabled = true
 tracks/62/keys = PoolRealArray( 0, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -3.07336e-08, -2.5495e-08, 5.12227e-09, 1, 1, 1, 1, 2, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -3.07336e-08, -2.5495e-08, 5.12227e-09, 1, 1, 1, 1 )
+tracks/63/type = "audio"
+tracks/63/path = NodePath("AnimationPlayer/Pushing")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 37 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 37 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 37 )
+} ],
+"times": PoolRealArray( 0, 0.683333, 1.36667 )
+}
 
 [sub_resource type="Animation" id=20]
 resource_name = "emma_rolling"
 length = 0.666667
 loop = true
+step = 0.0166667
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Skeleton:colen.L")
 tracks/0/interp = 1
@@ -7126,6 +7191,7 @@ tracks/62/keys = PoolRealArray( 0, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -
 resource_name = "emma_run"
 length = 0.5
 loop = true
+step = 0.0166667
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Skeleton:colen.L")
 tracks/0/interp = 1
@@ -7567,6 +7633,23 @@ tracks/62/loop_wrap = true
 tracks/62/imported = false
 tracks/62/enabled = true
 tracks/62/keys = PoolRealArray( 0, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -3.07336e-08, -2.5495e-08, 5.12227e-09, 1, 1, 1, 1, 0.5, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -3.07336e-08, -2.5495e-08, 5.12227e-09, 1, 1, 1, 1 )
+tracks/63/type = "method"
+tracks/63/path = NodePath("AnimationPlayer/Footstep")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0.15, 0.366667 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_random"
+}, {
+"args": [  ],
+"method": "play_random"
+} ]
+}
 
 [sub_resource type="Animation" id=22]
 resource_name = "emma_sliding"
@@ -11137,41 +11220,75 @@ axis_lock_motion_x = true
 move_lock_x = true
 collision/safe_margin = 0.01
 script = ExtResource( 9 )
+push_speed = 2.0
+gravity = 4.0
+jump_speed = 45.0
+kick_speed = 8.0
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="States" type="Node" parent="."]
 script = ExtResource( 10 )
 
-[node name="idle" type="Node" parent="StateMachine"]
+[node name="idle" type="Node" parent="States"]
 script = ExtResource( 11 )
 
-[node name="kneel" type="Node" parent="StateMachine"]
+[node name="kneel" type="Node" parent="States"]
 script = ExtResource( 21 )
 
-[node name="run" type="Node" parent="StateMachine"]
+[node name="run" type="Node" parent="States"]
 script = ExtResource( 16 )
 
-[node name="pushing" type="Node" parent="StateMachine"]
+[node name="pushing" type="Node" parent="States"]
 script = ExtResource( 19 )
 
-[node name="crawling" type="Node" parent="StateMachine"]
+[node name="crawling" type="Node" parent="States"]
 script = ExtResource( 20 )
 
-[node name="jump" type="Node" parent="StateMachine"]
+[node name="jump" type="Node" parent="States"]
 script = ExtResource( 13 )
 
-[node name="falling" type="Node" parent="StateMachine"]
+[node name="falling" type="Node" parent="States"]
 script = ExtResource( 15 )
 
-[node name="landing" type="Node" parent="StateMachine"]
+[node name="landing" type="Node" parent="States"]
 script = ExtResource( 14 )
 
-[node name="attack" type="Node" parent="StateMachine"]
+[node name="attack" type="Node" parent="States"]
 script = ExtResource( 17 )
 
-[node name="wall_sliding" type="Node" parent="StateMachine"]
+[node name="wall_sliding" type="Node" parent="States"]
 script = ExtResource( 18 )
 
-[node name="SoundSet" type="Node" parent="."]
+[node name="Sounds" type="Spatial" parent="."]
+
+[node name="DoubleJump" type="AudioStreamPlayer" parent="Sounds"]
+volume_db = -20.0
+script = SubResource( 77 )
+mix_rate = 22050
+samples = [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ) ]
+
+[node name="JumpVoice" type="AudioStreamPlayer" parent="Sounds"]
+volume_db = -20.0
+script = SubResource( 77 )
+mix_rate = 22050
+samples = [ ExtResource( 27 ), ExtResource( 26 ) ]
+
+[node name="Landing" type="AudioStreamPlayer" parent="Sounds"]
+volume_db = -20.0
+script = SubResource( 77 )
+mix_rate = 16000
+samples = [ ExtResource( 28 ), ExtResource( 31 ), ExtResource( 32 ) ]
+
+[node name="LandingVoice" type="AudioStreamPlayer" parent="Sounds"]
+volume_db = -20.0
+script = SubResource( 77 )
+mix_rate = 22050
+samples = [ ExtResource( 39 ), ExtResource( 40 ) ]
+
+[node name="BarrelSliding" type="AudioStreamPlayer" parent="Sounds"]
+volume_db = -20.0
+script = SubResource( 77 )
+mix_rate = 22050
+samples = [ ExtResource( 30 ), ExtResource( 29 ), ExtResource( 38 ) ]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.802971, 0 )
@@ -11591,3 +11708,16 @@ anims/stand_nude = SubResource( 26 )
 anims/stand_swallowed = SubResource( 27 )
 anims/stop = SubResource( 28 )
 anims/swallowed = SubResource( 29 )
+
+[node name="Footstep" type="AudioStreamPlayer" parent="AnimationPlayer"]
+volume_db = -20.0
+script = SubResource( 77 )
+mix_rate = 22050
+samples = [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 22 ) ]
+
+[node name="Pushing" type="AudioStreamPlayer" parent="AnimationPlayer"]
+stream = ExtResource( 37 )
+volume_db = -20.0
+
+[node name="CameraFocus" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.87, 0 )

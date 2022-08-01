@@ -1,6 +1,5 @@
 extends State
 
-export (float) var time_to_idle = 10
 
 onready var anim_player = owner.get_node("AnimationPlayer")
 
@@ -9,7 +8,7 @@ func _enter():
 	anim_player.play("kneel", 0.1)
 	
 	
-func _transition(_delta):	
+func _transition(_delta):
 	if owner.is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			return "jump"
