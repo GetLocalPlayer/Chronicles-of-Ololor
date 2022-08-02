@@ -39,8 +39,10 @@ func _transition():
 		return "jump"
 	for i in body.get_slide_count():
 		var collision = body.get_slide_collision(i)
-		if collision.collider.is_in_group("pushable"):
-			return "pushing"
+		var collider = collision.collider
+		if collider.is_in_group("pushable") and collider.is_on_floor():
+			if abs(stepify(collision.normal.dot(body.get_floor_normal()), 0.01)) == 0.0: 
+				return "pushing"
 	if not Input.is_action_pressed("run_left") and not Input.is_action_pressed("run_right"):
 		if Input.is_action_pressed("crawling"):
 			return "kneel"
