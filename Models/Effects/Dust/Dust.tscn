@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Models/Effects/Dust/Dust.material" type="Material" id=1]
+[ext_resource path="res://Sounds/Effects/boom2.wav" type="AudioStream" id=2]
+[ext_resource path="res://Sounds/Effects/boom3.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/Effects/boom.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -51,10 +54,80 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
+"times": PoolRealArray( 0, 0.986 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_random"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "birth&queue_free"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:mesh:surface_1/material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0.25, 0, 0 ), Vector3( 0.5, 0, 0 ), Vector3( 0.75, 0, 0 ), Vector3( 0, 0.333, 0 ), Vector3( 0.25, 0.333, 0 ), Vector3( 0.5, 0.333, 0 ), Vector3( 0.75, 0.333, 0 ), Vector3( 0, 0.667, 0 ), Vector3( 0.25, 0.667, 0 ), Vector3( 0.5, 0.667, 0 ), Vector3( 0.75, 0.667, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_random"
+} ]
 }
 
 [sub_resource type="ArrayMesh" id=1]
@@ -72,12 +145,37 @@ surfaces/0 = {
 "vertex_count": 8
 }
 
+[sub_resource type="GDScript" id=5]
+script/source = "extends AudioStreamPlayer
+
+
+export (int) var mix_rate = 48000
+export (bool) var stereo = true
+export (Array, AudioStreamSample) var samples
+
+
+func _ready():
+	randomize()
+	for i in samples.size():
+		var s = samples[i]
+		s.set_stereo(stereo)
+		s.set_mix_rate(mix_rate)
+				
+	
+func play_random():
+	if samples.size() > 0:
+		stream = samples[randi() % samples.size()]
+		if stream != null:
+			play()
+"
+
 [node name="Dust" type="Spatial"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Mesh")
 anims/RESET = SubResource( 2 )
 anims/birth = SubResource( 3 )
+anims/birth&queue_free = SubResource( 4 )
 
 [node name="Mesh" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328773, 0.123579, 0 )
@@ -85,3 +183,9 @@ visible = false
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = null
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
+script = SubResource( 5 )
+mix_rate = 16000
+samples = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ]

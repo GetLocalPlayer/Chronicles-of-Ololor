@@ -97,16 +97,16 @@ nodes/output/position = Vector2( 480, 140 )
 node_connections = [ "output", 0, "birth", "birth", 0, "Animation 2", "birth", 1, "Animation" ]
 
 [node name="Fire" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0.716006, 0 )
+transform = Transform( 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 0, 0, 0, 0, 1, -0.03, -0.182433, 0 )
+transform = Transform( 1, 0, 0, 0, 0, 0, 0, 0, 1, -0.03, 0.628258, 0 )
 light_color = Color( 1, 0.894329, 0.613333, 1 )
 omni_range = 4096.0
 omni_attenuation = 409.6
 
 [node name="Mesh" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.66469, -5.86638, -5.94453 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.66469, -5.27119, -5.94453 )
 mesh = SubResource( 3 )
 material/0 = null
 

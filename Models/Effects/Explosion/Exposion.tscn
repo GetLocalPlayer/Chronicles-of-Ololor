@@ -160,3 +160,4 @@ anims/birth&queue_free = SubResource( 6 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+volume_db = -20.0

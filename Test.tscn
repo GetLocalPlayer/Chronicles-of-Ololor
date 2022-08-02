@@ -1,10 +1,26 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Models/Characters/Emma/Emma.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Models/Environment/Platform/Platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BarrelsSpawn.gd" type="Script" id=3]
 [ext_resource path="res://Models/Characters/Nhizi/Nhizi.tscn" type="PackedScene" id=4]
 [ext_resource path="res://FightLogic.gd" type="Script" id=5]
+[ext_resource path="res://UI.tscn" type="PackedScene" id=6]
+
+[sub_resource type="GDScript" id=10]
+script/source = "extends TextureProgress
+
+
+onready var boss = get_node(\"/root/Spatial/Nhizi\")
+
+
+func _ready():
+	boss.connect(\"health_changed\", self, \"on_boss_health_changed\")
+	
+	
+func on_boss_health_changed(new_value: float):
+	set_value(new_value)
+"
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends Camera
@@ -31,7 +47,7 @@ extents = Vector3( 2.498, 1.6, 3.779 )
 extents = Vector3( 2.498, 1.6, 3.779 )
 
 [sub_resource type="BoxShape" id=9]
-extents = Vector3( 2.498, 1.6, 3.779 )
+extents = Vector3( 2.498, 1.6, 5.41021 )
 
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 2.498, 1.6, 3.779 )
@@ -40,6 +56,11 @@ extents = Vector3( 2.498, 1.6, 3.779 )
 extents = Vector3( 2.498, 1.6, 3.779 )
 
 [node name="Spatial" type="Spatial"]
+
+[node name="UI" parent="." instance=ExtResource( 6 )]
+
+[node name="BossHealth" parent="UI" index="0"]
+script = SubResource( 10 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.83316, 4.98649, 0.67179 )
@@ -55,9 +76,13 @@ debug_shape_thickness = 5
 
 [node name="Emma" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.6124, 0 )
-kick_speed = 10.0
+kick_speed = 14.0
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
+
+[node name="Nhizi" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76802, 6.22573, -7.77483 )
+explosion_damage = 12
 
 [node name="BarrelsSpawn" type="Spatial" parent="."]
 script = ExtResource( 3 )
@@ -67,9 +92,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.9485, 12.1451 )
 
 [node name="Right" type="Position3D" parent="BarrelsSpawn"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.9485, -13.6333 )
-
-[node name="Nhizi" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76802, 6.22573, -7.77483 )
 
 [node name="FightLogic" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -120,6 +142,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.77432, 7.58641 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.086 )
 shape = SubResource( 8 )
 
+[editable path="UI"]
 [editable path="Emma"]
 [editable path="Nhizi"]
-[editable path="Nhizi/Skeleton/Dust"]

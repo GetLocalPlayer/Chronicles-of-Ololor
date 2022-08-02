@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Textures/UI/boss_hp_progress.png" type="Texture" id=1]
+[ext_resource path="res://Textures/UI/boss_hp_under.png" type="Texture" id=2]
+[ext_resource path="res://Textures/UI/hp2.png" type="Texture" id=3]
+[ext_resource path="res://Textures/UI/hp1.png" type="Texture" id=4]
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BossHealth" type="TextureProgress" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -436.0
+margin_top = -154.0
+margin_right = 76.0001
+margin_bottom = 102.0
+rect_scale = Vector2( 0.85, 0.6 )
+value = 100.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 1 )
+fill_mode = 1
+
+[node name="PlayerHealth" type="TextureProgress" parent="."]
+anchor_right = 0.999
+anchor_bottom = 0.999
+margin_left = 26.0
+margin_top = 24.9999
+margin_right = -952.72
+margin_bottom = -544.28
+rect_scale = Vector2( 0.85, 0.85 )
+value = 100.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
