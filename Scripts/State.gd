@@ -10,9 +10,9 @@ func _update(_delta):
 	pass
 	
 	
-func _transition(_delta):
+func _transition():
 	return null
 	
 	
-func _exit(_delta):
+func _exit():
 	pass

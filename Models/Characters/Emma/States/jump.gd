@@ -41,7 +41,7 @@ func _enter():
 	audio_voice.play_random()
 
 	
-func _transition(_delta):
+func _transition():
 	if body.is_on_wall():
 		for i in body.get_slide_count():
 			var collision = body.get_slide_collision(i)
@@ -65,7 +65,3 @@ func _update(_delta):
 		velocity.y = jump_speed
 		audio_double_jump.play_random()
 	body.move_and_slide(velocity, Vector3.UP, false, 4, PI/4, false)
-
-
-func _exit(_delta):
-	pass

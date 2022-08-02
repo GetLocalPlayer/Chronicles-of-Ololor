@@ -26,7 +26,7 @@ func _update(_delta):
 	body.move_and_slide(velocity, Vector3.UP, false, 4, PI/4, false)
 	
 	
-func _transition(_delta):
+func _transition():
 	if not body.is_on_floor():
 		return "falling"
 	if Input.is_action_just_pressed("jump"):
@@ -36,6 +36,3 @@ func _transition(_delta):
 	if not Input.is_action_pressed("crawling"):
 		return "run"
 	
-	
-func _exit(_delta):
-	pass

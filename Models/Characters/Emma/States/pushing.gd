@@ -38,7 +38,7 @@ func _update(_delta):
 				is_pushing = true
 			
 	
-func _transition(_delta):
+func _transition():
 	if not body.is_on_floor():
 		return "falling"
 	if Input.is_action_just_pressed("jump"):
@@ -50,6 +50,3 @@ func _transition(_delta):
 	if not is_pushing:
 		return "run"
 		
-	
-func _exit(_delta):
-	pass

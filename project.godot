@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "State",
+"class": "AttackState",
+"language": "GDScript",
+"path": "res://Models/Characters/Nhizi/States/attack.gd"
+}, {
 "base": "KinematicBody",
 "class": "Pushable",
 "language": "GDScript",
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://Scripts/StateMachine.gd"
 } ]
 _global_script_class_icons={
+"AttackState": "",
 "Pushable": "",
 "State": "",
 "StateMachine": ""

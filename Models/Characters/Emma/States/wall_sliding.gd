@@ -47,14 +47,11 @@ func _update(_delta):
 	body.move_and_slide(velocity, Vector3.UP, false, 4, PI/4, false)
 	
 	
-func _transition(_delta):
+func _transition():
 	if body.is_on_floor():
 		return "idle"
 	if Input.is_action_just_pressed("jump"):
 		return "jump"
 	if not body.is_on_wall():
 		return "falling"
-	
-	
-func _exit(_delta):
-	pass
+

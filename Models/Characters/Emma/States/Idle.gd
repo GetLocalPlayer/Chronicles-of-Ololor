@@ -21,11 +21,11 @@ func _enter():
 	timer.start(time_to_idle)
 	
 	
-func _exit(_delta):
+func _exit():
 	timer.stop()
 	
 	
-func _transition(_delta):	
+func _transition():	
 	if owner.is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			return "jump"

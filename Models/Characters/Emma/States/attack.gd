@@ -51,7 +51,7 @@ func _update(_delta):
 	owner.move_and_slide(velocity, Vector3.UP, false, 4, PI/4, false)
 	
 	
-func _transition(_delta):
+func _transition():
 	if not anim_player.is_playing():
 		return "idle"
 	if not owner.is_on_floor():
@@ -67,5 +67,5 @@ func _transition(_delta):
 		return "kneel"
 	
 
-func _exit(_delta):
+func _exit():
 	owner.disconnect("attack", self, "on_attack")

@@ -29,7 +29,7 @@ func _update(_delta):
 	body.move_and_slide(velocity, Vector3.UP, false, 4, PI/4, false)
 	
 	
-func _transition(_delta):
+func _transition():
 	if body.is_on_floor():
 		return "landing"
 	if body.is_on_wall():
@@ -42,5 +42,5 @@ func _transition(_delta):
 		return "jump"
 	
 	
-func _exit(_delta):
+func _exit():
 	body.double_jump_available = true

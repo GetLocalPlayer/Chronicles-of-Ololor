@@ -30,7 +30,7 @@ func _enter():
 	
 		
 	
-func _transition(_delta):
+func _transition():
 	if Input.is_action_just_pressed("jump"):
 		return"jump"
 	if Input.is_action_pressed("run_left") or Input.is_action_pressed("run_right"):
