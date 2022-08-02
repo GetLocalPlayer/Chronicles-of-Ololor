@@ -30,8 +30,6 @@ func _ready():
 		area.connect("body_exited", self, "on_attack_area_exited", [area])
 		attack_type_to_area[area_to_attack_type[area]] = area
 	boss.connect("attack", self, "on_boss_attack")
-	boss.connect("health_changed", self, "on_boss_health_changed")
-
 
 
 func on_attack_timer_expired():
