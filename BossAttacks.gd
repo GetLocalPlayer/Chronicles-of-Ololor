@@ -32,6 +32,7 @@ func _ready():
 		area.connect("body_exited", self, "on_attack_area_exited", [area])
 		attack_type_to_area[area_to_attack_type[area]] = area
 	boss.connect("attack", self, "on_boss_attack")
+	boss.get_node("States").connect("state_changed", self, "on_boss_state_changed")
 
 
 func on_attack_timer_expired():
@@ -39,7 +40,11 @@ func on_attack_timer_expired():
 		return
 	if last_attack_area != null:
 		boss.attack(area_to_attack_type[last_attack_area])
-	attack_timer.start(attack_interval)
+	
+	
+func on_boss_state_changed(old_state, new_state):
+	if new_state == "idle":
+		attack_timer.start(attack_interval)
 	
 	
 func on_attack_area_entered(body, area):

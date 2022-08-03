@@ -4,7 +4,7 @@ onready var anim_player = owner.get_node("AnimationPlayer")
 
 
 func _enter():
-	anim_player.play("death", 0.15)
+	anim_player.play("death", 1)
 		
 	
 func _transition():

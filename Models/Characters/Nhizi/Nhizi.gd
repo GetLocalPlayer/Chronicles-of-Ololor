@@ -6,7 +6,6 @@ signal health_changed(new_value)
 
 
 export (int) var health = 100 setget set_health
-export (int) var explosion_damage = 20
 
 
 enum AttackType {FAR_LEFT, LEFT, CENTER, RIGHT, FAR_RIGHT}
