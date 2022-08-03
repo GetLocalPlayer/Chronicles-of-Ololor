@@ -2,20 +2,16 @@ extends Spatial
 
 
 signal attack
-signal health_changed(new_value)
+signal grasp_started # Emmited from the animation player
+signal grasp_ended # Emmited from the animation player
+signal upper_left_grasp # Emmited from the animation player
+signal upper_right_grasp # Emmited from the animation player
 
 
-export (int) var health = 100 setget set_health
+export (int) var health = 100 
 
 
 enum AttackType {FAR_LEFT, LEFT, CENTER, RIGHT, FAR_RIGHT}
-
-
-func set_health(new_value: float):
-	if new_value < 0:
-		new_value = 0
-	health = new_value
-	emit_signal("health_changed", new_value)
 	
 
 func attack(type: int):

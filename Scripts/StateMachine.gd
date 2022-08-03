@@ -11,8 +11,6 @@ var current_state = null
 func _ready():
 	if get_child_count() > 0:
 		_change_state(get_child(0).name)
-		current_state = get_child(0).name
-		get_child(0)._enter()
 	
 
 func _change_state(new_state):

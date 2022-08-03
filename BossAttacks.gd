@@ -2,63 +2,45 @@ extends Node
 
 
 export (float) var explosion_damage = 13
-export (float) var attack_interval = 4
 
 onready var boss = owner.get_node("Nhizi")
-onready var attack_timer = Timer.new()
 onready var player = owner.get_node("Emma")
 
-onready var area_to_attack_type = {
-	get_node("AreaFL"): boss.AttackType.FAR_LEFT,
-	get_node("AreaL"): 	boss.AttackType.LEFT,
-	get_node("AreaC"): 	boss.AttackType.CENTER,
-	get_node("AreaR"): 	boss.AttackType.RIGHT,
-	get_node("AreaFR"): boss.AttackType.FAR_RIGHT,
+
+onready var area_to_state = {
+	get_node("AreaFL"): "far_left_attack",
+	get_node("AreaL"):	"left_attack",
+	get_node("AreaC"): 	"attack",
+	get_node("AreaR"): 	"right_attack",
+	get_node("AreaFR"): "far_right_attack",
 }
 
+onready var attack_type_to_area = {
+	boss.AttackType.FAR_LEFT: get_node("AreaFL"),
+	boss.AttackType.LEFT: get_node("AreaL"),
+	boss.AttackType.CENTER: get_node("AreaC"),
+	boss.AttackType.RIGHT: get_node("AreaR"),
+	boss.AttackType.FAR_RIGHT: get_node("AreaFR"),
+}
 
-var attack_type_to_area = {}
-var attack_areas_stack = []
-var last_attack_area: Area
+var last_entered_area: Area
 
 
 func _ready():
-	add_child(attack_timer)
-	attack_timer.connect("timeout", self, "on_attack_timer_expired")
-	attack_timer.start(attack_interval)
-	attack_timer.one_shot = true
-	for area in area_to_attack_type:
+	for area in area_to_state:
 		area.connect("body_entered", self, "on_attack_area_entered", [area])
-		area.connect("body_exited", self, "on_attack_area_exited", [area])
-		attack_type_to_area[area_to_attack_type[area]] = area
 	boss.connect("attack", self, "on_boss_attack")
-	boss.get_node("States").connect("state_changed", self, "on_boss_state_changed")
-
-
-func on_attack_timer_expired():
-	if boss.health <= 0:
-		return
-	if last_attack_area != null:
-		boss.attack(area_to_attack_type[last_attack_area])
 	
 	
-func on_boss_state_changed(old_state, new_state):
-	if new_state == "idle":
-		attack_timer.start(attack_interval)
+func do():
+	if last_entered_area != null:
+		boss.get_node("States")._change_state(area_to_state[last_entered_area])
 	
 	
 func on_attack_area_entered(body, area):
 	if body == player:
-		attack_areas_stack.push_back(area)
-		last_attack_area = area
+		last_entered_area = area
 
-
-func on_attack_area_exited(body, area):
-	if body == player:
-		attack_areas_stack.erase(area)
-		if attack_areas_stack.size() > 0:
-			last_attack_area = attack_areas_stack.back()
-		
 
 func on_boss_attack(attack_type):
 	var area = attack_type_to_area[attack_type]
