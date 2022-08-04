@@ -36,7 +36,6 @@ func on_attack():
 			instance.to_local(ray.get_collision_point())
 			instance.translate(instance.to_local(ray.get_collision_point()))
 			instance.get_node("AnimationPlayer").play("birth&queue_free")
-			audio_barrel_sliding.play_random()
 	
 	
 func _enter():

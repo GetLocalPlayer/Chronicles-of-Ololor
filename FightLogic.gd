@@ -13,15 +13,15 @@ func _ready():
 	randomize()
 	add_child(attack_timer)
 	attack_timer.connect("timeout", self, "on_attack_timer_expired")
-	attack_timer.start(attack_interval)
 	attack_timer.one_shot = true
+	attack_timer.start(attack_interval)
 	boss.get_node("States").connect("state_changed", self, "on_boss_state_changed")
 
 
 func on_boss_state_changed(_old_state, new_state):
 	if new_state == "idle":
 		attack_timer.start(attack_interval)
-		print("timer started")
+		print ("Boss entered IDLE state")
 
 
 func on_attack_timer_expired():

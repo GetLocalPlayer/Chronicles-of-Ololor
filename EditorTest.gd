@@ -7,7 +7,8 @@ var timer = Timer.new()
 func _run():
 	print("#####################################")
 	var root = get_scene()
-	var boss = root.get_node("Nhizi")
-	var anim_player = boss.get_node("AnimationPlayer")
-	anim_player.play("stand", 0)
+	var anim_player = root.get_node("AnimationPlayer")
+	for name in anim_player.get_animation_list():
+		print(name)
+		anim_player.rename_animation(name, name.trim_prefix("emma_"))
 	print("#####################################")

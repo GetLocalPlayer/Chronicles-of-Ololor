@@ -1,4 +1,5 @@
 extends State
+class_name IdleState
 
 
 onready var anim_player = owner.get_node("AnimationPlayer")
