@@ -8,10 +8,13 @@ signal upper_left_grasp # Emmited from the animation player
 signal upper_right_grasp # Emmited from the animation player
 
 
-export (int) var health = 100 
-
-
+export (int) var health = 100
+onready var health_bar = get_node("HealthBar")
 enum AttackType {FAR_LEFT, LEFT, CENTER, RIGHT, FAR_RIGHT}
+
+
+func _process(_delta):
+	health_bar.value = health
 	
 
 func attack(type: int):

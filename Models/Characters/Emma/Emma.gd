@@ -16,6 +16,9 @@ export (float) var kick_speed = 10
 var double_jump_available = true
 
 
-func _ready():
-	pass
+onready var health_bar = get_node("HealthBar")
+
+
+func _process(_delta):
+	health_bar.value = health
 
