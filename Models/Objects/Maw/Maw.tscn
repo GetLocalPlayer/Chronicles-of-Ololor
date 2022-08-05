@@ -195,7 +195,7 @@ onready var arrow = preload(\"res://Models/Objects/Maw/Arrow.tscn\")
 onready var action_to_area = {
 	\"jump\": $Up/Area2D,
 	\"run_right\": $Right/Area2D,
-	\"down\": $Down/Area2D,
+	\"crawling\": $Down/Area2D,
 	\"run_left\": $Left/Area2D,
 }
 
@@ -219,6 +219,8 @@ func on_timer_expired():
 func success(arrow_area):
 	get_parent().value += success_score
 	get_node(\"AudioStreamPlayer\").play()
+	arrow_area.collision_layer = 0
+	arrow_area.collision_mask = 0
 
 
 func _input(_event):
@@ -301,7 +303,7 @@ margin_bottom = 165.0
 rect_scale = Vector2( 0.7, 0.7 )
 rect_pivot_offset = Vector2( 0, 525 )
 size_flags_vertical = 0
-max_value = 1000.0
+step = 0.01
 value = 50.0
 texture_under = ExtResource( 4 )
 texture_progress = ExtResource( 5 )

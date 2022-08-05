@@ -2,7 +2,7 @@ extends TextureProgress
 
 
 export (int) var decrease_per_second = 5
-export (int) var decrease_interwal = 0.1
+export (float) var decrease_interwal = 0.1
 export (float) var desirable_ratio = 1
 
 onready var default_size = rect_size
