@@ -58,7 +58,8 @@ tracks/0/keys = PoolRealArray( 0, 1, 9.29803, -3.2808, 1.19024, -0.021818, 0.793
 
 [sub_resource type="Animation" id=8]
 resource_name = "swallow"
-length = 7.91667
+length = 7.86667
+step = 0.0166667
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Camera")
 tracks/0/interp = 1
@@ -70,7 +71,7 @@ tracks/0/keys = PoolRealArray( 0, 1, 2.46482, 1.4754, 11.0485, 0.263035, 0.40462
 [node name="CutsceneCamera" type="Spatial"]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.619298, 0.616766, 0.485869, -0.170201, 0.709561, -0.68378, -0.766486, 0.340768, 0.544404, 4.17981, -1.99904, 12.4682 )
+transform = Transform( -0.245673, 0.0485748, 0.968135, 0.0386975, 0.998439, -0.0402754, -0.96858, 0.0275699, -0.247169, 45.0603, 6.25951, 5.99343 )
 fov = 24.6435
 near = 0.01
 far = 500.0

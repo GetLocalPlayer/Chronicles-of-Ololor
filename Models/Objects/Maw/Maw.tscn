@@ -231,11 +231,13 @@ func _input(_event):
 				success(area.get_overlapping_areas()[0])
 
 
-func _on_ArrowSlots_visibility_changed():
-	if visible:
+func _on_HealthBar_visibility_changed():
+	if get_parent().visible:
 		timer.start()
+		set_process_input(true)
 	else:
 		timer.stop()
+		set_process_input(false)
 "
 
 [node name="Maw" type="Spatial"]
@@ -294,6 +296,7 @@ anims/stand = SubResource( 8 )
 anims/swallow = SubResource( 9 )
 
 [node name="HealthBar" type="TextureProgress" parent="."]
+visible = false
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -335,4 +338,4 @@ stream = ExtResource( 6 )
 volume_db = -20.0
 
 [connection signal="visibility_changed" from="HealthBar" to="HealthBar" method="_on_HealthBar_visibility_changed"]
-[connection signal="visibility_changed" from="HealthBar/ArrowSlots" to="HealthBar/ArrowSlots" method="_on_ArrowSlots_visibility_changed"]
+[connection signal="visibility_changed" from="HealthBar" to="HealthBar/ArrowSlots" method="_on_HealthBar_visibility_changed"]

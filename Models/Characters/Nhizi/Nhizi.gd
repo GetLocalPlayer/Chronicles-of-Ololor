@@ -6,6 +6,7 @@ signal grasp_started # Emmited from the animation player
 signal grasp_ended # Emmited from the animation player
 signal upper_left_grasp # Emmited from the animation player
 signal upper_right_grasp # Emmited from the animation player
+signal spitout_frame
 
 
 export (int) var health = 100

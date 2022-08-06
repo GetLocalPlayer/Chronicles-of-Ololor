@@ -34,13 +34,13 @@ surfaces/1 = {
 extents = Vector3( 1.55853, 1.23956, 15.4014 )
 
 [sub_resource type="BoxShape" id=5]
-extents = Vector3( 1.55853, 0.315007, 2.42687 )
+extents = Vector3( 1.55853, 0.315007, 2.64817 )
 
 [sub_resource type="BoxShape" id=6]
 extents = Vector3( 1.55853, 4.09088, 0.166132 )
 
 [sub_resource type="BoxShape" id=7]
-extents = Vector3( 1.55853, 2.23432, 0.166132 )
+extents = Vector3( 1.55853, 1.69677, 0.166132 )
 
 [node name="Platform" type="StaticBody"]
 
@@ -55,11 +55,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.317871, 4.93993, -0.670174 
 shape = SubResource( 4 )
 
 [node name="FloorUL" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.317871, 14.9351, 11.8404 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.317871, 14.9351, 12.0071 )
 shape = SubResource( 5 )
 
 [node name="FloorUR" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.317871, 14.9659, -13.2509 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.317871, 14.9659, -13.4064 )
 shape = SubResource( 5 )
 
 [node name="WallFR" type="CollisionShape" parent="." groups=["walls"]]
@@ -67,11 +67,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.329885, 11.3881, -18.8 )
 shape = SubResource( 6 )
 
 [node name="WallR" type="CollisionShape" parent="." groups=["walls"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.329885, 13.0381, -15.8733 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.329885, 12.4133, -15.8733 )
 shape = SubResource( 7 )
 
 [node name="WallL" type="CollisionShape" parent="." groups=["walls"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.329885, 13.0163, 14.4864 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.329885, 12.5, 14.4864 )
 shape = SubResource( 7 )
 
 [node name="WallFL" type="CollisionShape" parent="." groups=["walls"]]

@@ -3,7 +3,7 @@ extends KinematicBody
 
 signal attack
 
-export (float) var health = 100
+export (float) var health = 100 setget set_health
 export (float) var run_speed = 10
 export (float) var crawling_speed = 5
 export (float) var slide_speed = 10
@@ -19,6 +19,19 @@ var double_jump_available = true
 onready var health_bar = get_node("HealthBar")
 
 
-func _process(_delta):
+func is_alive() -> bool:
+	return health > 0
+	
+
+func set_health(new_health):
+	if new_health < 0:
+		new_health = 0
+	health = new_health
+	health_bar = new_health
+	if health == 0:
+		$States._change_state("death")
+	
+	
+func _ready():
 	health_bar.value = health
 

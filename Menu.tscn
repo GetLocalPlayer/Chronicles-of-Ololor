@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://MenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Textures/UI/btn_quit_game.png" type="Texture" id=2]
+[ext_resource path="res://Menu.gd" type="Script" id=3]
+
+[node name="Menu" type="VBoxContainer"]
+anchor_right = 0.999
+anchor_bottom = 0.996
+margin_right = 0.279907
+margin_bottom = 10.8799
+alignment = 1
+script = ExtResource( 3 )
+
+[node name="Retry" parent="." instance=ExtResource( 1 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 497.0
+margin_top = 191.0
+margin_right = 781.0
+margin_bottom = 290.0
+rect_pivot_offset = Vector2( 142, 49 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="HSeparator" type="HSeparator" parent="."]
+margin_top = 294.0
+margin_right = 3.0
+margin_bottom = 444.0
+rect_min_size = Vector2( 0, 150 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="QuitGame" parent="." instance=ExtResource( 1 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 416.0
+margin_top = 448.0
+margin_right = 861.0
+margin_bottom = 535.0
+rect_pivot_offset = Vector2( 222, 43 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource( 2 )
+
+[connection signal="pressed" from="Retry" to="." method="_on_Retry_pressed"]
+[connection signal="pressed" from="QuitGame" to="." method="_on_QuitGame_pressed"]

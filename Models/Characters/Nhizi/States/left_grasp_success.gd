@@ -1,5 +1,5 @@
-extends GraspState
+extends UpperLeftGraspSuccessState
 
 
 func _enter():
-	anim_player.play("UL_grasp_success", 0)
+	anim_player.play("L_grasp_success", 1)
