@@ -210,7 +210,7 @@ surfaces/0 = {
 [node name="Barrel" type="KinematicBody" groups=["explosive", "pushable"]]
 collision_mask = 0
 script = ExtResource( 3 )
-gravity = 9.8
+gravity = 4.4
 kick_damp = 0.95
 
 [node name="FireArea" type="Area" parent="."]

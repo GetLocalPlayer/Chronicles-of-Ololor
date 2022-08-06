@@ -5,7 +5,7 @@ onready var gravity = owner.gravity
 onready var kick_speed = owner.kick_speed
 onready var anim_player = owner.get_node("AnimationPlayer")
 onready var ray = owner.get_node("Skeleton/RayCast")
-onready var audio_barrel_sliding = owner.get_node("Sounds/BarrelSliding")
+onready var audio_barrel_sliding = owner.get_node("Sounds/BarrelAttack")
 
 
 onready var hit_effect = [

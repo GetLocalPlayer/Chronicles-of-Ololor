@@ -14,6 +14,7 @@ func detonate():
 	anim_player.play("death")
 	emit_signal("detonated", explosion_area)
 	set_physics_process(false)
+	remove_from_group("explosive")
 	
 	fire_area.connect("body_entered", self, "on_fire_area_entered", [fire_area])
 	fire_area.connect("body_exited", self, "on_fire_area_exited", [fire_area])

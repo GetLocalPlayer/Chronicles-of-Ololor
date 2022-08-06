@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/attack.mp3-749b1f6c6c12778b00f7dc4ac9288c63.mp3str"
+
+[deps]
+
+source_file="res://Models/Characters/Emma/Sounds/attack.mp3"
+dest_files=[ "res://.import/attack.mp3-749b1f6c6c12778b00f7dc4ac9288c63.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

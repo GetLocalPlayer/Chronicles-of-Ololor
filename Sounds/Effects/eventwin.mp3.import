@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/eventwin.mp3-a5046292ee46238b1e549b132fc52ff5.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/eventwin.mp3"
+dest_files=[ "res://.import/eventwin.mp3-a5046292ee46238b1e549b132fc52ff5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

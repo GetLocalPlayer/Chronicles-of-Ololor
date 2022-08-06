@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/jump2.mp3-16cf9ab4ab002678ba6877830a75a6cd.mp3str"
+
+[deps]
+
+source_file="res://Models/Characters/Emma/Sounds/jump2.mp3"
+dest_files=[ "res://.import/jump2.mp3-16cf9ab4ab002678ba6877830a75a6cd.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

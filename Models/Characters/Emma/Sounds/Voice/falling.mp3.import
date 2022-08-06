@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/falling.mp3-d9ff2d798b1e49965ae91e6f6d883148.mp3str"
+
+[deps]
+
+source_file="res://Models/Characters/Emma/Sounds/Voice/falling.mp3"
+dest_files=[ "res://.import/falling.mp3-d9ff2d798b1e49965ae91e6f6d883148.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

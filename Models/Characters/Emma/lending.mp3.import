@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lending.mp3-fe8b55674b4be1197e26a6ad269ddba1.mp3str"
+
+[deps]
+
+source_file="res://Models/Characters/Emma/lending.mp3"
+dest_files=[ "res://.import/lending.mp3-fe8b55674b4be1197e26a6ad269ddba1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

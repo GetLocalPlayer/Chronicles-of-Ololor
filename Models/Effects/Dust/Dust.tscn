@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Models/Effects/Dust/Dust.material" type="Material" id=1]
-[ext_resource path="res://Sounds/Effects/boom2.wav" type="AudioStream" id=2]
-[ext_resource path="res://Sounds/Effects/boom3.wav" type="AudioStream" id=3]
-[ext_resource path="res://Sounds/Effects/boom.wav" type="AudioStream" id=4]
+[ext_resource path="res://Models/Effects/Dust/boom3.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Models/Effects/Dust/boom.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Models/Effects/Dust/boom2.mp3" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -149,19 +149,15 @@ surfaces/0 = {
 script/source = "extends AudioStreamPlayer
 
 
-export (int) var mix_rate = 48000
-export (bool) var stereo = true
-export (Array, AudioStreamSample) var samples
+export (Array, AudioStreamMP3) var samples
 
-
+	
 func _ready():
 	randomize()
-	for i in samples.size():
-		var s = samples[i]
-		s.set_stereo(stereo)
-		s.set_mix_rate(mix_rate)
-				
-	
+	for s in samples:
+		s.loop = false
+		
+		
 func play_random():
 	if samples.size() > 0:
 		stream = samples[randi() % samples.size()]
@@ -187,5 +183,4 @@ material/0 = null
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -20.0
 script = SubResource( 5 )
-mix_rate = 16000
-samples = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ]
+samples = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ) ]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/eventwin.mp3-fa76c6f875efcd0998272574bb89506b.mp3str"
+
+[deps]
+
+source_file="res://Models/Objects/Maw/eventwin.mp3"
+dest_files=[ "res://.import/eventwin.mp3-fa76c6f875efcd0998272574bb89506b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/boom.mp3-d1dafc7d925d383cf279267b1229f819.mp3str"
+
+[deps]
+
+source_file="res://Models/Effects/Dust/boom.mp3"
+dest_files=[ "res://.import/boom.mp3-d1dafc7d925d383cf279267b1229f819.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

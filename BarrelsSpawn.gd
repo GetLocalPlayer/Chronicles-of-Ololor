@@ -43,6 +43,4 @@ func on_barrel_detonated(_bodies, barrel):
 	
 func on_fire_timer_expired(barrel):
 	barrel.queue_free()
-
-
-
+	

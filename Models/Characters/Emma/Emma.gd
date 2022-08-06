@@ -28,7 +28,7 @@ func set_health(new_health):
 		new_health = 0
 	health = new_health
 	health_bar = new_health
-	if health == 0:
+	if health == 0 and $States.current_state != "death":
 		$States._change_state("death")
 	
 	

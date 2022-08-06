@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/oh4.mp3-07e3039f8ddf33ac14a992d6fd9851ce.mp3str"
+
+[deps]
+
+source_file="res://Models/Characters/Emma/Sounds/Voice/oh4.mp3"
+dest_files=[ "res://.import/oh4.mp3-07e3039f8ddf33ac14a992d6fd9851ce.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

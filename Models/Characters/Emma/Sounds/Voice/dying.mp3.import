@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dying.mp3-842e4cb1fda66fb61cd47c41a32b57f5.mp3str"
+
+[deps]
+
+source_file="res://Models/Characters/Emma/Sounds/Voice/dying.mp3"
+dest_files=[ "res://.import/dying.mp3-842e4cb1fda66fb61cd47c41a32b57f5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
