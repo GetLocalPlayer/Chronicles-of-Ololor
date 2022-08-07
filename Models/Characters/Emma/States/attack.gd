@@ -5,7 +5,7 @@ onready var gravity = owner.gravity
 onready var kick_speed = owner.kick_speed
 onready var anim_player = owner.get_node("AnimationPlayer")
 onready var ray = owner.get_node("Skeleton/RayCast")
-onready var audio_barrel_sliding = owner.get_node("Sounds/BarrelAttack")
+onready var audio = owner.get_node("Sounds/BarrelAttacked")
 
 
 onready var hit_effect = [
@@ -36,6 +36,7 @@ func on_attack():
 			instance.to_local(ray.get_collision_point())
 			instance.translate(instance.to_local(ray.get_collision_point()))
 			instance.get_node("AnimationPlayer").play("birth&queue_free")
+			audio.play_random()
 	
 	
 func _enter():

@@ -27,9 +27,12 @@ func on_boss_state_changed(_old_state, new_state):
 func on_attack_timer_expired():
 	if boss.health <= 0:
 		return
-	var attack_grasp = [$BossAttack, $BossGrasp]
-	var random = attack_grasp[randi() % attack_grasp.size()]
-	random.do()
+	if $DownArea.overlaps_body(player):
+		var attack_grasp = [$BossAttack, $BossGrasp]
+		var random = attack_grasp[randi() % attack_grasp.size()]
+		random.do()
+	else:
+		$BossGrasp.do()
 
 
 func _on_Emma_States_state_changed(_old_state, new_state):

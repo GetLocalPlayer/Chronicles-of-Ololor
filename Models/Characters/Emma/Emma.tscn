@@ -12251,7 +12251,7 @@ volume_db = -20.0
 script = SubResource( 77 )
 samples = [ ExtResource( 33 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 36 ), ExtResource( 32 ), ExtResource( 38 ) ]
 
-[node name="BarrelAttack" type="AudioStreamPlayer" parent="Sounds"]
+[node name="BarrelAttacked" type="AudioStreamPlayer" parent="Sounds"]
 volume_db = -20.0
 script = SubResource( 77 )
 samples = [ ExtResource( 57 ), ExtResource( 53 ), ExtResource( 52 ) ]
