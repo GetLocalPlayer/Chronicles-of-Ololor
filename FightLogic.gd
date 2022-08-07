@@ -28,7 +28,7 @@ func on_attack_timer_expired():
 	if not (boss.is_alive() and player.is_alive()):
 		return
 	if $DownArea.overlaps_body(player):
-		var attack_grasp = [$BossAttack, $BossGrasp]
+		var attack_grasp = [$BossAttacks, $BossGrasp]
 		var random = attack_grasp[randi() % attack_grasp.size()]
 		random.do()
 	else:

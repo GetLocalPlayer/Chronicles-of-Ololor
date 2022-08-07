@@ -4,6 +4,9 @@ extends Node
 export (float) var boss_hit_damage = 10
 export (float) var explosion_damage = 13
 export (float) var fire_lifetime = 7
+export (float) var burning_duration = 10
+export (float) var burning_damage_interval = 1
+export (float) var burning_damage = 2
 
 onready var boss = owner.get_node("Nhizi")
 onready var player = owner.get_node("Emma")
@@ -27,7 +30,6 @@ onready var attack_type_to_area = {
 }
 
 var last_entered_area: Area
-var fire_areas = []
 
 
 func _ready():
@@ -57,28 +59,30 @@ func on_boss_attack(attack_type):
 			var instance = fire.instance()
 			owner.add_child(instance)
 			instance.global_transform.origin = body.global_transform.origin
+			instance.get_node("Area").connect("body_entered", self, "on_fire_entered")
+			instance.get_node("Area").connect("body_exited", self, "on_fire_exited")
 			var timer = Timer.new()
 			instance.add_child(timer)
 			timer.one_shot = true
 			timer.connect("timeout", self, "on_fire_timer_expired", [instance])
 			timer.start(fire_lifetime)
-			fire_areas.append(instance)
 		if body == player and body.is_alive():
 			body.health -= boss_hit_damage
 			if body.is_alive():
 				body.get_node("Sounds/OhVoice").play_random()
 				body.get_node("States")._change_state("stun")
 				
-			
+
+
 func on_fire_timer_expired(instance):
-	fire_areas.erase(instance)
 	instance.queue_free()
-
-
-func _phisics_process(_delta):
-	for area in fire_areas:
-		for body in area.get_overlapping_bodies():
-			if body == player:
-				player.get_node("BurningTimer").run()
-				print("asdsadf")
-				return
+	
+	
+func on_fire_entered(body):
+	if body == player and player.is_alive() and player.get_node("States").current_state!= "idle_swallowed":
+		player.get_node("BurningTimer").run(burning_damage_interval,  burning_damage, 9999999)
+		
+		
+func on_fire_exited(body):
+	if body == player:
+		player.get_node("BurningTimer").run(burning_damage_interval,  burning_damage, burning_duration)

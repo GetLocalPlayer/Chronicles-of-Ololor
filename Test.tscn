@@ -105,13 +105,15 @@ bone_name = "Кисть.R"
 
 [node name="Emma" parent="." groups=["player"] instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.333615, 7.33087, -7.36041 )
+collision_layer = 1
+collision_mask = 1
 push_speed = 1.0
 
 [node name="Burning" parent="Emma/BurningTimer" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.426456, 8.58416, -7.34191 )
 
-[node name="Skeleton" parent="Emma" index="6"]
-bones/15/bound_children = [ NodePath("BodyAttachment") ]
+[node name="BodyAttachment" parent="Emma/Skeleton" index="10"]
+transform = Transform( 1, -2.02954e-07, 1.71061e-08, -8.20171e-08, 0.944524, 0.328448, -9.29136e-08, -0.328447, 0.944522, 0.00150353, 1.59717, 0.023994 )
 
 [node name="FightLogic" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -132,41 +134,41 @@ monitorable = false
 [node name="CollisionShape" type="CollisionShape" parent="FightLogic/DownArea"]
 shape = SubResource( 24 )
 
-[node name="BossAttack" type="Node" parent="FightLogic"]
+[node name="BossAttacks" type="Node" parent="FightLogic"]
 script = ExtResource( 8 )
 boss_hit_damage = 18.0
 
-[node name="AreaFR" type="Area" parent="FightLogic/BossAttack"]
+[node name="AreaFR" type="Area" parent="FightLogic/BossAttacks"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.77432, -0.0156946 )
 
-[node name="CollisionShape" type="CollisionShape" parent="FightLogic/BossAttack/AreaFR"]
+[node name="CollisionShape" type="CollisionShape" parent="FightLogic/BossAttacks/AreaFR"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.0806 )
 shape = SubResource( 5 )
 
-[node name="AreaR" type="Area" parent="FightLogic/BossAttack"]
+[node name="AreaR" type="Area" parent="FightLogic/BossAttacks"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.77432, -0.0156946 )
 
-[node name="CollisionShape" type="CollisionShape" parent="FightLogic/BossAttack/AreaR"]
+[node name="CollisionShape" type="CollisionShape" parent="FightLogic/BossAttacks/AreaR"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.59137 )
 shape = SubResource( 6 )
 
-[node name="AreaC" type="Area" parent="FightLogic/BossAttack"]
+[node name="AreaC" type="Area" parent="FightLogic/BossAttacks"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.77432, -0.0156946 )
 
-[node name="CollisionShape" type="CollisionShape" parent="FightLogic/BossAttack/AreaC"]
+[node name="CollisionShape" type="CollisionShape" parent="FightLogic/BossAttacks/AreaC"]
 shape = SubResource( 9 )
 
-[node name="AreaL" type="Area" parent="FightLogic/BossAttack"]
+[node name="AreaL" type="Area" parent="FightLogic/BossAttacks"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.77432, -0.0156946 )
 
-[node name="CollisionShape" type="CollisionShape" parent="FightLogic/BossAttack/AreaL"]
+[node name="CollisionShape" type="CollisionShape" parent="FightLogic/BossAttacks/AreaL"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.086 )
 shape = SubResource( 7 )
 
-[node name="AreaFL" type="Area" parent="FightLogic/BossAttack"]
+[node name="AreaFL" type="Area" parent="FightLogic/BossAttacks"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.77432, 7.58641 )
 
-[node name="CollisionShape" type="CollisionShape" parent="FightLogic/BossAttack/AreaFL"]
+[node name="CollisionShape" type="CollisionShape" parent="FightLogic/BossAttacks/AreaFL"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.086 )
 shape = SubResource( 8 )
 

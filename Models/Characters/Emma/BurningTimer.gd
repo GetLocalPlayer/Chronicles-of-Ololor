@@ -4,16 +4,18 @@ extends Timer
 # At this point I'm burning out to work
 # on this demo. 
 
-export (float) var interval = 1
-export (float) var damage = 2
-export (float) var duration = 10
+var interval: float
+var damage: float
 var remaining: float
-
 	
-func run():
-	remaining = duration
+	
+func run(_interval: float, _damage: float, _duration: float):
+	interval = _interval
+	damage = _damage
+	remaining = _duration
 	if not $Burning.visible:
 		start(interval)
+		$Burning.show()
 		
 		
 func cancel():
