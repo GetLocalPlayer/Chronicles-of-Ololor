@@ -39,3 +39,4 @@ func _on_DownGraspArea_body_entered(body):
 			boss.get_node("States")._change_state("right_grasp_success")
 		cutscenes.get_node("AnimationPlayer").queue("swallow")
 		player.get_node("Sounds/OhVoice").play_random()
+		player.get_node("BurningTimer").cancel()

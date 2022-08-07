@@ -35,9 +35,9 @@ func _on_HealthBar_value_changed(value):
 		cutscenes.get_node("AnimationPlayer").play("inside_swallowed", 0)
 	if value == health_bar.max_value:
 		cutscenes.get_node("AnimationPlayer").play("spitout", 0)
-		boss.health_bar.hide()
+		boss.health_bar.show()
 		boss.get_node("States")._change_state("spitout")
-		player.health_bar.hide()
+		player.health_bar.show()
 		maw.get_node("HealthBar").hide()
 
 

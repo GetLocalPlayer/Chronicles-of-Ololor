@@ -96,6 +96,9 @@ script = ExtResource( 11 )
 [node name="Nhizi" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76802, 6.22573, -7.77483 )
 
+[node name="Skeleton" parent="Nhizi" index="2"]
+bones/92/bound_children = [ NodePath("DownGraspAttachment") ]
+
 [node name="DownGraspAttachment" type="BoneAttachment" parent="Nhizi/Skeleton" index="2"]
 transform = Transform( 0.56179, 0.827058, -0.0192051, -0.20048, 0.113581, -0.973091, -0.802621, 0.550523, 0.229617, 3.34965, 7.15406, 0.454612 )
 bone_name = "Кисть.R"
@@ -103,6 +106,12 @@ bone_name = "Кисть.R"
 [node name="Emma" parent="." groups=["player"] instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.333615, 7.33087, -7.36041 )
 push_speed = 1.0
+
+[node name="Burning" parent="Emma/BurningTimer" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.426456, 8.58416, -7.34191 )
+
+[node name="Skeleton" parent="Emma" index="6"]
+bones/15/bound_children = [ NodePath("BodyAttachment") ]
 
 [node name="FightLogic" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -125,6 +134,7 @@ shape = SubResource( 24 )
 
 [node name="BossAttack" type="Node" parent="FightLogic"]
 script = ExtResource( 8 )
+boss_hit_damage = 18.0
 
 [node name="AreaFR" type="Area" parent="FightLogic/BossAttack"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.77432, -0.0156946 )
@@ -202,7 +212,7 @@ script = ExtResource( 6 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.333615, 6.3332, -9.48236 )
 
 [node name="EmmaSpitoutPosition" type="Position3D" parent="FightLogic/BossGrasp/MawEvent"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.184132, 10.1883, 0.90157 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.184132, 10.1883, 0.739172 )
 
 [node name="Maw" parent="FightLogic/BossGrasp/MawEvent" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90042, 5.88424, -8.00106 )

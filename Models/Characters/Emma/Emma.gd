@@ -4,6 +4,7 @@ extends KinematicBody
 signal attack
 
 export (float) var health = 100 setget set_health
+export (float) var max_health = 100
 export (float) var run_speed = 10
 export (float) var crawling_speed = 5
 export (float) var slide_speed = 10
@@ -26,6 +27,8 @@ func is_alive() -> bool:
 func set_health(new_health):
 	if new_health < 0:
 		health = 0
+	elif new_health > max_health:
+		health = max_health
 	else:
 		health = new_health
 	health_bar.value = health
@@ -35,4 +38,5 @@ func set_health(new_health):
 	
 func _ready():
 	health_bar.value = health
+	health_bar.max_value = max_health
 

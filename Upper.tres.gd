@@ -33,6 +33,7 @@ func on_upper_left_grasp():
 		anim_player.play("L_grasp", 0)
 		anim_player.queue("swallow")
 		player.get_node("Sounds/OhVoice").play_random()
+		player.get_node("BurningTimer").cancel() 
 		
 
 func on_upper_right_grasp():
@@ -43,6 +44,7 @@ func on_upper_right_grasp():
 		anim_player.play("R_grasp", 0)
 		anim_player.queue("swallow")
 		player.get_node("Sounds/OhVoice").play_random()
+		player.get_node("BurningTimer").cancel()
 
 
 

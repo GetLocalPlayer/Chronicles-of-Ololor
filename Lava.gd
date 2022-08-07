@@ -9,7 +9,7 @@ func _physics_process(_delta):
 		for i in body.get_slide_count():
 			var collision = body.get_slide_collision(i)
 			if collision.collider == self:
-				body.detonate()
+				body.detonate_and_queue_free()
 	for body in get_tree().get_nodes_in_group("player"):
 		if not body.is_alive():
 			continue
