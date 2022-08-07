@@ -28,7 +28,7 @@ func _on_Nhizi_grasp_ended():
 	
 
 func _on_DownGraspArea_body_entered(body):
-	if body == player:
+	if body == player and player.is_alive():
 		area.collision_layer = 0
 		area.collision_mask = 0
 		cutscenes.get_node("Camera").make_current()
@@ -38,3 +38,4 @@ func _on_DownGraspArea_body_entered(body):
 		else:
 			boss.get_node("States")._change_state("right_grasp_success")
 		cutscenes.get_node("AnimationPlayer").queue("swallow")
+		player.get_node("Sounds/OhVoice").play_random()

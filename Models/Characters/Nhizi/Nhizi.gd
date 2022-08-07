@@ -9,13 +9,23 @@ signal upper_right_grasp # Emmited from the animation player
 signal spitout_frame
 
 
-export (int) var health = 100
+export (int) var health = 100 setget set_health
 onready var health_bar = get_node("HealthBar")
 enum AttackType {FAR_LEFT, LEFT, CENTER, RIGHT, FAR_RIGHT}
 
 
-func _process(_delta):
+func is_alive() -> bool:
+	return health > 0
+	
+	
+func set_health(new_value):
+	if new_value < 0:
+		health = 0
+	else:
+		health = new_value
 	health_bar.value = health
+	if health == 0 and $States.current_state != "death":
+		$States._change_state("death")
 	
 
 func attack(type: int):

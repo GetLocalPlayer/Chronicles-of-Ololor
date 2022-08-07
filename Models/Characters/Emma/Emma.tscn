@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://Models/Characters/Emma/Джинсы.material" type="Material" id=1]
 [ext_resource path="res://Models/Characters/Emma/Emma skin.material" type="Material" id=2]
@@ -57,6 +57,10 @@
 [ext_resource path="res://Sounds/Emma VO/oh3.wav" type="AudioStream" id=55]
 [ext_resource path="res://Sounds/Emma VO/falling.wav" type="AudioStream" id=56]
 [ext_resource path="res://Models/Characters/Emma/Sounds/attack.mp3" type="AudioStream" id=57]
+[ext_resource path="res://Models/Characters/Emma/Sounds/Voice/oh3.mp3" type="AudioStream" id=58]
+[ext_resource path="res://Models/Characters/Emma/Sounds/Voice/oh2.mp3" type="AudioStream" id=59]
+[ext_resource path="res://Models/Characters/Emma/Sounds/Voice/oh4.mp3" type="AudioStream" id=60]
+[ext_resource path="res://Models/Characters/Emma/Sounds/Voice/oh.mp3" type="AudioStream" id=61]
 
 [sub_resource type="GDScript" id=77]
 script/source = "extends AudioStreamPlayer
@@ -7177,20 +7181,6 @@ tracks/62/loop_wrap = true
 tracks/62/imported = false
 tracks/62/enabled = true
 tracks/62/keys = PoolRealArray( 0, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -3.07336e-08, -2.5495e-08, 5.12227e-09, 1, 1, 1, 1, 2.08333, 1, 3.72529e-09, -1.50502e-06, -1.76951e-08, -3.07336e-08, -2.5495e-08, 5.12227e-09, 1, 1, 1, 1 )
-tracks/63/type = "method"
-tracks/63/path = NodePath("Sounds/LandingVoice")
-tracks/63/interp = 1
-tracks/63/loop_wrap = true
-tracks/63/imported = false
-tracks/63/enabled = true
-tracks/63/keys = {
-"times": PoolRealArray( 0.266667 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "play_random"
-} ]
-}
 
 [sub_resource type="Animation" id=19]
 resource_name = "emma_pushing"
@@ -12256,6 +12246,11 @@ volume_db = -20.0
 script = SubResource( 77 )
 samples = [ ExtResource( 57 ), ExtResource( 53 ), ExtResource( 52 ) ]
 
+[node name="OhVoice" type="AudioStreamPlayer" parent="Sounds"]
+volume_db = -20.0
+script = SubResource( 77 )
+samples = [ ExtResource( 61 ), ExtResource( 59 ), ExtResource( 58 ), ExtResource( 60 ) ]
+
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.802971, 0 )
 shape = SubResource( 88 )
@@ -12649,7 +12644,7 @@ cast_to = Vector3( 0, 0, 1.474 )
 debug_shape_thickness = 5
 
 [node name="CameraFocus" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.01143, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.44857, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/attack = SubResource( 6 )
@@ -12689,3 +12684,4 @@ volume_db = -20.0
 
 [node name="Swallowed" type="AudioStreamPlayer" parent="AnimationPlayer"]
 stream = ExtResource( 48 )
+volume_db = -40.0

@@ -25,7 +25,7 @@ func on_boss_state_changed(_old_state, new_state):
 
 
 func on_attack_timer_expired():
-	if boss.health <= 0:
+	if not (boss.is_alive() and player.is_alive()):
 		return
 	if $DownArea.overlaps_body(player):
 		var attack_grasp = [$BossAttack, $BossGrasp]

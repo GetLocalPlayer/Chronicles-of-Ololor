@@ -25,9 +25,10 @@ func is_alive() -> bool:
 
 func set_health(new_health):
 	if new_health < 0:
-		new_health = 0
-	health = new_health
-	health_bar = new_health
+		health = 0
+	else:
+		health = new_health
+	health_bar.value = health
 	if health == 0 and $States.current_state != "death":
 		$States._change_state("death")
 	

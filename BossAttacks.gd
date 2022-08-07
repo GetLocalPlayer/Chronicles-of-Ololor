@@ -1,6 +1,7 @@
 extends Node
 
 
+export (float) var boss_hit_damage = 10
 export (float) var explosion_damage = 13
 
 onready var boss = owner.get_node("Nhizi")
@@ -48,3 +49,8 @@ func on_boss_attack(attack_type):
 		if body.is_in_group("explosive") and body.is_on_floor():
 			body.detonate()
 			boss.health = boss.health - explosion_damage
+		if body == player and body.is_alive():
+			body.health -= boss_hit_damage
+			if body.is_alive():
+				body.get_node("Sounds/OhVoice").play_random()
+				body.get_node("States")._change_state("stun")
