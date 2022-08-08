@@ -93,6 +93,9 @@ script = ExtResource( 11 )
 [node name="Nhizi" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76802, 6.22573, -7.77483 )
 
+[node name="Skeleton" parent="Nhizi" index="2"]
+bones/92/bound_children = [ NodePath("DownGraspAttachment") ]
+
 [node name="DownGraspAttachment" type="BoneAttachment" parent="Nhizi/Skeleton" index="2"]
 transform = Transform( 0.56179, 0.827058, -0.0192051, -0.20048, 0.113581, -0.973091, -0.802621, 0.550523, 0.229617, 3.34965, 7.15406, 0.454612 )
 bone_name = "Кисть.R"
@@ -104,10 +107,7 @@ collision_mask = 1
 push_speed = 1.0
 
 [node name="Burning" parent="Emma/BurningTimer" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.426456, 16.2112, -0.161655 )
-
-[node name="Skeleton" parent="Emma" index="6"]
-bones/15/bound_children = [  ]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.426456, 16.2112, -0.161654 )
 
 [node name="BodyAttachment" parent="Emma/Skeleton" index="10"]
 transform = Transform( 1, -2.02954e-07, 1.71061e-08, -8.20171e-08, 0.944524, 0.328448, -9.29136e-08, -0.328447, 0.944522, 0.00150353, 1.59717, 0.023994 )
