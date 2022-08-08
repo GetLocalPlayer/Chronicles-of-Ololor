@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://Models/Characters/Emma/Джинсы.material" type="Material" id=1]
 [ext_resource path="res://Models/Characters/Emma/Emma skin.material" type="Material" id=2]
@@ -295,6 +295,38 @@ bind/62/name = "pyatka.R"
 bind/62/bone = -1
 bind/62/pose = Transform( 1.29481, -0.0176361, -0.0781574, -0.0783532, -0.014274, -1.29484, 0.0167429, 1.29708, -0.0153115, 4.0159, 10.1026, -0.46915 )
 
+[sub_resource type="Animation" id=91]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:mesh:surface_1/material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=92]
+resource_name = "uv"
+length = 3.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:mesh:surface_1/material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0.5, 0, 0 ), Vector3( 0, 0.333, 0 ), Vector3( 0.5, 0.333, 0 ), Vector3( 0, 0.667, 0 ), Vector3( 0.5, 0.667, 0 ) ]
+}
+
 [sub_resource type="ArrayMesh" id=16]
 resource_name = "test lvl_Hair 1"
 surfaces/0 = {
@@ -398,6 +430,38 @@ surfaces/0 = {
 "primitive": 4,
 "skeleton_aabb": [ AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -2.60439, 1.95007, 8.06834, 0.240581, 0.0464054, 0.0570679 ) ],
 "vertex_count": 39
+}
+
+[sub_resource type="Animation" id=93]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:mesh:surface_1/material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=94]
+resource_name = "uv"
+length = 2.0
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:mesh:surface_1/material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75, 1.875 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0.25, 0, 0 ), Vector3( 0.5, 0, 0 ), Vector3( 0.75, 0, 0 ), Vector3( 0, 0.25, 0 ), Vector3( 0.25, 0.25, 0 ), Vector3( 0.5, 0.25, 0 ), Vector3( 0.75, 0.25, 0 ), Vector3( 0, 0.5, 0 ), Vector3( 0.25, 0.5, 0 ), Vector3( 0.5, 0.5, 0 ), Vector3( 0.75, 0.5, 0 ), Vector3( 0, 0.75, 0 ), Vector3( 0.25, 0.75, 0 ), Vector3( 0.5, 0.75, 0 ), Vector3( 0.75, 0.75, 0 ) ]
 }
 
 [sub_resource type="ArrayMesh" id=13]
@@ -12176,7 +12240,7 @@ script = ExtResource( 62 )
 script = ExtResource( 63 )
 
 [node name="Burning" parent="BurningTimer" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.110004, 0.999381, -0.0980411 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0928408, 1.25329, 0.0185016 )
 visible = false
 
 [node name="HShapeTween" type="Tween" parent="BurningTimer/Burning"]
@@ -12349,7 +12413,7 @@ bones/15/name = "grud"
 bones/15/parent = 14
 bones/15/rest = Transform( -1, 2.48875e-07, -8.23243e-07, -2.04822e-08, 0.950053, 0.31209, 8.59795e-07, 0.31209, -0.950052, -7.07805e-08, 0.156883, 5.64149e-07 )
 bones/15/enabled = true
-bones/15/bound_children = [ NodePath("BodyAttachment") ]
+bones/15/bound_children = [  ]
 bones/16/name = "shea"
 bones/16/parent = 15
 bones/16/rest = Transform( 1, -1.90293e-08, -5.8076e-08, -1.10133e-09, 0.944522, -0.328448, 6.11042e-08, 0.328448, 0.944522, -6.14673e-08, 0.293813, 8.79169e-07 )
@@ -12592,6 +12656,11 @@ mesh = SubResource( 14 )
 skin = SubResource( 10 )
 material/0 = null
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Skeleton/Maw"]
+autoplay = "uv"
+anims/RESET = SubResource( 91 )
+anims/uv = SubResource( 92 )
+
 [node name="Hair 1" type="MeshInstance" parent="Skeleton"]
 transform = Transform( 1, 8.14907e-10, 7.45058e-09, -1.62981e-09, 1, 0, 0, -9.31323e-10, 1, 0, 0, 0 )
 mesh = SubResource( 16 )
@@ -12612,16 +12681,19 @@ material/0 = null
 
 [node name="Cloth1" type="MeshInstance" parent="Skeleton"]
 transform = Transform( 1, 8.14907e-10, 7.45058e-09, -1.62981e-09, 1, 0, 0, -9.31323e-10, 1, 0, 0, 0 )
+visible = false
 mesh = SubResource( 12 )
 skin = SubResource( 10 )
 material/0 = null
 
 [node name="Cloth 2" type="MeshInstance" parent="Skeleton"]
+visible = false
 mesh = SubResource( 9 )
 skin = SubResource( 10 )
 material/0 = null
 
 [node name="Cloth 3" type="MeshInstance" parent="Skeleton"]
+visible = false
 mesh = SubResource( 11 )
 skin = SubResource( 10 )
 material/0 = null
@@ -12631,6 +12703,11 @@ transform = Transform( 1, 8.14907e-10, 7.45058e-09, -1.62981e-09, 1, 0, 0, -9.31
 mesh = SubResource( 15 )
 skin = SubResource( 10 )
 material/0 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Skeleton/Eyes"]
+autoplay = "uv"
+anims/RESET = SubResource( 93 )
+anims/uv = SubResource( 94 )
 
 [node name="Body" type="MeshInstance" parent="Skeleton"]
 mesh = SubResource( 13 )
@@ -12645,7 +12722,7 @@ cast_to = Vector3( 0, 0, 1.474 )
 debug_shape_thickness = 5
 
 [node name="BodyAttachment" type="BoneAttachment" parent="Skeleton"]
-transform = Transform( 0.953502, 0.0269622, 0.300178, 0.181617, 0.743436, -0.643677, -0.240518, 0.668264, 0.70397, -0.0207578, 1.26781, -0.127146 )
+transform = Transform( 1, -2.02954e-07, 1.71061e-08, -8.20171e-08, 0.944524, 0.328448, -9.29136e-08, -0.328447, 0.944522, 0.00150353, 1.59717, 0.023994 )
 bone_name = "grud"
 
 [node name="FireSpriteRemoteTranslation" type="RemoteTransform" parent="Skeleton/BodyAttachment"]

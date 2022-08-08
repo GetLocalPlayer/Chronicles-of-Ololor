@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Models/Characters/Emma/Emma.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Models/Environment/Platform/Platform.tscn" type="PackedScene" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://Lower.gd" type="Script" id=14]
 [ext_resource path="res://Models/Objects/Maw/Maw.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Camera.tres.gd" type="Script" id=16]
+[ext_resource path="res://Models/Environment/PlatformFire/PlatformFire.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Models/Environment/Clouds/Clouds.tscn" type="PackedScene" id=18]
 
 [sub_resource type="BoxShape" id=24]
 extents = Vector3( 2.9408, 4.11444, 14.4602 )
@@ -86,6 +88,12 @@ transform = Transform( 0.626918, 0.47349, 0.618693, -0.0477638, 0.815992, -0.576
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 
+[node name="PlatformFire" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15546, 7.61873, -8.56456 )
+
+[node name="Clouds" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.26534, 4.31479, -8.1202 )
+
 [node name="Lava" parent="." instance=ExtResource( 7 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.236027, 0, 0.0010376 )
 script = ExtResource( 11 )
@@ -109,8 +117,8 @@ push_speed = 1.0
 [node name="Burning" parent="Emma/BurningTimer" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.426456, 16.2112, -0.161654 )
 
-[node name="BodyAttachment" parent="Emma/Skeleton" index="10"]
-transform = Transform( 1, -2.02954e-07, 1.71061e-08, -8.20171e-08, 0.944524, 0.328448, -9.29136e-08, -0.328447, 0.944522, 0.00150353, 1.59717, 0.023994 )
+[node name="Skeleton" parent="Emma" index="6"]
+bones/15/bound_children = [ NodePath("BodyAttachment") ]
 
 [node name="FightLogic" type="Node" parent="."]
 script = ExtResource( 5 )

@@ -53,6 +53,7 @@ surfaces/0 = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Mesh")
+autoplay = "stand"
 anims/RESET = SubResource( 4 )
 anims/stand = SubResource( 5 )
 

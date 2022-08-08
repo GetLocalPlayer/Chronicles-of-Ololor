@@ -52,6 +52,7 @@ surfaces/0 = {
 [node name="PlatformFire" type="Spatial"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "stand"
 anims/RESET = SubResource( 4 )
 anims/stand = SubResource( 5 )
 
