@@ -58,6 +58,7 @@ extents = Vector3( 2.49595, 1.29308, 1.01504 )
 [node name="NhiziFight" type="Node"]
 
 [node name="Menu" parent="." instance=ExtResource( 10 )]
+pause_mode = 2
 visible = false
 
 [node name="Camera" type="Camera" parent="."]
@@ -110,6 +111,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.426456, 8.58416, -7.34191 )
 
 [node name="Skeleton" parent="Emma" index="6"]
 bones/15/bound_children = [ NodePath("BodyAttachment") ]
+
+[node name="BodyAttachment" parent="Emma/Skeleton" index="10"]
+transform = Transform( 1, -2.02954e-07, 1.71061e-08, -8.20171e-08, 0.944524, 0.328448, -9.29136e-08, -0.328447, 0.944522, 0.00150353, 1.59717, 0.023994 )
 
 [node name="FightLogic" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -223,7 +227,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90042, 5.88424, -8.00106 )
 [connection signal="grasp_ended" from="Nhizi" to="FightLogic/BossGrasp/Lower" method="_on_Nhizi_grasp_ended"]
 [connection signal="grasp_started" from="Nhizi" to="FightLogic/BossGrasp/Lower" method="_on_Nhizi_grasp_started"]
 [connection signal="spitout_frame" from="Nhizi" to="FightLogic/BossGrasp/MawEvent" method="_on_Nhizi_spitout_frame"]
-[connection signal="damaged" from="Emma" to="Camera" method="_on_Emma_damaged"]
 [connection signal="state_changed" from="Emma/States" to="FightLogic" method="_on_Emma_States_state_changed"]
 [connection signal="body_entered" from="FightLogic/BossGrasp/Lower/DownGraspArea" to="FightLogic/BossGrasp/Lower" method="_on_DownGraspArea_body_entered"]
 [connection signal="animation_finished" from="FightLogic/BossGrasp/MawEvent/Maw/AnimationPlayer" to="FightLogic/BossGrasp/MawEvent" method="_on_Maw_AnimationPlayer_animation_finished"]
