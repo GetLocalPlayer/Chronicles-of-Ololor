@@ -10,6 +10,7 @@ signal spitout_frame
 
 
 export (int) var health = 100 setget set_health
+export (int) var max_health = 100
 onready var health_bar = get_node("HealthBar")
 enum AttackType {FAR_LEFT, LEFT, CENTER, RIGHT, FAR_RIGHT}
 
@@ -21,6 +22,8 @@ func is_alive() -> bool:
 func set_health(new_value):
 	if new_value < 0:
 		health = 0
+	elif new_value > max_health:
+		health = max_health
 	else:
 		health = new_value
 	health_bar.value = health
@@ -54,3 +57,8 @@ func emit_attack_signal():
 			emit_signal("attack", AttackType.RIGHT)
 		"FR_attack":
 			emit_signal("attack", AttackType.FAR_RIGHT)
+
+
+func _ready():
+	health_bar.max_value = max_health
+	health_bar.value = health
