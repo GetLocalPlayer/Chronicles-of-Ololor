@@ -41,5 +41,5 @@ func on_expired():
 func _ready():
 	one_shot = true
 	connect("timeout", self, "on_expired")
-	owner.get_node("States").connect("state_changed", self, "on_state_changed")
+	#owner.get_node("States").connect("state_changed", self, "on_state_changed")
 

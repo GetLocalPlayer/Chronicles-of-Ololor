@@ -15,21 +15,7 @@
 [ext_resource path="res://BossGrasp.gd" type="Script" id=13]
 [ext_resource path="res://Lower.gd" type="Script" id=14]
 [ext_resource path="res://Models/Objects/Maw/Maw.tscn" type="PackedScene" id=15]
-
-[sub_resource type="GDScript" id=2]
-script/source = "extends Camera
-
-
-
-func _process(_delta):
-	var player = owner.get_node(\"Emma\")
-	if player.is_alive():
-		var focus = player.get_node(\"CameraFocus\")
-		look_at(player.to_global(focus.translation), Vector3.UP)
-
-
-
-"
+[ext_resource path="res://Camera.tres.gd" type="Script" id=16]
 
 [sub_resource type="BoxShape" id=24]
 extents = Vector3( 2.9408, 4.11444, 14.4602 )
@@ -79,7 +65,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.83316
 fov = 34.0
 near = 0.01
 far = 1612.7
-script = SubResource( 2 )
+script = ExtResource( 16 )
 
 [node name="Cutscenes" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36312, 6.18305, -7.42492 )
@@ -96,6 +82,9 @@ script = ExtResource( 11 )
 [node name="Nhizi" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76802, 6.22573, -7.77483 )
 
+[node name="Skeleton" parent="Nhizi" index="2"]
+bones/92/bound_children = [ NodePath("DownGraspAttachment") ]
+
 [node name="DownGraspAttachment" type="BoneAttachment" parent="Nhizi/Skeleton" index="2"]
 transform = Transform( 0.56179, 0.827058, -0.0192051, -0.20048, 0.113581, -0.973091, -0.802621, 0.550523, 0.229617, 3.34965, 7.15406, 0.454612 )
 bone_name = "Кисть.R"
@@ -108,6 +97,9 @@ push_speed = 1.0
 
 [node name="Burning" parent="Emma/BurningTimer" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.426456, 8.58416, -7.34191 )
+
+[node name="BodyAttachment" parent="Emma/Skeleton" index="10"]
+transform = Transform( 1, -2.02954e-07, 1.71061e-08, -8.20171e-08, 0.944524, 0.328448, -9.29136e-08, -0.328447, 0.944522, 0.00150353, 1.59717, 0.023994 )
 
 [node name="FightLogic" type="Node" parent="."]
 script = ExtResource( 5 )
