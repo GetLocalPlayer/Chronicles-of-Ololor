@@ -12176,7 +12176,7 @@ script = ExtResource( 62 )
 script = ExtResource( 63 )
 
 [node name="Burning" parent="BurningTimer" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452522, 0.342947, -0.384239 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.110004, 0.999381, -0.0980411 )
 visible = false
 
 [node name="HShapeTween" type="Tween" parent="BurningTimer/Burning"]
@@ -12645,7 +12645,7 @@ cast_to = Vector3( 0, 0, 1.474 )
 debug_shape_thickness = 5
 
 [node name="BodyAttachment" type="BoneAttachment" parent="Skeleton"]
-transform = Transform( 0.998019, -0.060472, 0.0173299, 0.0240798, 0.112745, -0.993333, 0.058115, 0.991782, 0.113977, 0.0632271, 0.416318, -0.498305 )
+transform = Transform( 0.953502, 0.0269622, 0.300178, 0.181617, 0.743436, -0.643677, -0.240518, 0.668264, 0.70397, -0.0207578, 1.26781, -0.127146 )
 bone_name = "grud"
 
 [node name="FireSpriteRemoteTranslation" type="RemoteTransform" parent="Skeleton/BodyAttachment"]

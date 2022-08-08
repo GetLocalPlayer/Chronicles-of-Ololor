@@ -37,6 +37,24 @@ func set_health(new_health):
 	
 	
 func _ready():
+	randomize()
 	health_bar.value = health
 	health_bar.max_value = max_health
+	# Random dress
+	var hairs = []
+	var clothes = []
+	for child in $Skeleton.get_children():
+		if child.name.begins_with("Hair"):
+			hairs.append(child)
+			child.hide()
+		if child.name.begins_with("Cloth"):
+			clothes.append(child)
+			child.hide()
+	var random = randi() % (hairs.size())
+	hairs[random].show()
+	random = randi() % (clothes.size() + 1)
+	if random < clothes.size():
+		clothes[random].show()
+		
+		
 
