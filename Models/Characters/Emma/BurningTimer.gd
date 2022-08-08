@@ -1,8 +1,11 @@
 extends Timer
 
 
-# At this point I'm burning out to work
-# on this demo. 
+# This should be an effect with some
+# effect manager. But since we have
+# only like 2 effects for the whole 
+# game, unique for the only character,
+# let's bake it in the character.
 
 var interval: float
 var damage: float
@@ -23,10 +26,6 @@ func cancel():
 	stop()
 	
 	
-func _ready():
-	one_shot = true
-	connect("timeout", self, "on_expired")
-	
 
 func on_expired():
 	if owner.is_alive():
@@ -37,3 +36,10 @@ func on_expired():
 		start(interval)
 	else:
 		$Burning.hide()
+		
+		
+func _ready():
+	one_shot = true
+	connect("timeout", self, "on_expired")
+	owner.get_node("States").connect("state_changed", self, "on_state_changed")
+
