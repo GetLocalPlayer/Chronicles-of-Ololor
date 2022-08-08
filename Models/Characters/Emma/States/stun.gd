@@ -1,9 +1,6 @@
 extends "res://Models/Characters/Emma/States/Idle.gd"
 
 
-onready var body = owner
-
-
 func _enter():
 	if body.is_on_floor():
 		anim_player.play("landing_hard", 0.1)

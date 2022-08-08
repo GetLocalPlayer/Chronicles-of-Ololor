@@ -1,10 +1,14 @@
 extends State
+class_name Idle
 
 
 export (float) var time_to_idle = 10
-
+onready var gravity = owner.gravity
+onready var body = owner
 onready var anim_player = owner.get_node("AnimationPlayer")
 onready var timer = Timer.new()
+
+var velocity = Vector3.ZERO
 
 
 func _ready():
@@ -43,6 +47,7 @@ func _transition():
 		
 	
 func _update(_delta):
-	var gravity = owner.gravity
-	var velocity = Vector3(0, -gravity, 0)
-	owner.move_and_slide(velocity, Vector3.UP, false, 4, PI/4, false)
+	velocity.y -= gravity
+	body.move_and_slide(velocity, Vector3.UP, false, 4, PI/4, false)
+	if body.is_on_floor():
+		velocity.y = 0
