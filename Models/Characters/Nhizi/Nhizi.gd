@@ -1,7 +1,7 @@
 extends Spatial
 
 
-signal attack
+signal attack(attack_type)
 signal grasp_started # Emmited from the animation player
 signal grasp_ended # Emmited from the animation player
 signal upper_left_grasp # Emmited from the animation player
