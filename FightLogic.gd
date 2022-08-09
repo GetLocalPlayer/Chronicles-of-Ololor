@@ -77,7 +77,7 @@ func _on_VictoryMusic_finished():
 
 func _on_Key_body_entered(body):
 	if $Key.visible:
-		$Key.monitoring = false
+		$Key.disconnect("body_entered", self, "_on_Key_body_entered")
 		$Key/AnimationPlayer.play("death", 0)
 		$KeyTakenMusic.play()
 		
