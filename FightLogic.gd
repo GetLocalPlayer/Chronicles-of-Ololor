@@ -53,3 +53,34 @@ func _on_Emma_States_state_changed(_old_state, new_state):
 	if new_state == "death":
 		menu.show()
 		
+
+
+func _on_NhiziFight_ready():
+	$StartingSplash/AnimationPlayer.play("start")
+	$FightMusic.play()
+
+
+func _on_BossStates_state_changed(_old_state, new_state):
+	if new_state == "death":
+		$Key.show()
+		$FightMusic.stop()
+		$VictoryMusic.play()
+		$VictorySplash/AnimationPlayer.play("start")
+		owner.get_node("Camera").target = $Key
+		player.health_bar.hide()
+		boss.health_bar.hide()
+
+
+func _on_VictoryMusic_finished():
+	owner.get_node("Camera").target = player.get_node("CameraFocus")
+
+
+func _on_Key_body_entered(body):
+	if $Key.visible:
+		$Key.monitoring = false
+		$Key/AnimationPlayer.play("death", 0)
+		$KeyTakenMusic.play()
+		
+
+func _on_KeyTakenMusic_finished():
+	get_tree().change_scene("res://EndOfDemo.tscn")
