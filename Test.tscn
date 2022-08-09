@@ -217,11 +217,9 @@ transform = Transform( 0.626918, 0.47349, 0.618693, -0.0477638, 0.815992, -0.576
 
 [node name="PlatformFire" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15546, 7.61873, -8.56456 )
-visible = false
 
 [node name="Clouds" parent="." instance=ExtResource( 18 )]
 transform = Transform( 0.704058, 0, 0, 0, 1, 0, 0, 0, 0.704058, 3.63435, 4.31479, -8.1202 )
-visible = false
 
 [node name="Lava" parent="." instance=ExtResource( 7 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.236027, 0, 0.0010376 )
