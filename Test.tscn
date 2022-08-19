@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Models/Characters/Emma/Emma.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Models/Environment/Platform/Platform.tscn" type="PackedScene" id=2]
@@ -25,6 +25,11 @@
 [ext_resource path="res://Models/Objects/Key/Key.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Sounds/Music/key taken.wav" type="AudioStream" id=24]
 [ext_resource path="res://Textures/UI/victory.png" type="Texture" id=25]
+
+[sub_resource type="Environment" id=30]
+background_mode = 1
+background_color = Color( 1, 0, 0, 1 )
+background_energy = 0.2
 
 [sub_resource type="Animation" id=26]
 length = 0.001
@@ -178,8 +183,11 @@ extents = Vector3( 2.49595, 1.29308, 1.01504 )
 
 [node name="NhiziFight" type="Node"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 30 )
+
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.621353, -0.577716, -0.529306, -3.22295e-08, -0.675539, 0.737324, -0.783531, -0.458139, -0.419748, -34.9732, 6.32253, -17.8166 )
+transform = Transform( 0.621353, -0.577716, -0.529306, -3.22295e-08, -0.675539, 0.737324, -0.783531, -0.458139, -0.419748, -14.2136, 6.32253, -17.8166 )
 light_color = Color( 0.909804, 0.0313726, 0.0980392, 1 )
 light_energy = 0.1
 
@@ -219,7 +227,8 @@ transform = Transform( 0.626918, 0.47349, 0.618693, -0.0477638, 0.815992, -0.576
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15546, 7.61873, -8.56456 )
 
 [node name="Clouds" parent="." instance=ExtResource( 18 )]
-transform = Transform( 0.704058, 0, 0, 0, 1, 0, 0, 0, 0.704058, 3.63435, 4.31479, -8.1202 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.41251, 5.71307, -9.53857 )
+visible = false
 
 [node name="Lava" parent="." instance=ExtResource( 7 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.236027, 0, 0.0010376 )
