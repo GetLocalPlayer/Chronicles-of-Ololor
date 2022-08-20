@@ -27,9 +27,8 @@
 [ext_resource path="res://Textures/UI/victory.png" type="Texture" id=25]
 
 [sub_resource type="Environment" id=30]
-background_mode = 1
-background_color = Color( 1, 0, 0, 1 )
-background_energy = 0.2
+background_color = Color( 1, 1, 1, 1 )
+background_energy = 0.0
 
 [sub_resource type="Animation" id=26]
 length = 0.001
@@ -189,7 +188,7 @@ environment = SubResource( 30 )
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.621353, -0.577716, -0.529306, -3.22295e-08, -0.675539, 0.737324, -0.783531, -0.458139, -0.419748, -14.2136, 6.32253, -17.8166 )
 light_color = Color( 0.909804, 0.0313726, 0.0980392, 1 )
-light_energy = 0.1
+light_energy = 0.169
 
 [node name="Sky" parent="." instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35204, -2.20454, 2.7731 )
@@ -222,6 +221,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36312, 6.18305, -7.42492 )
 transform = Transform( 0.626918, 0.47349, 0.618693, -0.0477638, 0.815992, -0.576086, -0.77762, 0.331608, 0.534176, 2.46482, 1.4754, 11.0485 )
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
+visible = false
 
 [node name="PlatformFire" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15546, 7.61873, -8.56456 )
@@ -241,20 +241,18 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76802, 6.22573, -7.77483 )
 bones/92/bound_children = [ NodePath("DownGraspAttachment") ]
 
 [node name="DownGraspAttachment" type="BoneAttachment" parent="Nhizi/Skeleton" index="2"]
-transform = Transform( 0.56179, 0.827058, -0.0192051, -0.20048, 0.113581, -0.973091, -0.802621, 0.550523, 0.229617, 3.34965, 7.15406, 0.454612 )
+transform = Transform( -0.251623, -0.92675, -0.278963, -0.867378, 0.343806, -0.359794, 0.429347, 0.151433, -0.890353, 0.724121, 7.50958, 0.905199 )
 bone_name = "Кисть.R"
 
 [node name="Emma" parent="." groups=["player"] instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.333615, 14.9579, -0.180156 )
+visible = false
 collision_layer = 1
 collision_mask = 1
 push_speed = 1.0
 
 [node name="Burning" parent="Emma/BurningTimer" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.426456, 16.2112, -0.161654 )
-
-[node name="Skeleton" parent="Emma" index="6"]
-bones/15/bound_children = [ NodePath("BodyAttachment") ]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.332456, 16.1892, -0.161654 )
 
 [node name="BodyAttachment" parent="Emma/Skeleton" index="10"]
 transform = Transform( 1, -2.02954e-07, 1.71061e-08, -8.20171e-08, 0.944524, 0.328448, -9.29136e-08, -0.328447, 0.944522, 0.00150353, 1.59717, 0.023994 )

@@ -4,7 +4,7 @@
 [ext_resource path="res://Models/Characters/Emma/Emma skin.material" type="Material" id=2]
 [ext_resource path="res://Models/Characters/Emma/Emma ear.material" type="Material" id=3]
 [ext_resource path="res://Models/Characters/Emma/cloth1.material" type="Material" id=4]
-[ext_resource path="res://TestImport/Emma maw.material" type="Material" id=5]
+[ext_resource path="res://Models/Characters/Emma/Emma maw.material" type="Material" id=5]
 [ext_resource path="res://Models/Characters/Emma/Emma eyes.material" type="Material" id=6]
 [ext_resource path="res://Models/Characters/Emma/волосы.material" type="Material" id=7]
 [ext_resource path="res://Models/Characters/Emma/Ladi Bug.material" type="Material" id=8]
@@ -12435,7 +12435,7 @@ script = ExtResource( 62 )
 script = ExtResource( 63 )
 
 [node name="Burning" parent="BurningTimer" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0891657, 1.00494, -0.0828613 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00115921, 1.23129, 0.0185016 )
 visible = false
 
 [node name="HShapeTween" type="Tween" parent="BurningTimer/Burning"]
@@ -12846,7 +12846,6 @@ bones/62/enabled = true
 bones/62/bound_children = [  ]
 
 [node name="Maw" type="MeshInstance" parent="Skeleton"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 3 )
 skin = SubResource( 4 )
 material/0 = null
@@ -12919,7 +12918,7 @@ cast_to = Vector3( 0, 0, 1.474 )
 debug_shape_thickness = 5
 
 [node name="BodyAttachment" type="BoneAttachment" parent="Skeleton"]
-transform = Transform( 0.968889, -0.11333, 0.220023, 0.0550985, 0.96546, 0.254663, -0.241284, -0.234617, 0.941666, 0.11565, 1.30356, -0.10746 )
+transform = Transform( 1, -2.02954e-07, 1.71061e-08, -8.20171e-08, 0.944524, 0.328448, -9.29136e-08, -0.328447, 0.944522, 0.00150353, 1.59717, 0.023994 )
 bone_name = "grud"
 
 [node name="FireSpriteRemoteTranslation" type="RemoteTransform" parent="Skeleton/BodyAttachment"]
