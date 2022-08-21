@@ -83,12 +83,12 @@ void light() {
 
 }
 "
-graph_offset = Vector2( 204.505, 30.1258 )
+graph_offset = Vector2( -77.7116, 120.147 )
 modes/diffuse = 4
 modes/specular = 3
 nodes/fragment/0/position = Vector2( 1240, 20 )
 nodes/fragment/3/node = SubResource( 30 )
-nodes/fragment/3/position = Vector2( 100, 220 )
+nodes/fragment/3/position = Vector2( 100, 200 )
 nodes/fragment/4/node = SubResource( 31 )
 nodes/fragment/4/position = Vector2( 360, 100 )
 nodes/fragment/10/node = SubResource( 38 )
@@ -101,4 +101,4 @@ nodes/fragment/24/node = SubResource( 52 )
 nodes/fragment/24/position = Vector2( 620, -60 )
 nodes/fragment/26/node = SubResource( 54 )
 nodes/fragment/26/position = Vector2( 880, 360 )
-nodes/fragment/connections = PoolIntArray( 3, 0, 4, 0, 4, 0, 24, 1, 10, 0, 0, 3, 26, 0, 0, 5, 24, 0, 0, 0, 14, 0, 24, 0, 24, 0, 26, 1, 11, 0, 0, 4 )
+nodes/fragment/connections = PoolIntArray( 4, 0, 24, 1, 10, 0, 0, 3, 26, 0, 0, 5, 24, 0, 0, 0, 14, 0, 24, 0, 24, 0, 26, 1, 11, 0, 0, 4, 3, 0, 4, 0 )

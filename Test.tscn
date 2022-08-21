@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Models/Characters/Emma/Emma.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Models/Environment/Platform/Platform.tscn" type="PackedScene" id=2]
@@ -29,10 +29,14 @@
 [ext_resource path="res://Models/Characters/Nhizi/Materials/Eye.tres" type="Shader" id=27]
 [ext_resource path="res://Models/Characters/Nhizi/Materials/Eyelashes.material" type="Material" id=28]
 [ext_resource path="res://Models/Characters/Nhizi/Textures/eye.png" type="Texture" id=29]
+[ext_resource path="res://Shaders/ScreenSpaceOutline.tscn" type="PackedScene" id=30]
 
 [sub_resource type="Environment" id=30]
 background_color = Color( 1, 1, 1, 1 )
 background_energy = 0.0
+glow_intensity = 1.03
+adjustment_brightness = 1.9
+adjustment_contrast = 1.42
 
 [sub_resource type="ShaderMaterial" id=31]
 shader = ExtResource( 27 )
@@ -193,6 +197,8 @@ extents = Vector3( 2.49595, 1.29308, 1.01504 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 30 )
 
+[node name="OutlineShader" parent="." instance=ExtResource( 30 )]
+
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.621353, -0.577716, -0.529306, -3.22295e-08, -0.675539, 0.737324, -0.783531, -0.458139, -0.419748, -14.2136, 6.32253, -17.8166 )
 light_color = Color( 0.909804, 0.0313726, 0.0980392, 1 )
@@ -206,7 +212,7 @@ pause_mode = 2
 visible = false
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.999996, 0, 0.00268781, 0, 1, 0, -0.00268781, 0, 0.999996, 11.3011, 4.98649, 0.67179 )
+transform = Transform( 0.999996, 0, 0.00268781, 0, 1, 0, -0.00268781, 0, 0.999996, 11.3011, 5.34578, 0.67179 )
 fov = 34.0
 near = 0.01
 far = 1612.7
@@ -229,7 +235,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36312, 6.18305, -7.42492 )
 transform = Transform( 0.626918, 0.47349, 0.618693, -0.0477638, 0.815992, -0.576086, -0.77762, 0.331608, 0.534176, 2.46482, 1.4754, 11.0485 )
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
-visible = false
 
 [node name="PlatformFire" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15546, 7.61873, -8.56456 )
@@ -259,7 +264,6 @@ bone_name = "Кисть.R"
 
 [node name="Emma" parent="." groups=["player"] instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.333615, 14.9579, -0.180156 )
-visible = false
 collision_layer = 1
 collision_mask = 1
 push_speed = 1.0
