@@ -241,7 +241,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76802, 6.22573, -7.77483 )
 bones/92/bound_children = [ NodePath("DownGraspAttachment") ]
 
 [node name="DownGraspAttachment" type="BoneAttachment" parent="Nhizi/Skeleton" index="2"]
-transform = Transform( -0.251623, -0.92675, -0.278963, -0.867378, 0.343806, -0.359794, 0.429347, 0.151433, -0.890353, 0.724121, 7.50958, 0.905199 )
+transform = Transform( 0.56179, 0.827058, -0.0192051, -0.20048, 0.113581, -0.973091, -0.802621, 0.550523, 0.229617, 3.34965, 7.15406, 0.454612 )
 bone_name = "Кисть.R"
 
 [node name="Emma" parent="." groups=["player"] instance=ExtResource( 1 )]
