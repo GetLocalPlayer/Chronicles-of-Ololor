@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Models/Characters/Emma/Emma.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Models/Environment/Platform/Platform.tscn" type="PackedScene" id=2]
@@ -25,10 +25,18 @@
 [ext_resource path="res://Models/Objects/Key/Key.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Sounds/Music/key taken.wav" type="AudioStream" id=24]
 [ext_resource path="res://Textures/UI/victory.png" type="Texture" id=25]
+[ext_resource path="res://Models/Characters/Nhizi/Materials/Teeth.material" type="Material" id=26]
+[ext_resource path="res://Models/Characters/Nhizi/Materials/Eye.tres" type="Shader" id=27]
+[ext_resource path="res://Models/Characters/Nhizi/Materials/Eyelashes.material" type="Material" id=28]
+[ext_resource path="res://Models/Characters/Nhizi/Textures/eye.png" type="Texture" id=29]
 
 [sub_resource type="Environment" id=30]
 background_color = Color( 1, 1, 1, 1 )
 background_energy = 0.0
+
+[sub_resource type="ShaderMaterial" id=31]
+shader = ExtResource( 27 )
+shader_param/TextureUniform = ExtResource( 29 )
 
 [sub_resource type="Animation" id=26]
 length = 0.001
@@ -239,6 +247,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76802, 6.22573, -7.77483 )
 
 [node name="Skeleton" parent="Nhizi" index="2"]
 bones/92/bound_children = [ NodePath("DownGraspAttachment") ]
+
+[node name="Mesh" parent="Nhizi/Skeleton" index="0"]
+material/4 = ExtResource( 26 )
+material/5 = SubResource( 31 )
+material/6 = ExtResource( 28 )
 
 [node name="DownGraspAttachment" type="BoneAttachment" parent="Nhizi/Skeleton" index="2"]
 transform = Transform( 0.56179, 0.827058, -0.0192051, -0.20048, 0.113581, -0.973091, -0.802621, 0.550523, 0.229617, 3.34965, 7.15406, 0.454612 )
