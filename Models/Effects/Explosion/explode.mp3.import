@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/explode.mp3-77813d35496960ed2cc375993251d12f.mp3str"
+
+[deps]
+
+source_file="res://Models/Effects/Explosion/explode.mp3"
+dest_files=[ "res://.import/explode.mp3-77813d35496960ed2cc375993251d12f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

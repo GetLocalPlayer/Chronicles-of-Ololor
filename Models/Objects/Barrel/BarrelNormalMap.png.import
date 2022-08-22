@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Skull.png-2b6f415642fc014dca65c6b034e65d71.s3tc.stex"
-path.etc2="res://.import/Skull.png-2b6f415642fc014dca65c6b034e65d71.etc2.stex"
+path.s3tc="res://.import/BarrelNormalMap.png-6b87edefc42b5a3dbb40b0692d11b14d.s3tc.stex"
+path.etc2="res://.import/BarrelNormalMap.png-6b87edefc42b5a3dbb40b0692d11b14d.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Environment/Platform/Textures/Skull.png"
-dest_files=[ "res://.import/Skull.png-2b6f415642fc014dca65c6b034e65d71.s3tc.stex", "res://.import/Skull.png-2b6f415642fc014dca65c6b034e65d71.etc2.stex" ]
+source_file="res://Models/Objects/Barrel/BarrelNormalMap.png"
+dest_files=[ "res://.import/BarrelNormalMap.png-6b87edefc42b5a3dbb40b0692d11b14d.s3tc.stex", "res://.import/BarrelNormalMap.png-6b87edefc42b5a3dbb40b0692d11b14d.etc2.stex" ]
 
 [params]
 

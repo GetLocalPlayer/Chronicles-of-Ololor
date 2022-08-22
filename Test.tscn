@@ -268,6 +268,9 @@ push_speed = 1.0
 [node name="Burning" parent="Emma/BurningTimer" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.332456, 16.1892, -0.161654 )
 
+[node name="BodyAttachment" parent="Emma/Skeleton" index="10"]
+transform = Transform( 1, -2.02954e-07, 1.71061e-08, -8.20171e-08, 0.944524, 0.328448, -9.29136e-08, -0.328447, 0.944522, 0.00150353, 1.59717, 0.023994 )
+
 [node name="FightLogic" type="Node" parent="."]
 script = ExtResource( 5 )
 
