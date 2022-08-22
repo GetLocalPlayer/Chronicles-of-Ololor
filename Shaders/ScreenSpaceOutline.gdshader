@@ -3,6 +3,7 @@ shader_type spatial;
 uniform float intencity = 300;
 uniform float dist = 4;
 
+render_mode unshaded;
 
 void vertex()
 {
@@ -20,5 +21,5 @@ void fragment()
 	float x = fac * intencity;
 	vec4 sub = vec4(x, x, x, 0);
        
-	EMISSION = (texture(SCREEN_TEXTURE, SCREEN_UV) - sub).rgb;
+	ALBEDO = (texture(SCREEN_TEXTURE, SCREEN_UV) - sub).rgb;
 }
