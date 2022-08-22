@@ -25,7 +25,7 @@ constant = Color( 1, 0.890196, 0, 1 )
 default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 1, 1, 1 ), 2, 0.35 ]
 
 [sub_resource type="VisualShaderNodeVectorScalarMix" id=52]
-default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 1, 1, 1 ), 2, 0.4 ]
+default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 1, 1, 1 ), 2, 0.3 ]
 
 [sub_resource type="VisualShaderNodeVectorOp" id=53]
 operator = 2
@@ -85,7 +85,7 @@ void fragment() {
 	float n_out4p1 = tex_frg_4_read.a;
 
 // VectorScalarMix:24
-	float n_in24p2 = 0.40000;
+	float n_in24p2 = 0.30000;
 	vec3 n_out24p0 = mix(n_out25p0, n_out4p0, n_in24p2);
 
 // Scalar:10
@@ -126,12 +126,12 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -54.341, 111.297 )
+graph_offset = Vector2( 561.274, 117.741 )
 modes/diffuse = 4
 modes/specular = 3
 nodes/fragment/0/position = Vector2( 1240, 20 )
 nodes/fragment/3/node = SubResource( 30 )
-nodes/fragment/3/position = Vector2( -20, 220 )
+nodes/fragment/3/position = Vector2( -160, 240 )
 nodes/fragment/4/node = SubResource( 31 )
 nodes/fragment/4/position = Vector2( 260, 120 )
 nodes/fragment/10/node = SubResource( 38 )
@@ -154,4 +154,4 @@ nodes/fragment/25/node = SubResource( 53 )
 nodes/fragment/25/position = Vector2( 260, -140 )
 nodes/fragment/26/node = SubResource( 54 )
 nodes/fragment/26/position = Vector2( 900, 360 )
-nodes/fragment/connections = PoolIntArray( 3, 0, 4, 0, 13, 0, 0, 9, 15, 0, 0, 8, 17, 0, 22, 1, 4, 0, 24, 1, 10, 0, 0, 3, 11, 0, 0, 4, 14, 0, 25, 0, 22, 0, 25, 1, 25, 0, 24, 0, 26, 0, 0, 5, 24, 0, 0, 0, 24, 0, 26, 1 )
+nodes/fragment/connections = PoolIntArray( 13, 0, 0, 9, 15, 0, 0, 8, 17, 0, 22, 1, 4, 0, 24, 1, 10, 0, 0, 3, 11, 0, 0, 4, 14, 0, 25, 0, 22, 0, 25, 1, 25, 0, 24, 0, 26, 0, 0, 5, 24, 0, 0, 0, 24, 0, 26, 1, 3, 0, 4, 0 )

@@ -22,7 +22,7 @@ func _change_state(new_state):
 	current_state = new_state
 	get_node(current_state)._enter()
 	emit_signal("state_changed", old_state, new_state)
-	print(owner.name, " - ", current_state)
+	#print(owner.name, " - ", current_state)
 	
 	
 func _transition():

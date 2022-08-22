@@ -66,13 +66,10 @@ config/name="Chronicles of Ololor"
 run/main_scene="res://Test.tscn"
 config/icon="res://icon.png"
 
-[debug]
-
-settings/stdout/print_fps=true
-
 [display]
 
-window/size/fullscreen=true
+window/size/width=1280
+window/size/height=720
 
 [input]
 
