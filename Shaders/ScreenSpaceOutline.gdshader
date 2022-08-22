@@ -4,6 +4,7 @@ uniform float intencity = 300;
 uniform float dist = 4;
 
 render_mode unshaded;
+render_mode blend_add;
 
 void vertex()
 {
@@ -22,4 +23,5 @@ void fragment()
 	vec4 sub = vec4(x, x, x, 0);
        
 	ALBEDO = (texture(SCREEN_TEXTURE, SCREEN_UV) - sub).rgb;
+	//ALPHA = float(x < 0.5);
 }

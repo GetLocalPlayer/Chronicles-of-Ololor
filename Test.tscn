@@ -201,7 +201,7 @@ extents = Vector3( 2.49595, 1.29308, 1.01504 )
 environment = SubResource( 30 )
 
 [node name="OutlineShader" parent="." instance=ExtResource( 30 )]
-extra_cull_margin = 0.0
+visible = false
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.621353, -0.577716, -0.529306, -3.22295e-08, -0.675539, 0.737324, -0.783531, -0.458139, -0.419748, -14.2136, 6.32253, -17.8166 )
@@ -245,7 +245,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15546, 7.61873, -8.56456 )
 
 [node name="Clouds" parent="." instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 0.965584, 0, 0, 0, 0.988986, 3.41251, 5.71307, -9.53857 )
-visible = false
 
 [node name="Lava" parent="." instance=ExtResource( 7 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.236027, 0, 0.0010376 )
@@ -253,6 +252,9 @@ script = ExtResource( 11 )
 
 [node name="Nhizi" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76802, 6.22573, -7.77483 )
+
+[node name="Skeleton" parent="Nhizi" index="2"]
+bones/92/bound_children = [ NodePath("DownGraspAttachment") ]
 
 [node name="Mesh" parent="Nhizi/Skeleton" index="0"]
 material/5 = SubResource( 31 )
