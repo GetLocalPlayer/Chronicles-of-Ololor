@@ -17,7 +17,6 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194903,
 "index_count": 10320,
-"material": ExtResource( 2 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( 26.6044, 0.283371, 4.6676, 15.2375, 8.72462, 6.48536 ), AABB( 29.455, 2.10253, 5.24778, 5.2573, 3.50604, 5.07567 ), AABB( 34.3206, 4.15446, 4.81414, 2.33033, 1.45411, 5.94656 ), AABB( 36.0897, 3.88549, 4.8937, 2.70845, 1.38674, 5.867 ), AABB( 38.3679, 3.76928, 5.11641, 1.52006, 1.10562, 5.57586 ), AABB( 26.9177, 2.31158, 5.72145, 11.1368, 6.64712, 5.17547 ), AABB( 26.8377, 1.2162, 4.77593, 7.00992, 7.37391, 4.39279 ), AABB( 26.8377, 2.04272, 5.47822, 7.52535, 6.80628, 5.22626 ) ],
 "vertex_count": 1840
@@ -29,7 +28,6 @@ surfaces/1 = {
 "blend_shape_data": [  ],
 "format": 2194903,
 "index_count": 42,
-"material": ExtResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( 32.0446, 4.80351, 4.69925, 7.85349, 4.03043, 6.43588 ), AABB( 33.3157, 5.06173, 8.1093, 0.078167, 0.257227, 0.381454 ), AABB( 35.3791, 4.62147, 4.96567, 1.13091, 0.568541, 4.79437 ), AABB( 36.3784, 4.46432, 5.01497, 2.41973, 0.725688, 5.05666 ), AABB( 38.6282, 4.56081, 6.21092, 0.169926, 0.314081, 3.79398 ), AABB( 32.0446, 6.61641, 8.04492, 0.0456886, 0.10415, 0.0267 ) ],
 "vertex_count": 26
@@ -288,8 +286,8 @@ bones/7/bound_children = [  ]
 [node name="Mesh" type="MeshInstance" parent="Skeleton"]
 mesh = SubResource( 3 )
 skin = SubResource( 4 )
-material/0 = null
-material/1 = null
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/stand = SubResource( 8 )
