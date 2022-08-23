@@ -14,7 +14,7 @@ export (float) var attack_interval = 3
 onready var boss = owner.get_node("Nhizi")
 onready var attack_timer = Timer.new()
 onready var player = owner.get_node("Emma")
-onready var menu = owner.get_node("Menu")
+onready var env = owner.get_node("WorldEnvironment").environment
 
 
 func _ready():
@@ -51,7 +51,10 @@ func on_attack_timer_expired():
 
 func _on_Emma_States_state_changed(_old_state, new_state):
 	if new_state == "death":
-		menu.show()
+		$Menu.show()
+		$FightMusic.stop()
+		$DefeatMusic.play()
+		$GrayScreenShader.show()
 		
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Models/Characters/Emma/Emma.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Models/Environment/Platform/Platform.tscn" type="PackedScene" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://Models/Objects/Key/Key.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Sounds/Music/key taken.wav" type="AudioStream" id=24]
 [ext_resource path="res://Textures/UI/victory.png" type="Texture" id=25]
+[ext_resource path="res://Sounds/Music/defeat.mp3" type="AudioStream" id=26]
 [ext_resource path="res://Models/Characters/Nhizi/Materials/EyeShader.tres" type="Shader" id=27]
 [ext_resource path="res://Models/Characters/Nhizi/Textures/eye.png" type="Texture" id=29]
 [ext_resource path="res://Shaders/ScreenSpaceOutline.tscn" type="PackedScene" id=30]
@@ -38,12 +39,26 @@ glow_bloom = 0.27
 glow_blend_mode = 0
 glow_hdr_threshold = 0.0
 glow_hdr_scale = 0.25
-adjustment_brightness = 1.9
-adjustment_contrast = 1.42
+adjustment_enabled = true
+adjustment_contrast = 1.1
 
 [sub_resource type="ShaderMaterial" id=31]
 shader = ExtResource( 27 )
 shader_param/TextureUniform = ExtResource( 29 )
+
+[sub_resource type="Shader" id=32]
+code = "shader_type canvas_item;
+
+
+void fragment()
+{
+	vec3 color = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
+	float average = (color.r + color.g + color.b) / 3f;
+	COLOR = vec4(average, average, average, 1f);
+}"
+
+[sub_resource type="ShaderMaterial" id=33]
+shader = SubResource( 32 )
 
 [sub_resource type="Animation" id=26]
 length = 0.001
@@ -217,10 +232,6 @@ shadow_contact = 1.0
 [node name="Sky" parent="." instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35204, -2.20454, 2.7731 )
 
-[node name="Menu" parent="." instance=ExtResource( 10 )]
-pause_mode = 2
-visible = false
-
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2045, 5.33399, 0.67179 )
 fov = 30.0
@@ -281,6 +292,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.332456, 16.1892, -0.161654 
 [node name="Skeleton" parent="Emma" index="6"]
 bones/15/bound_children = [ NodePath("BodyAttachment") ]
 
+[node name="BodyAttachment" parent="Emma/Skeleton" index="10"]
+transform = Transform( 1, -2.02954e-07, 1.71061e-08, -8.20171e-08, 0.944524, 0.328448, -9.29136e-08, -0.328447, 0.944522, 0.00150353, 1.59717, 0.023994 )
+
 [node name="FightLogic" type="Node" parent="."]
 script = ExtResource( 5 )
 
@@ -292,8 +306,23 @@ pitch_scale = 0.75
 [node name="VictoryMusic" type="AudioStreamPlayer" parent="FightLogic"]
 stream = ExtResource( 22 )
 
+[node name="DefeatMusic" type="AudioStreamPlayer" parent="FightLogic"]
+stream = ExtResource( 26 )
+pitch_scale = 0.8
+
+[node name="GrayScreenShader" type="ColorRect" parent="FightLogic"]
+visible = false
+material = SubResource( 33 )
+anchor_right = 0.999
+anchor_bottom = 1.0
+margin_right = 0.279907
+
 [node name="KeyTakenMusic" type="AudioStreamPlayer" parent="FightLogic"]
 stream = ExtResource( 24 )
+
+[node name="Menu" parent="FightLogic" instance=ExtResource( 10 )]
+pause_mode = 2
+visible = false
 
 [node name="StartingSplash" type="Control" parent="FightLogic"]
 visible = false
@@ -465,6 +494,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90042, 5.88424, -8.00106 )
 [connection signal="state_changed" from="Nhizi/States" to="FightLogic" method="_on_BossStates_state_changed"]
 [connection signal="state_changed" from="Emma/States" to="FightLogic" method="_on_Emma_States_state_changed"]
 [connection signal="finished" from="FightLogic/VictoryMusic" to="FightLogic" method="_on_VictoryMusic_finished"]
+[connection signal="finished" from="FightLogic/DefeatMusic" to="FightLogic" method="_on_VictoryMusic_finished"]
 [connection signal="finished" from="FightLogic/KeyTakenMusic" to="FightLogic" method="_on_KeyTakenMusic_finished"]
 [connection signal="body_entered" from="FightLogic/Key" to="FightLogic" method="_on_Key_body_entered"]
 [connection signal="body_entered" from="FightLogic/BossGrasp/Lower/DownGraspArea" to="FightLogic/BossGrasp/Lower" method="_on_DownGraspArea_body_entered"]
