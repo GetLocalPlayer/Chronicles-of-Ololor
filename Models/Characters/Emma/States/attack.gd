@@ -1,9 +1,7 @@
-extends State
+extends "idle.gd"
 
 
-onready var gravity = owner.gravity
 onready var kick_speed = owner.kick_speed
-onready var anim_player = owner.get_node("AnimationPlayer")
 onready var ray = owner.get_node("Skeleton/RayCast")
 onready var audio = owner.get_node("Sounds/BarrelAttacked")
 
@@ -52,19 +50,14 @@ func _update(_delta):
 	
 	
 func _transition():
-	if not anim_player.is_playing():
-		return "idle"
-	if not owner.is_on_floor():
-		return "falling"
-	if Input.is_action_just_pressed("jump"):
-		return "jump"
-	if Input.is_action_pressed("run_left") or Input.is_action_pressed("run_right"):
-		if Input.is_action_pressed("crawling"):
-			return "crawling"
-		else:
-			return "run"
-	if Input.is_action_pressed("crawling"):
-		return "kneel"
+	var new_state = ._transition()
+	if new_state == null:
+		if not anim_player.is_playing():
+			if Input.is_action_pressed("crawling"):
+				return "kneel"
+			else:
+				return "stand"
+	return new_state
 	
 
 func _exit():

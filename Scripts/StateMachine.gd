@@ -30,7 +30,11 @@ func _transition():
 	if new_state != null:
 		_change_state(new_state)
 		
-		
+
+func _unhandled_input(event):
+	get_node(current_state)._handle_input(event)
+	
+	
 func _physics_process(delta):
 	if current_state != null: 
 		get_node(current_state)._update(delta)

@@ -1,10 +1,9 @@
-extends State
+extends "idle.gd"
 
 
-onready var anim_player = owner.get_node("AnimationPlayer")
 onready var audio = owner.get_node("Sounds/Landing")
 onready var audio_voice = owner.get_node("Sounds/LandingVoice")
-onready var body = owner
+
 
 
 var yellow_dust = preload("res://Models/Effects/DustYellow/DustYellow.tscn")
@@ -38,6 +37,6 @@ func _transition():
 	if not anim_player.is_playing():
 		if Input.is_action_pressed("crawling"):
 			return "kneel"
-		return "idle"
+		return "stand"
 
 

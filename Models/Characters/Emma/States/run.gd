@@ -1,10 +1,7 @@
-extends State
+extends "move.gd"
 
 onready var run_speed = owner.run_speed
-onready var gravity = owner.gravity
-onready var anim_player = owner.get_node("AnimationPlayer")
-onready var armature = owner.get_node("Skeleton")
-onready var body = owner
+
 
 # How long the character must run
 # before having to play "stop" animation
@@ -12,44 +9,38 @@ export (float) var stop_run_time = 1
 var stop_time: float
 
 
+func _ready():
+	speed = run_speed
+
 func _enter():
 	anim_player.play("run", 0.15)
 	stop_time = stop_run_time
 	
 	
 func _update(delta):
-	var velocity = Vector3.ZERO
-	velocity.y = -gravity
+	._update(delta)
 	stop_time -= delta
-		
-	if Input.is_action_pressed("run_left"):
-		velocity.z = run_speed
-		armature.rotation_degrees = Vector3.ZERO
-	if Input.is_action_pressed("run_right"):
-		velocity.z = -run_speed
-		armature.rotation_degrees = Vector3(0, 180, 0)
-		
-	body.move_and_slide(velocity, Vector3.UP, false, 4, PI/4, false)
-	
 	
 func _transition():
-	if not body.is_on_floor():
-		return "falling"
-	if Input.is_action_just_pressed("jump"):
-		return "jump"
-	for i in body.get_slide_count():
-		var collision = body.get_slide_collision(i)
-		var collider = collision.collider
-		if collider.is_in_group("pushable") and collider.is_on_floor():
-			if abs(stepify(collision.normal.dot(body.get_floor_normal()), 0.01)) == 0.0: 
-				return "pushing"
-	if not Input.is_action_pressed("run_left") and not Input.is_action_pressed("run_right"):
+	var new_state = ._transition()
+	
+	if new_state == null:
 		if Input.is_action_pressed("crawling"):
-			return "kneel"
-		elif stop_time <= 0:
-			return "stop_run"
-		else:
-			return "idle"
-	if Input.is_action_pressed("crawling"):
 			return "crawling"
+		else:
+			for i in body.get_slide_count():
+				var collision = body.get_slide_collision(i)
+				var collider = collision.collider
+				if collider.is_in_group("pushable") and collider.is_on_floor():
+					if abs(stepify(collision.normal.dot(body.get_floor_normal()), 0.01)) == 0.0: 
+						return "pushing"
+	
+	if new_state in ["stand", "kneel"]:
+		if stop_time <= 0:
+			new_state = "stop_run"
+			
+	return new_state
+
+
+
 

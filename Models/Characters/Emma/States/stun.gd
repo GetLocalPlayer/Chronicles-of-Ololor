@@ -1,4 +1,4 @@
-extends "res://Models/Characters/Emma/States/Idle.gd"
+extends "idle.gd"
 
 
 func _enter():
@@ -18,4 +18,4 @@ func _update(delta):
 	
 func _transition():
 	if not anim_player.is_playing():
-		return "idle"
+		return "stand"
