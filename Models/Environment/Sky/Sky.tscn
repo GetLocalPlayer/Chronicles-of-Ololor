@@ -21,5 +21,6 @@ surfaces/0 = {
 
 [node name="Mesh" type="MeshInstance" parent="."]
 transform = Transform( -1048.9, 1.76166, 0, -1.76166, -1048.9, 0, 0, 0, -1048.9, -88.5996, 9.9608, -6.55632 )
+cast_shadow = 0
 mesh = SubResource( 3 )
 material/0 = null

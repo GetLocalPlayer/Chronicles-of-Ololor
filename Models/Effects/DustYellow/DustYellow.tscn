@@ -127,5 +127,6 @@ anims/birth&queue_free = SubResource( 11 )
 [node name="Mesh" type="MeshInstance" parent="."]
 transform = Transform( -1.54137e-07, 4.68553, 0, -2.36701, -1.37481e-07, 0, 0, 0, 3.6817, -1.43845, -0.142136, 0 )
 visible = false
+cast_shadow = 0
 mesh = SubResource( 8 )
 material/0 = null

@@ -150,6 +150,7 @@ tracks/3/keys = {
 [node name="Mesh" type="MeshInstance" parent="."]
 transform = Transform( 2.96458e-06, 8.28956, 0, -8.28956, 2.96458e-06, 0, 0, 0, 8.28956, 0, 0, 0 )
 visible = false
+cast_shadow = 0
 mesh = SubResource( 3 )
 material/0 = null
 
