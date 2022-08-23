@@ -6,7 +6,7 @@ onready var main_camera = owner.get_node("Camera")
 onready var player = owner.get_node("Emma")
 onready var boss = owner.get_node("Nhizi")
 onready var maw = $Maw
-onready var menu = owner.get_node("Menu")
+onready var menu = owner.find_node("Menu", true)
 
 
 func _on_AnimationPlayer_animation_started(anim_name):

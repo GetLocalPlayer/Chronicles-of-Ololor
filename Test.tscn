@@ -220,12 +220,14 @@ environment = SubResource( 30 )
 [node name="SkyLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.621353, -0.577716, -0.529306, -3.22295e-08, -0.675539, 0.737324, -0.783531, -0.458139, -0.419748, -14.2136, 6.32253, -17.8166 )
 light_color = Color( 0.909804, 0.0313726, 0.0980392, 1 )
-light_energy = 0.169
+light_energy = 0.1
+light_specular = 1.0
 
 [node name="LavaLight" type="DirectionalLight" parent="."]
 transform = Transform( -2.08961e-08, 0.878334, 0.478048, 3.83932e-08, 0.478048, -0.878334, -1, 1.77636e-15, -4.37114e-08, 23.6573, 12.588, -17.8166 )
 light_color = Color( 1, 0.909804, 0.352941, 1 )
-light_energy = 0.15
+light_energy = 0.1
+light_specular = 0.25
 shadow_enabled = true
 shadow_contact = 1.0
 
@@ -288,9 +290,6 @@ push_speed = 1.0
 
 [node name="Burning" parent="Emma/BurningTimer" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.332456, 16.1892, -0.161654 )
-
-[node name="Skeleton" parent="Emma" index="6"]
-bones/15/bound_children = [ NodePath("BodyAttachment") ]
 
 [node name="BodyAttachment" parent="Emma/Skeleton" index="10"]
 transform = Transform( 1, -2.02954e-07, 1.71061e-08, -8.20171e-08, 0.944524, 0.328448, -9.29136e-08, -0.328447, 0.944522, 0.00150353, 1.59717, 0.023994 )
