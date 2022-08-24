@@ -40,7 +40,6 @@ glow_bloom = 0.27
 glow_blend_mode = 0
 glow_hdr_threshold = 0.0
 glow_hdr_scale = 0.25
-adjustment_enabled = true
 adjustment_contrast = 1.1
 
 [sub_resource type="ShaderMaterial" id=31]
@@ -358,7 +357,7 @@ environment = SubResource( 30 )
 transform = Transform( 0.621353, -0.577716, -0.529306, -3.22295e-08, -0.675539, 0.737324, -0.783531, -0.458139, -0.419748, -14.2136, 6.32253, -17.8166 )
 light_color = Color( 0.909804, 0.0313726, 0.0980392, 1 )
 light_energy = 0.1
-light_specular = 1.0
+light_specular = 2.622
 
 [node name="LavaLight" type="DirectionalLight" parent="."]
 transform = Transform( -2.08961e-08, 0.878334, 0.478048, 3.83932e-08, 0.478048, -0.878334, -1, 1.77636e-15, -4.37114e-08, 23.6573, 12.588, -17.8166 )
@@ -372,8 +371,8 @@ shadow_contact = 1.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35204, -2.20454, 2.7731 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2045, 5.33399, 0.67179 )
-fov = 30.0
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.9769, 5.07477, 0.67179 )
+fov = 37.0
 near = 0.01
 far = 1612.7
 script = ExtResource( 16 )
@@ -409,6 +408,9 @@ script = ExtResource( 11 )
 [node name="Nhizi" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76802, 6.22573, -7.77483 )
 
+[node name="Skeleton" parent="Nhizi" index="2"]
+bones/92/bound_children = [ NodePath("DownGraspAttachment") ]
+
 [node name="Mesh" parent="Nhizi/Skeleton" index="0"]
 material/5 = SubResource( 31 )
 
@@ -425,11 +427,8 @@ push_speed = 1.0
 [node name="Burning" parent="Emma/BurningTimer" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.364088, 16.493, 0.109243 )
 
-[node name="Skeleton" parent="Emma" index="6"]
-bones/15/bound_children = [  ]
-
-[node name="BodyAttachment" parent="Emma/Skeleton" index="10"]
-transform = Transform( 1, -2.02954e-07, 1.71061e-08, -8.20171e-08, 0.944524, 0.328448, -9.29136e-08, -0.328447, 0.944522, 0.00150353, 1.59717, 0.023994 )
+[node name="Skeleton" parent="Emma" index="7"]
+bones/15/bound_children = [ NodePath("BodyAttachment") ]
 
 [node name="FightLogic" type="Node" parent="."]
 script = ExtResource( 5 )

@@ -6,6 +6,10 @@ export (float) var shake_amplitude = 0.5 # max h/v offset during shaking
 onready var target = owner.get_node("Emma/CameraFocus")
 
 
+func _ready():
+	rotation = Vector3.ZERO
+	
+	
 func _process(delta):
 	var look_at_transform = global_transform.looking_at(target.global_transform.origin, Vector3.UP)
 	var new_transform = global_transform.interpolate_with(look_at_transform, delta/look_at_delay)
