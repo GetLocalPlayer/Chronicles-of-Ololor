@@ -11,6 +11,7 @@ export (float) var burning_damage = 2
 onready var boss = owner.get_node("Nhizi")
 onready var player = owner.get_node("Emma")
 onready var fire = preload("res://Models/Effects/Fire/Fire.tscn")
+onready var hit_screen = owner.find_node("HitScreen")
 
 
 onready var area_to_state = {
@@ -68,6 +69,7 @@ func on_boss_attack(attack_type):
 			timer.start(fire_lifetime)
 		if body == player and body.is_alive():
 			body.health -= boss_hit_damage
+			hit_screen.play("fade", 0)
 			if body.is_alive():
 				body.get_node("Sounds/OhVoice").play_random()
 				body.get_node("States")._change_state("stun")

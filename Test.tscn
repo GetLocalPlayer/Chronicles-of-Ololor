@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Models/Characters/Emma/Emma.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Models/Environment/Platform/Platform.tscn" type="PackedScene" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://Textures/UI/victory.png" type="Texture" id=25]
 [ext_resource path="res://Sounds/Music/defeat.mp3" type="AudioStream" id=26]
 [ext_resource path="res://Models/Characters/Nhizi/Materials/EyeShader.tres" type="Shader" id=27]
+[ext_resource path="res://Textures/hitscreen.png" type="Texture" id=28]
 [ext_resource path="res://Models/Characters/Nhizi/Textures/eye.png" type="Texture" id=29]
 [ext_resource path="res://Shaders/ScreenSpaceOutline.tscn" type="PackedScene" id=30]
 
@@ -45,6 +46,142 @@ adjustment_contrast = 1.1
 [sub_resource type="ShaderMaterial" id=31]
 shader = ExtResource( 27 )
 shader_param/TextureUniform = ExtResource( 29 )
+
+[sub_resource type="Animation" id=35]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../RadialBlurShader:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../RadialBlurShader:material:shader_param/density")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "fade"
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../RadialBlurShader:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../RadialBlurShader:material:shader_param/density")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1.23114, 1 ),
+"update": 0,
+"values": [ 0.0, 0.35, 0.0 ]
+}
+
+[sub_resource type="CanvasItemMaterial" id=34]
+blend_mode = 1
+
+[sub_resource type="Shader" id=37]
+code = "shader_type canvas_item;
+
+uniform int max_samples = 30;
+uniform float density = 0;
+
+
+void fragment()
+{
+	vec2 uv = SCREEN_UV;
+    vec2 uv_delta = uv - vec2(0.5, 0.5);
+	uv_delta *= 1.0 / float(max_samples) * density;
+	vec4 sample = vec4(1.0);
+	float decay = 1.0;
+  
+	for(int i=0; i < max_samples ; i++)
+	{
+		uv -= uv_delta;
+	    sample += texture(SCREEN_TEXTURE, uv);
+	}
+
+	COLOR = sample / float(max_samples);
+}
+"
+
+[sub_resource type="ShaderMaterial" id=38]
+shader = SubResource( 37 )
+shader_param/max_samples = 30
+shader_param/density = 0.0
 
 [sub_resource type="Shader" id=32]
 code = "shader_type canvas_item;
@@ -240,16 +377,16 @@ fov = 30.0
 near = 0.01
 far = 1612.7
 script = ExtResource( 16 )
-shake_amplitude = 0.45
+shake_amplitude = 0.6
 
 [node name="Tween" type="Tween" parent="Camera"]
 
 [node name="ShakeOverTimer" type="Timer" parent="Camera"]
-wait_time = 0.9
+wait_time = 0.8
 one_shot = true
 
 [node name="ShakeTimer" type="Timer" parent="Camera"]
-wait_time = 0.04
+wait_time = 0.02
 
 [node name="Cutscenes" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36312, 6.18305, -7.42492 )
@@ -312,12 +449,30 @@ stream = ExtResource( 22 )
 stream = ExtResource( 26 )
 pitch_scale = 0.8
 
+[node name="HitScreen" type="AnimationPlayer" parent="FightLogic"]
+root_node = NodePath("TextureRect")
+anims/RESET = SubResource( 35 )
+anims/fade = SubResource( 36 )
+
+[node name="TextureRect" type="TextureRect" parent="FightLogic/HitScreen"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 34 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 28 )
+expand = true
+
+[node name="RadialBlurShader" type="ColorRect" parent="FightLogic/HitScreen"]
+material = SubResource( 38 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
 [node name="GrayScreenShader" type="ColorRect" parent="FightLogic"]
 visible = false
 material = SubResource( 33 )
-anchor_right = 0.999
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 0.279907
 
 [node name="KeyTakenMusic" type="AudioStreamPlayer" parent="FightLogic"]
 stream = ExtResource( 24 )
