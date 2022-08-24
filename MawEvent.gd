@@ -6,7 +6,6 @@ onready var main_camera = owner.get_node("Camera")
 onready var player = owner.get_node("Emma")
 onready var boss = owner.get_node("Nhizi")
 onready var maw = $Maw
-onready var menu = owner.find_node("Menu", true)
 
 
 func _on_AnimationPlayer_animation_started(anim_name):
@@ -39,10 +38,6 @@ func _on_HealthBar_value_changed(value):
 		boss.get_node("States")._change_state("spitout")
 		player.health_bar.show()
 		maw.get_node("HealthBar").hide()
-
-
-func _on_Maw_AnimationPlayer_animation_finished(anim_name):
-	menu.show()
 
 
 func _on_Nhizi_spitout_frame():
