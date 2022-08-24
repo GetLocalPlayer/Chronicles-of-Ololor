@@ -20,8 +20,6 @@ void fragment()
        
     float fac = abs(depth - depth2) + abs(depth - depth3);
 	float x = fac * intencity;
-	vec4 sub = vec4(x, x, x, 0);
-       
+	vec4 sub = vec4(x, x, x, 0);   
 	ALBEDO = (texture(SCREEN_TEXTURE, SCREEN_UV) - sub).rgb;
-	//ALPHA = float(x < 0.5);
 }
