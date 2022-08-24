@@ -12,6 +12,7 @@ onready var hit_effect = [
 	preload("res://Models/Effects/Hit/Hit_3.tscn"),
 ]
 
+onready var test = preload("res://Models/Effects/Fire/Fire.tscn")
 
 var animations = ["attack", "attack_2", "attack_3", "attack_4"]
 
@@ -29,7 +30,7 @@ func on_attack():
 			body.kick(kick_dir.normalized() * kick_speed)
 			var random = randi() % hit_effect.size()
 			var instance = hit_effect[random].instance()
-			ray.add_child(instance)
+			owner.add_child(instance)
 			instance.set_as_toplevel(true)
 			instance.to_local(ray.get_collision_point())
 			instance.translate(instance.to_local(ray.get_collision_point()))
