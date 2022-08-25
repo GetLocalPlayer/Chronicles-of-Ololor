@@ -7,8 +7,12 @@ size = Vector2( 2, 2 )
 
 [sub_resource type="ShaderMaterial" id=34]
 shader = ExtResource( 1 )
-shader_param/intencity = 300.0
-shader_param/dist = 4.0
+shader_param/outline_mode = 2
+shader_param/outline_intensity = 1.0
+shader_param/_round = true
+shader_param/outline_bias = 0.0
+shader_param/thickness = 0.5
+shader_param/outline_color = Color( 0, 0, 0, 1 )
 
 [node name="OutlineShader" type="MeshInstance"]
 cast_shadow = 0

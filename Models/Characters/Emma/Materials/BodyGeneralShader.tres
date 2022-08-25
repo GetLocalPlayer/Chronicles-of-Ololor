@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=5 format=2]
+[gd_resource type="VisualShader" load_steps=7 format=2]
 
 [sub_resource type="VisualShaderNodeTextureUniform" id=121]
 uniform_name = "TextureUniform"
@@ -11,6 +11,12 @@ default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 1, 1, 1 ), 2, 0.2 ]
 
 [sub_resource type="VisualShaderNodeColorUniform" id=138]
 uniform_name = "ColorUniform"
+
+[sub_resource type="VisualShaderNodeScalarConstant" id=139]
+constant = 0.5
+
+[sub_resource type="VisualShaderNodeScalarConstant" id=140]
+constant = 0.1
 
 [resource]
 code = "shader_type spatial;
@@ -43,6 +49,12 @@ void fragment() {
 // VectorOp:5
 	vec3 n_out5p0 = n_out2p0 * n_out7p0;
 
+// Scalar:9
+	float n_out9p0 = 0.100000;
+
+// Scalar:8
+	float n_out8p0 = 0.500000;
+
 // VectorScalarMix:6
 	vec3 n_in6p0 = vec3(0.00000, 0.00000, 0.00000);
 	float n_in6p2 = 0.20000;
@@ -50,6 +62,8 @@ void fragment() {
 
 // Output:0
 	ALBEDO = n_out5p0;
+	ROUGHNESS = n_out9p0;
+	SPECULAR = n_out8p0;
 	EMISSION = n_out6p0;
 
 }
@@ -59,13 +73,17 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -378.123, 385.795 )
+graph_offset = Vector2( -262, 99.0869 )
 nodes/fragment/2/node = SubResource( 121 )
 nodes/fragment/2/position = Vector2( -440, 40 )
 nodes/fragment/5/node = SubResource( 131 )
 nodes/fragment/5/position = Vector2( -100, 160 )
 nodes/fragment/6/node = SubResource( 132 )
-nodes/fragment/6/position = Vector2( 100, 300 )
+nodes/fragment/6/position = Vector2( 100, 388 )
 nodes/fragment/7/node = SubResource( 138 )
 nodes/fragment/7/position = Vector2( -480, 300 )
-nodes/fragment/connections = PoolIntArray( 2, 0, 5, 0, 6, 0, 0, 5, 5, 0, 0, 0, 5, 0, 6, 1, 7, 0, 5, 1 )
+nodes/fragment/8/node = SubResource( 139 )
+nodes/fragment/8/position = Vector2( 105, 294.087 )
+nodes/fragment/9/node = SubResource( 140 )
+nodes/fragment/9/position = Vector2( 104, 235.087 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 5, 0, 6, 0, 0, 5, 5, 0, 0, 0, 5, 0, 6, 1, 7, 0, 5, 1, 9, 0, 0, 3, 8, 0, 0, 4 )

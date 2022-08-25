@@ -13,10 +13,10 @@ constant = 1.0
 default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 1, 1, 1 ), 2, 0.3 ]
 
 [sub_resource type="VisualShaderNodeScalarConstant" id=104]
-constant = 0.1
+constant = 0.5
 
 [sub_resource type="VisualShaderNodeScalarConstant" id=105]
-constant = 1.0
+constant = 0.15
 
 [resource]
 code = "shader_type spatial;
@@ -43,10 +43,10 @@ void fragment() {
 	}
 
 // Scalar:6
-	float n_out6p0 = 0.100000;
+	float n_out6p0 = 0.500000;
 
 // Scalar:7
-	float n_out7p0 = 1.000000;
+	float n_out7p0 = 0.150000;
 
 // VectorScalarMix:5
 	vec3 n_in5p0 = vec3(0.00000, 0.00000, 0.00000);
@@ -81,7 +81,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -92, 133 )
+graph_offset = Vector2( -369, 74.0869 )
 modes/cull = 2
 modes/depth_draw = 3
 modes/diffuse = 4
