@@ -4,6 +4,7 @@
 
 I also used screen-space outline shader by **Warren Jennings**.
 
-(Clickable) :warning:Warning:warning: Contains vore-content:warning:
+(Clickable)
+:warning: **WARNING** :warning: **Contains vore-content** :warning:
 
 [![Clickable](https://i.imgur.com/0Q5P7qn.jpg)](https://youtu.be/2HnN0QI888Y)
