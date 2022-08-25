@@ -409,9 +409,6 @@ script = ExtResource( 11 )
 [node name="Nhizi" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76802, 6.22573, -7.77483 )
 
-[node name="Skeleton" parent="Nhizi" index="2"]
-bones/92/bound_children = [ NodePath("DownGraspAttachment") ]
-
 [node name="Mesh" parent="Nhizi/Skeleton" index="0"]
 material/5 = SubResource( 31 )
 
@@ -427,9 +424,6 @@ push_speed = 1.0
 
 [node name="Burning" parent="Emma/BurningTimer" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.364088, 16.493, 0.109243 )
-
-[node name="Skeleton" parent="Emma" index="7"]
-bones/15/bound_children = [ NodePath("BodyAttachment") ]
 
 [node name="Cloth 3" parent="Emma/Skeleton" index="6"]
 visible = true
