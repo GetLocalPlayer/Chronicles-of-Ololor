@@ -47,7 +47,7 @@ constant = 0.1
 
 [resource]
 code = "shader_type spatial;
-render_mode cull_disabled, diffuse_toon, specular_toon;
+render_mode cull_disabled, diffuse_toon, specular_toon, async_visible;
 
 uniform sampler2D TextureUniform;
 uniform sampler2D TextureUniform2;

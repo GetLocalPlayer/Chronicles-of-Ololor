@@ -20,7 +20,7 @@ constant = 0.15
 
 [resource]
 code = "shader_type spatial;
-render_mode depth_draw_alpha_prepass, cull_disabled, diffuse_toon, specular_toon;
+render_mode depth_draw_alpha_prepass, cull_disabled, diffuse_toon, specular_toon, async_visible;
 
 uniform sampler2D TextureUniform;
 uniform sampler2D TextureUniform2;

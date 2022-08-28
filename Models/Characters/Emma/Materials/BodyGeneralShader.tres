@@ -20,7 +20,7 @@ constant = 0.1
 
 [resource]
 code = "shader_type spatial;
-render_mode specular_schlick_ggx;
+render_mode specular_schlick_ggx, async_visible;
 
 uniform sampler2D TextureUniform;
 uniform vec4 ColorUniform : hint_color;
