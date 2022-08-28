@@ -4,6 +4,8 @@
 
 I also used screen-space outline shader by **Warren Jennings**.
 
+Godot version: **3.5**
+
 (Clickable)<br/>
 :warning: **WARNING** :warning: **Contains vore-content** :warning:
 
