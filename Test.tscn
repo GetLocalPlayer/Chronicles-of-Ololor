@@ -388,18 +388,6 @@ collision_layer = 1
 collision_mask = 1
 push_speed = 1.0
 
-[node name="Burning" parent="Emma/BurningTimer" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.364088, 16.493, 0.109243 )
-
-[node name="Skeleton" parent="Emma" index="7"]
-bones/15/bound_children = [  ]
-
-[node name="Cloth 3" parent="Emma/Skeleton" index="6"]
-visible = true
-
-[node name="BodyAttachment" parent="Emma/Skeleton" index="10"]
-transform = Transform( 1, -2.02954e-07, 1.71061e-08, -8.20171e-08, 0.944524, 0.328448, -9.29136e-08, -0.328447, 0.944522, 0.00150353, 1.59717, 0.023994 )
-
 [node name="FightLogic" type="Node" parent="."]
 script = ExtResource( 5 )
 
@@ -616,7 +604,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90042, 5.88424, -8.00106 )
 [connection signal="grasp_started" from="Nhizi" to="FightLogic/BossGrasp/Lower" method="_on_Nhizi_grasp_started"]
 [connection signal="spitout_frame" from="Nhizi" to="FightLogic/BossGrasp/MawEvent" method="_on_Nhizi_spitout_frame"]
 [connection signal="state_changed" from="Nhizi/States" to="FightLogic" method="_on_BossStates_state_changed"]
-[connection signal="state_changed" from="Emma/States" to="FightLogic" method="_on_Emma_States_state_changed"]
+[connection signal="state_changed" from="Emma" to="FightLogic" method="_on_Emma_state_changed"]
 [connection signal="finished" from="FightLogic/VictoryMusic" to="FightLogic" method="_on_VictoryMusic_finished"]
 [connection signal="finished" from="FightLogic/DefeatMusic" to="FightLogic" method="_on_VictoryMusic_finished"]
 [connection signal="finished" from="FightLogic/KeyTakenMusic" to="FightLogic" method="_on_KeyTakenMusic_finished"]
@@ -626,6 +614,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90042, 5.88424, -8.00106 )
 
 [editable path="Cutscenes"]
 [editable path="Nhizi"]
-[editable path="Emma"]
 [editable path="FightLogic/Key"]
 [editable path="FightLogic/BossGrasp/MawEvent/Maw"]

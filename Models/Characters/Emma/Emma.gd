@@ -2,6 +2,7 @@ extends KinematicBody
 
 
 signal attack
+signal state_changed(old_state, new_state)
 
 export (float) var health = 100 setget set_health
 export (float) var max_health = 100
@@ -15,7 +16,6 @@ export (float) var jump_speed = 50
 export (float) var kick_speed = 10
 # To check if second jump is possible
 var double_jump_available = true
-
 
 onready var health_bar = get_node("HealthBar")
 
@@ -34,6 +34,14 @@ func set_health(new_health):
 	health_bar.value = health
 	if health == 0 and $States.current_state != "death":
 		$States._change_state("death")
+	
+	
+func stun():
+	$States._change_state("stun")
+	
+	
+func set_state(new_state: String):
+	$States._change_state(new_state)
 	
 	
 func _ready():
@@ -55,6 +63,7 @@ func _ready():
 	random = randi() % (clothes.size() + 1)
 	if random < clothes.size():
 		clothes[random].show()
-		
-		
 
+
+func _on_States_state_changed(old_state, new_state):
+	emit_signal("state_changed", old_state, new_state)

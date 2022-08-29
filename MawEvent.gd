@@ -11,7 +11,7 @@ onready var maw = $Maw
 func _on_AnimationPlayer_animation_started(anim_name):
 	if anim_name in ["L_grasp", "R_grasp"]:
 		player.global_transform.origin = $EmmaMawPosition.global_transform.origin
-		player.get_node("States")._change_state("idle_swallowed")
+		player.set_state("idle_swallowed")
 		maw.get_node("AnimationPlayer").play("stand", 0)
 	
 	
@@ -29,7 +29,7 @@ func _on_HealthBar_value_changed(value):
 	var health_bar = maw.get_node("HealthBar")
 	if value == 0:
 		health_bar.hide()
-		player.get_node("States")._change_state("swallowed")
+		player.set_state("swallowed")
 		maw.get_node("AnimationPlayer").play("swallow", 0)
 		cutscenes.get_node("AnimationPlayer").play("inside_swallowed", 0)
 	if value == health_bar.max_value:
@@ -42,4 +42,4 @@ func _on_HealthBar_value_changed(value):
 
 func _on_Nhizi_spitout_frame():
 	player.global_transform.origin = $EmmaSpitoutPosition.global_transform.origin
-	player.get_node("States")._change_state("stun")
+	player.stun()

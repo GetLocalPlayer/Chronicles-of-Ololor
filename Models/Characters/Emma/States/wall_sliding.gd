@@ -49,7 +49,7 @@ func _update(_delta):
 	
 func _transition():
 	if body.is_on_floor():
-		return "idle"
+		return "stand"
 	if Input.is_action_just_pressed("jump"):
 		return "jump"
 	if not body.is_on_wall():

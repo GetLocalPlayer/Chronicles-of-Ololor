@@ -49,7 +49,7 @@ func on_attack_timer_expired():
 		$BossGrasp.do()
 
 
-func _on_Emma_States_state_changed(_old_state, new_state):
+func _on_Emma_state_changed(_old_state, new_state):
 	if new_state == "death":
 		$Menu.show()
 		$FightMusic.stop()
@@ -87,3 +87,6 @@ func _on_Key_body_entered(body):
 
 func _on_KeyTakenMusic_finished():
 	get_tree().change_scene("res://EndOfDemo.tscn")
+
+
+

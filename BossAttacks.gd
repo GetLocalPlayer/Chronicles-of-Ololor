@@ -72,7 +72,7 @@ func on_boss_attack(attack_type):
 			hit_screen.play("fade", 0)
 			if body.is_alive():
 				body.get_node("Sounds/OhVoice").play_random()
-				body.get_node("States")._change_state("stun")
+				body.stun()
 				
 
 
