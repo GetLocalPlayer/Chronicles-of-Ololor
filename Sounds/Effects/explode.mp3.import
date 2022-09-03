@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/explode.mp3-050c56b5d6d71b0215d23e05b8efe490.mp3str"
+path="res://.import/explode.mp3-15c5f536d298b102d02a0328024527ee.mp3str"
 
 [deps]
 
-source_file="res://Sounds/Effects/explode.mp3"
-dest_files=[ "res://.import/explode.mp3-050c56b5d6d71b0215d23e05b8efe490.mp3str" ]
+source_file="res://sounds/effects/explode.mp3"
+dest_files=[ "res://.import/explode.mp3-15c5f536d298b102d02a0328024527ee.mp3str" ]
 
 [params]
 

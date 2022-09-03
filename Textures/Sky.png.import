@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Sky.png-cad9648afded55e7d2d5dc7cc07a7916.s3tc.stex"
-path.etc2="res://.import/Sky.png-cad9648afded55e7d2d5dc7cc07a7916.etc2.stex"
+path.s3tc="res://.import/sky.png-336f2665fcf445d317f527ae344bd89c.s3tc.stex"
+path.etc2="res://.import/sky.png-336f2665fcf445d317f527ae344bd89c.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Sky.png"
-dest_files=[ "res://.import/Sky.png-cad9648afded55e7d2d5dc7cc07a7916.s3tc.stex", "res://.import/Sky.png-cad9648afded55e7d2d5dc7cc07a7916.etc2.stex" ]
+source_file="res://textures/sky.png"
+dest_files=[ "res://.import/sky.png-336f2665fcf445d317f527ae344bd89c.s3tc.stex", "res://.import/sky.png-336f2665fcf445d317f527ae344bd89c.etc2.stex" ]
 
 [params]
 

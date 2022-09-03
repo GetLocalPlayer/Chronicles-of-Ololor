@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/eye.png-0dddd5f4aea47aa8e9f27d819ccb814c.stex"
+path="res://.import/eye.png-f44c9810efa509d78d96dee4e41b68a7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Models/Characters/Emma/Textures/eye.png"
-dest_files=[ "res://.import/eye.png-0dddd5f4aea47aa8e9f27d819ccb814c.stex" ]
+source_file="res://models/characters/emma/textures/eye.png"
+dest_files=[ "res://.import/eye.png-f44c9810efa509d78d96dee4e41b68a7.stex" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/boom.mp3-3af883acf5e4f3fb86825d0d33c1693f.mp3str"
+path="res://.import/boom.mp3-85008c3d94036845cc322793e62a5b7e.mp3str"
 
 [deps]
 
-source_file="res://Sounds/Effects/boom.mp3"
-dest_files=[ "res://.import/boom.mp3-3af883acf5e4f3fb86825d0d33c1693f.mp3str" ]
+source_file="res://sounds/effects/boom.mp3"
+dest_files=[ "res://.import/boom.mp3-85008c3d94036845cc322793e62a5b7e.mp3str" ]
 
 [params]
 

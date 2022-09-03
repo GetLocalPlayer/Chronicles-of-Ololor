@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Models/Effects/Burning/fireemma.material" type="Material" id=1]
+[ext_resource path="res://models/effects/burning/fire.material" type="Material" id=1]
 
 [sub_resource type="ArrayMesh" id=4]
 resource_name = "test lvl_burning"

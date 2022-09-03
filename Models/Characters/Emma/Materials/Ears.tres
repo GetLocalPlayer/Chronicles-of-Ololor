@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=2]
 
-[ext_resource path="res://Models/Characters/Emma/Textures/skin.png" type="Texture" id=1]
-[ext_resource path="res://Models/Characters/Emma/Materials/BodyGeneralShader.tres" type="Shader" id=2]
+[ext_resource path="res://models/characters/emma/textures/skin.png" type="Texture" id=1]
+[ext_resource path="res://models/characters/emma/materials/body_shader_general.tres" type="Shader" id=2]
 
 [resource]
 shader = ExtResource( 2 )

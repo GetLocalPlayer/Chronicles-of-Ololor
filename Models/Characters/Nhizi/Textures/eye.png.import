@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/eye.png-086fd2cbaabf3a47d7c9d02ef635d7fe.s3tc.stex"
-path.etc2="res://.import/eye.png-086fd2cbaabf3a47d7c9d02ef635d7fe.etc2.stex"
+path.s3tc="res://.import/eye.png-ebf270210afddf03a85025ac3fc8c6f4.s3tc.stex"
+path.etc2="res://.import/eye.png-ebf270210afddf03a85025ac3fc8c6f4.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Characters/Nhizi/Textures/eye.png"
-dest_files=[ "res://.import/eye.png-086fd2cbaabf3a47d7c9d02ef635d7fe.s3tc.stex", "res://.import/eye.png-086fd2cbaabf3a47d7c9d02ef635d7fe.etc2.stex" ]
+source_file="res://models/characters/nhizi/textures/eye.png"
+dest_files=[ "res://.import/eye.png-ebf270210afddf03a85025ac3fc8c6f4.s3tc.stex", "res://.import/eye.png-ebf270210afddf03a85025ac3fc8c6f4.etc2.stex" ]
 
 [params]
 

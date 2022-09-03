@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/oh3.mp3-d84c96aee57fb6878ccc8871662901e6.mp3str"
+path="res://.import/oh3.mp3-c461f801b7703739f1f9841c95a74000.mp3str"
 
 [deps]
 
-source_file="res://Models/Characters/Emma/Sounds/Voice/oh3.mp3"
-dest_files=[ "res://.import/oh3.mp3-d84c96aee57fb6878ccc8871662901e6.mp3str" ]
+source_file="res://models/characters/emma/sounds/Voice/oh3.mp3"
+dest_files=[ "res://.import/oh3.mp3-c461f801b7703739f1f9841c95a74000.mp3str" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/menu1.mp3-b9030981ab91b68d469b8361047b8e55.mp3str"
+path="res://.import/menu1.mp3-638315515e012488ed0e2a2ea23e41fb.mp3str"
 
 [deps]
 
-source_file="res://Sounds/Effects/menu1.mp3"
-dest_files=[ "res://.import/menu1.mp3-b9030981ab91b68d469b8361047b8e55.mp3str" ]
+source_file="res://sounds/effects/menu1.mp3"
+dest_files=[ "res://.import/menu1.mp3-638315515e012488ed0e2a2ea23e41fb.mp3str" ]
 
 [params]
 

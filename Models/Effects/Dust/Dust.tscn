@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Models/Effects/Dust/Dust.material" type="Material" id=1]
-[ext_resource path="res://Models/Effects/Dust/boom3.mp3" type="AudioStream" id=2]
-[ext_resource path="res://Models/Effects/Dust/boom.mp3" type="AudioStream" id=3]
-[ext_resource path="res://Models/Effects/Dust/boom2.mp3" type="AudioStream" id=4]
+[ext_resource path="res://models/effects/dust/dust.material" type="Material" id=1]
+[ext_resource path="res://models/effects/dust/boom3.mp3" type="AudioStream" id=2]
+[ext_resource path="res://models/effects/dust/boom2.mp3" type="AudioStream" id=3]
+[ext_resource path="res://models/effects/dust/boom.mp3" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -184,4 +184,4 @@ material/0 = null
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -20.0
 script = SubResource( 5 )
-samples = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ) ]
+samples = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ]

@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/eventwin.mp3-a5046292ee46238b1e549b132fc52ff5.mp3str"
+path="res://.import/eventwin.mp3-847db17af95be5eb3d267a7126f609fc.mp3str"
 
 [deps]
 
-source_file="res://Sounds/Effects/eventwin.mp3"
-dest_files=[ "res://.import/eventwin.mp3-a5046292ee46238b1e549b132fc52ff5.mp3str" ]
+source_file="res://sounds/effects/eventwin.mp3"
+dest_files=[ "res://.import/eventwin.mp3-847db17af95be5eb3d267a7126f609fc.mp3str" ]
 
 [params]
 

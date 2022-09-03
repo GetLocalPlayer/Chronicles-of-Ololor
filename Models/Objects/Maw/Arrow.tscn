@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Models/Objects/Maw/arrow.png" type="Texture" id=1]
+[ext_resource path="res://models/objects/maw/arrow.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 35, 28 )

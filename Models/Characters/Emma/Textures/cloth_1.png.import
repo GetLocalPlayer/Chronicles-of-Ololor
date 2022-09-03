@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/cloth_1.png-adce92921bb3cf4101d395f813419f2b.s3tc.stex"
-path.etc2="res://.import/cloth_1.png-adce92921bb3cf4101d395f813419f2b.etc2.stex"
+path.s3tc="res://.import/cloth_1.png-9f0077b6f4aa52087acb9e45f3470ca1.s3tc.stex"
+path.etc2="res://.import/cloth_1.png-9f0077b6f4aa52087acb9e45f3470ca1.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Characters/Emma/Textures/cloth_1.png"
-dest_files=[ "res://.import/cloth_1.png-adce92921bb3cf4101d395f813419f2b.s3tc.stex", "res://.import/cloth_1.png-adce92921bb3cf4101d395f813419f2b.etc2.stex" ]
+source_file="res://models/characters/emma/textures/cloth_1.png"
+dest_files=[ "res://.import/cloth_1.png-9f0077b6f4aa52087acb9e45f3470ca1.s3tc.stex", "res://.import/cloth_1.png-9f0077b6f4aa52087acb9e45f3470ca1.etc2.stex" ]
 
 [params]
 

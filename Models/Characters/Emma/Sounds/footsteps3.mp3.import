@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/footsteps3.mp3-7feaa41f6d24b476438dea47f9d6a076.mp3str"
+path="res://.import/footsteps3.mp3-1a1b7ae43d4f604ceafdd6ac110ffe5f.mp3str"
 
 [deps]
 
-source_file="res://Models/Characters/Emma/Sounds/footsteps3.mp3"
-dest_files=[ "res://.import/footsteps3.mp3-7feaa41f6d24b476438dea47f9d6a076.mp3str" ]
+source_file="res://models/characters/emma/sounds/footsteps3.mp3"
+dest_files=[ "res://.import/footsteps3.mp3-1a1b7ae43d4f604ceafdd6ac110ffe5f.mp3str" ]
 
 [params]
 

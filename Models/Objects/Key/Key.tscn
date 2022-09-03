@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Models/Objects/Key/keyItemeffect.material" type="Material" id=1]
-[ext_resource path="res://Models/Objects/Key/Key.material" type="Material" id=2]
-[ext_resource path="res://Models/Objects/Key/effectiremTake.material" type="Material" id=3]
+[ext_resource path="res://models/objects/key/keyItemeffect.material" type="Material" id=1]
+[ext_resource path="res://models/objects/key/key.material" type="Material" id=2]
+[ext_resource path="res://models/objects/key/effect_item_take.material" type="Material" id=3]
 
 [sub_resource type="ArrayMesh" id=3]
 resource_name = "test lvl_KeyTaken"

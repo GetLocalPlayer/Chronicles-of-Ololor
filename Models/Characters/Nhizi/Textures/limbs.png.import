@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/limbs.png-d396d9d47dcfe644667d1956ca68030d.s3tc.stex"
-path.etc2="res://.import/limbs.png-d396d9d47dcfe644667d1956ca68030d.etc2.stex"
+path.s3tc="res://.import/limbs.png-576487cd574a7804e3a4481660300666.s3tc.stex"
+path.etc2="res://.import/limbs.png-576487cd574a7804e3a4481660300666.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Characters/Nhizi/Textures/limbs.png"
-dest_files=[ "res://.import/limbs.png-d396d9d47dcfe644667d1956ca68030d.s3tc.stex", "res://.import/limbs.png-d396d9d47dcfe644667d1956ca68030d.etc2.stex" ]
+source_file="res://models/characters/nhizi/textures/limbs.png"
+dest_files=[ "res://.import/limbs.png-576487cd574a7804e3a4481660300666.s3tc.stex", "res://.import/limbs.png-576487cd574a7804e3a4481660300666.etc2.stex" ]
 
 [params]
 

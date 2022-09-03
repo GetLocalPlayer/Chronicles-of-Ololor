@@ -6,7 +6,7 @@ onready var audio_voice = owner.get_node("Sounds/LandingVoice")
 
 
 
-var yellow_dust = preload("res://Models/Effects/DustYellow/DustYellow.tscn")
+var yellow_dust = preload("res://models/effects/dust_yellow/dust_yellow.tscn")
 
 
 func spawn_yellow_dust():

@@ -7,12 +7,12 @@ onready var audio = owner.get_node("Sounds/BarrelAttacked")
 
 
 onready var hit_effect = [
-	preload("res://Models/Effects/Hit/Hit_1.tscn"),
-	preload("res://Models/Effects/Hit/Hit_2.tscn"),
-	preload("res://Models/Effects/Hit/Hit_3.tscn"),
+	preload("res://models/effects/hit/v1.tscn"),
+	preload("res://models/effects/hit/v2.tscn"),
+	preload("res://models/effects/hit/v3.tscn"),
 ]
 
-onready var test = preload("res://Models/Effects/Fire/Fire.tscn")
+onready var test = preload("res://models/effects/fire/fire.tscn")
 
 var animations = ["attack", "attack_2", "attack_3", "attack_4"]
 

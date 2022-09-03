@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/tooth.png-7fae5c1706e87ec39fa1da7ff0039cfa.s3tc.stex"
-path.etc2="res://.import/tooth.png-7fae5c1706e87ec39fa1da7ff0039cfa.etc2.stex"
+path.s3tc="res://.import/tooth.png-07ca291ba212d816b43a3925c25c02ff.s3tc.stex"
+path.etc2="res://.import/tooth.png-07ca291ba212d816b43a3925c25c02ff.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Characters/Nhizi/Textures/tooth.png"
-dest_files=[ "res://.import/tooth.png-7fae5c1706e87ec39fa1da7ff0039cfa.s3tc.stex", "res://.import/tooth.png-7fae5c1706e87ec39fa1da7ff0039cfa.etc2.stex" ]
+source_file="res://models/characters/nhizi/textures/tooth.png"
+dest_files=[ "res://.import/tooth.png-07ca291ba212d816b43a3925c25c02ff.s3tc.stex", "res://.import/tooth.png-07ca291ba212d816b43a3925c25c02ff.etc2.stex" ]
 
 [params]
 

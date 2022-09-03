@@ -10,7 +10,7 @@ onready var armature = owner.get_node("Skeleton")
 onready var audio_voice = owner.get_node("Sounds/JumpVoice")
 
 
-var dust = preload("res://Models/Effects/DustSmall/DustSmall.tscn")
+var dust = preload("res://models/effects/dust_small/dust_small.tscn")
 
 var velocity: Vector3
 

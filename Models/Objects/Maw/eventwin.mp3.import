@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/eventwin.mp3-fa76c6f875efcd0998272574bb89506b.mp3str"
+path="res://.import/eventwin.mp3-442196d7a6dd74bbfed3d6ab55b5f7c4.mp3str"
 
 [deps]
 
-source_file="res://Models/Objects/Maw/eventwin.mp3"
-dest_files=[ "res://.import/eventwin.mp3-fa76c6f875efcd0998272574bb89506b.mp3str" ]
+source_file="res://models/objects/maw/eventwin.mp3"
+dest_files=[ "res://.import/eventwin.mp3-442196d7a6dd74bbfed3d6ab55b5f7c4.mp3str" ]
 
 [params]
 

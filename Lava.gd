@@ -1,7 +1,7 @@
 extends StaticBody
 
 
-var fire = preload("res://Models/Effects/Fire/Fire.tscn")
+var fire = preload("res://models/effects/fire/fire.tscn")
 
 
 func _physics_process(_delta):

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Models/Environment/Sky/sky.material" type="Material" id=1]
+[ext_resource path="res://models/environment/sky/sky.material" type="Material" id=1]
 
 [sub_resource type="ArrayMesh" id=3]
 resource_name = "test lvl_sky"

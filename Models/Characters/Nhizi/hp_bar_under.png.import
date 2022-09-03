@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hp_bar_under.png-54c56ddd99c7c4095f3da855013ed756.stex"
+path="res://.import/hp_bar_under.png-0dab7a70e2c43df4b633b34a31da0b47.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Models/Characters/Nhizi/hp_bar_under.png"
-dest_files=[ "res://.import/hp_bar_under.png-54c56ddd99c7c4095f3da855013ed756.stex" ]
+source_file="res://models/characters/nhizi/hp_bar_under.png"
+dest_files=[ "res://.import/hp_bar_under.png-0dab7a70e2c43df4b633b34a31da0b47.stex" ]
 
 [params]
 

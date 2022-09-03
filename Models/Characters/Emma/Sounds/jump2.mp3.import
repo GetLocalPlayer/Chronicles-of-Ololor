@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/jump2.mp3-16cf9ab4ab002678ba6877830a75a6cd.mp3str"
+path="res://.import/jump2.mp3-9692fbcb53ae6f99fd14fe4ed42436f1.mp3str"
 
 [deps]
 
-source_file="res://Models/Characters/Emma/Sounds/jump2.mp3"
-dest_files=[ "res://.import/jump2.mp3-16cf9ab4ab002678ba6877830a75a6cd.mp3str" ]
+source_file="res://models/characters/emma/sounds/jump2.mp3"
+dest_files=[ "res://.import/jump2.mp3-9692fbcb53ae6f99fd14fe4ed42436f1.mp3str" ]
 
 [params]
 

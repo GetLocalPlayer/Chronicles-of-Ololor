@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arrow_slot.png-0b788039bebda582409be8b49e0579ce.stex"
+path="res://.import/arrow_slot.png-68abd0e05bfa407d7d1fdfec3c692209.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Models/Objects/Maw/arrow_slot.png"
-dest_files=[ "res://.import/arrow_slot.png-0b788039bebda582409be8b49e0579ce.stex" ]
+source_file="res://models/objects/maw/arrow_slot.png"
+dest_files=[ "res://.import/arrow_slot.png-68abd0e05bfa407d7d1fdfec3c692209.stex" ]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/eyelashes.png-d1ba74f4bc1b70c90e61028c2721cabc.s3tc.stex"
-path.etc2="res://.import/eyelashes.png-d1ba74f4bc1b70c90e61028c2721cabc.etc2.stex"
+path.s3tc="res://.import/eyelashes.png-4064ffa451661fa38c1f887c64deb476.s3tc.stex"
+path.etc2="res://.import/eyelashes.png-4064ffa451661fa38c1f887c64deb476.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Characters/Nhizi/Textures/eyelashes.png"
-dest_files=[ "res://.import/eyelashes.png-d1ba74f4bc1b70c90e61028c2721cabc.s3tc.stex", "res://.import/eyelashes.png-d1ba74f4bc1b70c90e61028c2721cabc.etc2.stex" ]
+source_file="res://models/characters/nhizi/textures/eyelashes.png"
+dest_files=[ "res://.import/eyelashes.png-4064ffa451661fa38c1f887c64deb476.s3tc.stex", "res://.import/eyelashes.png-4064ffa451661fa38c1f887c64deb476.etc2.stex" ]
 
 [params]
 

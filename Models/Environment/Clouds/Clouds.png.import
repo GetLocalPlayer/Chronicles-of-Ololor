@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Clouds.png-be2e6b4d86e1e549c479fb3e25e7a727.s3tc.stex"
-path.etc2="res://.import/Clouds.png-be2e6b4d86e1e549c479fb3e25e7a727.etc2.stex"
+path.s3tc="res://.import/clouds.png-cdce26611e19a4dad9381cc96f39313b.s3tc.stex"
+path.etc2="res://.import/clouds.png-cdce26611e19a4dad9381cc96f39313b.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Environment/Clouds/Clouds.png"
-dest_files=[ "res://.import/Clouds.png-be2e6b4d86e1e549c479fb3e25e7a727.s3tc.stex", "res://.import/Clouds.png-be2e6b4d86e1e549c479fb3e25e7a727.etc2.stex" ]
+source_file="res://models/environment/clouds/clouds.png"
+dest_files=[ "res://.import/clouds.png-cdce26611e19a4dad9381cc96f39313b.s3tc.stex", "res://.import/clouds.png-cdce26611e19a4dad9381cc96f39313b.etc2.stex" ]
 
 [params]
 

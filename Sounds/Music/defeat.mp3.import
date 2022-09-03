@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/defeat.mp3-df6704069d751a31ceff0f273468a9c8.mp3str"
+path="res://.import/defeat.mp3-00d4857d8a7fd574f8c79da1d31edc3c.mp3str"
 
 [deps]
 
-source_file="res://Sounds/Music/defeat.mp3"
-dest_files=[ "res://.import/defeat.mp3-df6704069d751a31ceff0f273468a9c8.mp3str" ]
+source_file="res://sounds/music/defeat.mp3"
+dest_files=[ "res://.import/defeat.mp3-00d4857d8a7fd574f8c79da1d31edc3c.mp3str" ]
 
 [params]
 

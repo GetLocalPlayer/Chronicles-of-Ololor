@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/maw.png-67806e6944129f7ce9d8787be8dd28d2.stex"
+path="res://.import/maw.png-6e9c34a92b891d52077c25d23d434c5a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Models/Characters/Emma/Textures/maw.png"
-dest_files=[ "res://.import/maw.png-67806e6944129f7ce9d8787be8dd28d2.stex" ]
+source_file="res://models/characters/emma/textures/maw.png"
+dest_files=[ "res://.import/maw.png-6e9c34a92b891d52077c25d23d434c5a.stex" ]
 
 [params]
 

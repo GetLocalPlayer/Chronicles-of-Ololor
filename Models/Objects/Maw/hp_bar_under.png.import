@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hp_bar_under.png-bda3e72e8748148caa1c29148bfc6501.stex"
+path="res://.import/hp_bar_under.png-f88c1e5d2ca76111dcf1a1a294e7bbac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Models/Objects/Maw/hp_bar_under.png"
-dest_files=[ "res://.import/hp_bar_under.png-bda3e72e8748148caa1c29148bfc6501.stex" ]
+source_file="res://models/objects/maw/hp_bar_under.png"
+dest_files=[ "res://.import/hp_bar_under.png-f88c1e5d2ca76111dcf1a1a294e7bbac.stex" ]
 
 [params]
 
