@@ -1,4 +1,4 @@
-extends "res://Models/Characters/Nhizi/States/left_grasp_success.gd"
+extends "left_grasp_success.gd"
 
 
 func _enter():
