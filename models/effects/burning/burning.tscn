@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://models/effects/burning/fire.material" type="Material" id=1]
+
+[sub_resource type="ArrayMesh" id=4]
+resource_name = "test lvl_burning"
+blend_shape_mode = 0
+blend_shape/names = PoolStringArray( "L", "R", "Up", "down]" )
+blend_shape/mode = 0
+surfaces/0 = {
+"aabb": AABB( -2.65895, -8.09962e-08, -3.20573, 5.3179, 1.00953e-05, 6.4034 ),
+"array_data": PoolByteArray( 234, 38, 173, 191, 0, 0, 0, 0, 243, 38, 173, 63, 0, 127, 127, 63, 9, 20, 44, 52, 234, 38, 173, 63, 0, 0, 0, 169, 243, 38, 173, 63, 0, 127, 127, 63, 3, 52, 44, 52, 234, 38, 173, 191, 0, 0, 0, 41, 243, 38, 173, 191, 0, 127, 127, 63, 9, 20, 139, 33, 234, 38, 173, 63, 0, 0, 0, 0, 243, 38, 173, 191, 0, 127, 127, 63, 3, 52, 139, 33 ),
+"array_index_data": PoolByteArray( 0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0 ),
+"blend_shape_data": [ PoolByteArray( 234, 38, 173, 191, 0, 0, 0, 0, 243, 38, 173, 63, 0, 127, 127, 63, 9, 20, 44, 52, 234, 38, 173, 63, 0, 0, 0, 169, 243, 38, 173, 63, 0, 127, 127, 63, 3, 52, 44, 52, 108, 149, 46, 63, 212, 188, 182, 178, 204, 173, 17, 192, 0, 127, 127, 63, 9, 20, 139, 33, 63, 44, 42, 64, 78, 4, 98, 51, 60, 201, 219, 190, 0, 127, 0, 63, 3, 52, 139, 33 ), PoolByteArray( 234, 38, 173, 191, 0, 0, 0, 169, 243, 38, 173, 63, 0, 127, 127, 63, 9, 20, 44, 52, 234, 38, 173, 63, 0, 0, 0, 0, 243, 38, 173, 63, 0, 127, 127, 63, 3, 52, 44, 52, 63, 44, 42, 192, 78, 4, 98, 51, 60, 201, 219, 190, 0, 127, 127, 63, 9, 20, 139, 33, 108, 149, 46, 191, 212, 188, 182, 178, 204, 173, 17, 192, 0, 127, 0, 63, 3, 52, 139, 33 ), PoolByteArray( 234, 38, 173, 191, 30, 33, 117, 50, 46, 239, 214, 63, 0, 127, 127, 63, 9, 20, 44, 52, 234, 38, 173, 63, 254, 32, 117, 50, 46, 239, 214, 63, 0, 127, 127, 63, 3, 52, 44, 52, 118, 164, 132, 191, 23, 240, 173, 179, 160, 42, 77, 192, 0, 127, 127, 63, 9, 20, 139, 33, 118, 164, 132, 63, 27, 240, 173, 179, 160, 42, 77, 192, 0, 127, 0, 63, 3, 52, 139, 33 ), PoolByteArray( 234, 38, 173, 191, 237, 122, 134, 179, 16, 151, 163, 189, 0, 130, 127, 63, 9, 20, 44, 52, 234, 38, 173, 63, 241, 122, 134, 179, 16, 151, 163, 189, 0, 130, 127, 63, 3, 52, 44, 52, 234, 38, 173, 191, 181, 146, 85, 52, 176, 166, 76, 64, 0, 130, 127, 63, 9, 20, 139, 33, 234, 38, 173, 63, 179, 146, 85, 52, 176, 166, 76, 64, 0, 130, 0, 63, 3, 52, 139, 33 ) ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 1 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:mesh:surface_1/material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "stand"
+loop = true
+step = 0.0625
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:mesh:surface_1/material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0625, 0.125, 0.1875, 0.25, 0.3125, 0.375, 0.4375, 0.5, 0.5625, 0.625, 0.6875, 0.75, 0.8125, 0.875, 0.9375 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0.25, 0, 0 ), Vector3( 0.5, 0, 0 ), Vector3( 0.75, 0, 0 ), Vector3( 0, 0.25, 0 ), Vector3( 0.25, 0.25, 0 ), Vector3( 0.5, 0.25, 0 ), Vector3( 0.75, 0.25, 0 ), Vector3( 0, 0.5, 0 ), Vector3( 0.25, 0.5, 0 ), Vector3( 0.5, 0.5, 0 ), Vector3( 0.75, 0.5, 0 ), Vector3( 0, 0.75, 0 ), Vector3( 0.25, 0.75, 0 ), Vector3( 0.5, 0.75, 0 ), Vector3( 0.75, 0.75, 0 ) ]
+}
+
+[node name="Burning" type="Spatial"]
+
+[node name="Mesh" type="MeshInstance" parent="."]
+transform = Transform( 0, 1.73446, 0, 0, 0, -1.73464, -1.73425, 0, 0, 0.024, 1.13305, 0 )
+cast_shadow = 0
+mesh = SubResource( 4 )
+skeleton = NodePath("")
+blend_shapes/L = 0.0
+blend_shapes/R = 0.0
+blend_shapes/Up = 0.0
+blend_shapes/down] = 0.0
+material/0 = null
+
+[node name="UV" type="AnimationPlayer" parent="Mesh"]
+autoplay = "stand"
+anims/RESET = SubResource( 5 )
+anims/stand = SubResource( 6 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lending2.mp3-65a7633b8d762cba0ce1382a41af9919.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/lending2.mp3"
+dest_files=[ "res://.import/lending2.mp3-65a7633b8d762cba0ce1382a41af9919.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

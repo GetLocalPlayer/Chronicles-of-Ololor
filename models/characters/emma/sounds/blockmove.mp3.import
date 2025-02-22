@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/blockmove.mp3-ec6d15a7baa849414afdb13c46c7a532.mp3str"
+
+[deps]
+
+source_file="res://models/characters/emma/sounds/blockmove.mp3"
+dest_files=[ "res://.import/blockmove.mp3-ec6d15a7baa849414afdb13c46c7a532.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

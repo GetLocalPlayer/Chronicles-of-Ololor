@@ -1,0 +1,187 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://models/effects/dust/dust.material" type="Material" id=1]
+[ext_resource path="res://models/effects/dust/boom3.mp3" type="AudioStream" id=2]
+[ext_resource path="res://models/effects/dust/boom2.mp3" type="AudioStream" id=3]
+[ext_resource path="res://models/effects/dust/boom.mp3" type="AudioStream" id=4]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:mesh:surface_1/material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "birth"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:mesh:surface_1/material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0.25, 0, 0 ), Vector3( 0.5, 0, 0 ), Vector3( 0.75, 0, 0 ), Vector3( 0, 0.333, 0 ), Vector3( 0.25, 0.333, 0 ), Vector3( 0.5, 0.333, 0 ), Vector3( 0.75, 0.333, 0 ), Vector3( 0, 0.667, 0 ), Vector3( 0.25, 0.667, 0 ), Vector3( 0.5, 0.667, 0 ), Vector3( 0.75, 0.667, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.986 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_random"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "birth&queue_free"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:mesh:surface_1/material:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0.25, 0, 0 ), Vector3( 0.5, 0, 0 ), Vector3( 0.75, 0, 0 ), Vector3( 0, 0.333, 0 ), Vector3( 0.25, 0.333, 0 ), Vector3( 0.5, 0.333, 0 ), Vector3( 0.75, 0.333, 0 ), Vector3( 0, 0.667, 0 ), Vector3( 0.25, 0.667, 0 ), Vector3( 0.5, 0.667, 0 ), Vector3( 0.75, 0.667, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_random"
+} ]
+}
+
+[sub_resource type="ArrayMesh" id=1]
+resource_name = "test lvl_Plane008"
+surfaces/0 = {
+"aabb": AABB( -0.365244, -0.363871, -2.70938, 0.341411, 2.30193, 5.35283 ),
+"array_data": PoolByteArray( 243, 70, 200, 188, 197, 0, 89, 190, 205, 138, 147, 60, 112, 2, 115, 5, 167, 52, 43, 53, 80, 1, 187, 190, 95, 18, 248, 63, 75, 46, 41, 64, 112, 2, 119, 6, 130, 41, 107, 31, 228, 33, 109, 190, 59, 210, 142, 190, 235, 154, 11, 64, 112, 2, 123, 120, 130, 41, 43, 53, 103, 61, 195, 188, 86, 135, 171, 63, 6, 53, 82, 188, 112, 2, 105, 5, 167, 52, 107, 31, 240, 187, 156, 190, 202, 165, 234, 63, 120, 102, 45, 192, 124, 12, 10, 195, 130, 41, 107, 31, 243, 70, 200, 188, 197, 0, 89, 190, 205, 138, 147, 60, 124, 12, 9, 197, 167, 52, 43, 53, 218, 27, 60, 190, 67, 77, 186, 190, 93, 204, 9, 192, 124, 12, 9, 189, 130, 41, 43, 53, 103, 61, 195, 188, 86, 135, 171, 63, 6, 53, 82, 188, 124, 12, 9, 202, 167, 52, 107, 31 ),
+"array_index_data": PoolByteArray( 0, 0, 2, 0, 1, 0, 3, 0, 0, 0, 1, 0, 4, 0, 6, 0, 5, 0, 4, 0, 5, 0, 7, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 12,
+"material": ExtResource( 1 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 8
+}
+
+[sub_resource type="GDScript" id=5]
+script/source = "extends AudioStreamPlayer
+
+
+export (Array, AudioStreamMP3) var samples
+
+	
+func _ready():
+	randomize()
+	for s in samples:
+		s.loop = false
+		
+		
+func play_random():
+	if samples.size() > 0:
+		stream = samples[randi() % samples.size()]
+		if stream != null:
+			play()
+"
+
+[node name="Dust" type="Spatial"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Mesh")
+anims/RESET = SubResource( 2 )
+anims/birth = SubResource( 3 )
+anims/birth&queue_free = SubResource( 4 )
+
+[node name="Mesh" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328773, 0.123579, 0 )
+visible = false
+cast_shadow = 0
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
+script = SubResource( 5 )
+samples = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ]

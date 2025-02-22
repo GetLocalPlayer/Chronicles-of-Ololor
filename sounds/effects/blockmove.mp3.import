@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/blockmove.mp3-966f15458136b3bf94fc6023f2ae5fa0.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Effects/blockmove.mp3"
+dest_files=[ "res://.import/blockmove.mp3-966f15458136b3bf94fc6023f2ae5fa0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
