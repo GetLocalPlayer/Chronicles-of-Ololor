@@ -3,7 +3,6 @@
 *.gltf.import
 *.glb
 *.glb.import
-*.import
 /Garbage
 /.vscode
 /.VSCodeCounter
