@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/dying.mp3-4dc9f0106df063365176713db3d00aec.mp3str"
+path="res://.import/dying.mp3-36da34da303e591e80c9f53c748491b3.mp3str"
 
 [deps]
 
-source_file="res://models/characters/emma/sounds/Voice/dying.mp3"
-dest_files=[ "res://.import/dying.mp3-4dc9f0106df063365176713db3d00aec.mp3str" ]
+source_file="res://models/characters/emma/sounds/voice/dying.mp3"
+dest_files=[ "res://.import/dying.mp3-36da34da303e591e80c9f53c748491b3.mp3str" ]
 
 [params]
 

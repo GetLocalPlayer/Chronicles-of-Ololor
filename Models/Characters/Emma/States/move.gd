@@ -17,7 +17,7 @@ func _enter():
 	
 
 
-func _update(delta):
+func _update(_delta):
 	velocity.y = -gravity
 	if Input.is_action_pressed("run_left", true):
 		velocity.z = speed

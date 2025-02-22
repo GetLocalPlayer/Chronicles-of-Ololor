@@ -5,7 +5,7 @@ onready var run_speed = owner.run_speed
 
 # How long the character must run
 # before having to play "stop" animation
-export (float) var stop_run_time = 1 
+export (float) var stop_run_time = 1
 var stop_time: float
 
 

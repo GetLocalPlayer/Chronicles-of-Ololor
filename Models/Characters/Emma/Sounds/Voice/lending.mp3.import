@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/lending.mp3-3f15fd7c627bf3700a49dc2755eaa0b1.mp3str"
+path="res://.import/lending.mp3-dcf455d14b104d7d9aa3635e63e086b0.mp3str"
 
 [deps]
 
-source_file="res://models/characters/emma/sounds/Voice/lending.mp3"
-dest_files=[ "res://.import/lending.mp3-3f15fd7c627bf3700a49dc2755eaa0b1.mp3str" ]
+source_file="res://models/characters/emma/sounds/voice/lending.mp3"
+dest_files=[ "res://.import/lending.mp3-dcf455d14b104d7d9aa3635e63e086b0.mp3str" ]
 
 [params]
 
