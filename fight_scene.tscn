@@ -323,13 +323,13 @@ environment = SubResource( 30 )
 [node name="SkyLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.621353, -0.577716, -0.529306, -3.22295e-08, -0.675539, 0.737324, -0.783531, -0.458139, -0.419748, -14.2136, 6.32253, -17.8166 )
 light_color = Color( 0.909804, 0.0313726, 0.0980392, 1 )
-light_energy = 0.232
+light_energy = 0.313
 light_specular = 1.0
 
 [node name="LavaLight" type="DirectionalLight" parent="."]
 transform = Transform( -2.08961e-08, 0.878334, 0.478048, 3.83932e-08, 0.478048, -0.878334, -1, 1.77636e-15, -4.37114e-08, 23.6573, 12.588, -17.8166 )
-light_color = Color( 0.611765, 0.596078, 0.211765, 1 )
-light_energy = 0.364
+light_color = Color( 0.870588, 0.745098, 0.172549, 1 )
+light_energy = 0.168
 light_specular = 0.25
 shadow_enabled = true
 shadow_contact = 1.0
