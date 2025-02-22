@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "State",
 "class": "IdleState",
 "language": "GDScript",
-"path": "res://models/characters/nhizi/states/Idle.gd"
+"path": "res://models/characters/nhizi/states/idle.gd"
 }, {
 "base": "KinematicBody",
 "class": "Pushable",
