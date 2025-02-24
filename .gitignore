@@ -1,8 +1,4 @@
 /.import
-*.gltf
-*.gltf.import
-*.glb
-*.glb.import
 /Garbage
 /.vscode
 /.VSCodeCounter
