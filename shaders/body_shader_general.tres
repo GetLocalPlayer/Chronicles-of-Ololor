@@ -1,0 +1,208 @@
+[gd_resource type="VisualShader" load_steps=18 format=2]
+
+[sub_resource type="VisualShaderNodeInput" id=139]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=140]
+uniform_name = "Roughness"
+default_value_enabled = true
+default_value = 0.1
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=141]
+uniform_name = "Specular"
+default_value_enabled = true
+default_value = 0.5
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=142]
+uniform_name = "Normal"
+
+[sub_resource type="VisualShaderNodeInput" id=143]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=144]
+uniform_name = "NormalDepth"
+default_value_enabled = true
+default_value = 1.0
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=145]
+uniform_name = "Emission"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeVectorOp" id=146]
+operator = 2
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=147]
+uniform_name = "Sky"
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=121]
+uniform_name = "Albedo"
+
+[sub_resource type="VisualShaderNodeVectorScalarMix" id=148]
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=149]
+uniform_name = "SkyMixFactor"
+default_value_enabled = true
+default_value = 0.5
+
+[sub_resource type="VisualShaderNodeInput" id=150]
+input_name = "normal"
+
+[sub_resource type="VisualShaderNodeVectorOp" id=151]
+operator = 10
+
+[sub_resource type="VisualShaderNodeInput" id=152]
+input_name = "view"
+
+[sub_resource type="VisualShaderNodeVectorOp" id=131]
+operator = 2
+
+[sub_resource type="VisualShaderNodeColorUniform" id=138]
+uniform_name = "AlbedoColor"
+default_value_enabled = true
+
+[resource]
+code = "shader_type spatial;
+render_mode diffuse_toon, specular_toon, async_visible;
+
+uniform sampler2D Albedo;
+uniform vec4 AlbedoColor : hint_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
+uniform sampler2D Sky;
+uniform float SkyMixFactor = 0.5;
+uniform float Roughness = 0.1;
+uniform float Specular = 0.5;
+uniform float Emission = 0;
+uniform sampler2D Normal;
+uniform float NormalDepth = 1;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Input:10
+	vec3 n_out10p0 = vec3(UV, 0.0);
+
+// TextureUniform:2
+	vec3 n_out2p0;
+	float n_out2p1;
+	{
+		vec4 n_tex_read = texture(Albedo, n_out10p0.xy);
+		n_out2p0 = n_tex_read.rgb;
+		n_out2p1 = n_tex_read.a;
+	}
+
+// ColorUniform:7
+	vec3 n_out7p0 = AlbedoColor.rgb;
+	float n_out7p1 = AlbedoColor.a;
+
+// VectorOp:5
+	vec3 n_out5p0 = n_out2p0 * n_out7p0;
+
+// Input:24
+	vec3 n_out24p0 = VIEW;
+
+// Input:22
+	vec3 n_out22p0 = NORMAL;
+
+// VectorOp:23
+	vec3 n_out23p0 = reflect(n_out24p0, n_out22p0);
+
+// TextureUniform:18
+	vec3 n_out18p0;
+	float n_out18p1;
+	{
+		vec4 n_tex_read = texture(Sky, n_out23p0.xy);
+		n_out18p0 = n_tex_read.rgb;
+		n_out18p1 = n_tex_read.a;
+	}
+
+// ScalarUniform:21
+	float n_out21p0 = SkyMixFactor;
+
+// VectorScalarMix:20
+	vec3 n_out20p0 = mix(n_out5p0, n_out18p0, n_out21p0);
+
+// ScalarUniform:11
+	float n_out11p0 = Roughness;
+
+// ScalarUniform:12
+	float n_out12p0 = Specular;
+
+// ScalarUniform:16
+	float n_out16p0 = Emission;
+
+// VectorOp:17
+	vec3 n_out17p0 = n_out5p0 * vec3(n_out16p0);
+
+// Input:14
+	vec3 n_out14p0 = vec3(UV, 0.0);
+
+// TextureUniform:13
+	vec3 n_out13p0;
+	float n_out13p1;
+	{
+		vec4 n_tex_read = texture(Normal, n_out14p0.xy);
+		n_out13p0 = n_tex_read.rgb;
+		n_out13p1 = n_tex_read.a;
+	}
+
+// ScalarUniform:15
+	float n_out15p0 = NormalDepth;
+
+// Output:0
+	ALBEDO = n_out20p0;
+	ROUGHNESS = n_out11p0;
+	SPECULAR = n_out12p0;
+	EMISSION = n_out17p0;
+	NORMALMAP = n_out13p0;
+	NORMALMAP_DEPTH = n_out15p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -464.544, 518.514 )
+modes/diffuse = 4
+modes/specular = 3
+nodes/fragment/0/position = Vector2( 540, 0 )
+nodes/fragment/2/node = SubResource( 121 )
+nodes/fragment/2/position = Vector2( -620, -180 )
+nodes/fragment/5/node = SubResource( 131 )
+nodes/fragment/5/position = Vector2( -300, 20 )
+nodes/fragment/7/node = SubResource( 138 )
+nodes/fragment/7/position = Vector2( -860, 120 )
+nodes/fragment/10/node = SubResource( 139 )
+nodes/fragment/10/position = Vector2( -900, -60 )
+nodes/fragment/11/node = SubResource( 140 )
+nodes/fragment/11/position = Vector2( -200, 440 )
+nodes/fragment/12/node = SubResource( 141 )
+nodes/fragment/12/position = Vector2( -200, 600 )
+nodes/fragment/13/node = SubResource( 142 )
+nodes/fragment/13/position = Vector2( -140, 960 )
+nodes/fragment/14/node = SubResource( 143 )
+nodes/fragment/14/position = Vector2( -340, 1040 )
+nodes/fragment/15/node = SubResource( 144 )
+nodes/fragment/15/position = Vector2( -240, 1180 )
+nodes/fragment/16/node = SubResource( 145 )
+nodes/fragment/16/position = Vector2( -220, 240 )
+nodes/fragment/17/node = SubResource( 146 )
+nodes/fragment/17/position = Vector2( 140, 80 )
+nodes/fragment/18/node = SubResource( 147 )
+nodes/fragment/18/position = Vector2( -100, -400 )
+nodes/fragment/20/node = SubResource( 148 )
+nodes/fragment/20/position = Vector2( 340, -280 )
+nodes/fragment/21/node = SubResource( 149 )
+nodes/fragment/21/position = Vector2( -180, -160 )
+nodes/fragment/22/node = SubResource( 150 )
+nodes/fragment/22/position = Vector2( -520, -380 )
+nodes/fragment/23/node = SubResource( 151 )
+nodes/fragment/23/position = Vector2( -300, -300 )
+nodes/fragment/24/node = SubResource( 152 )
+nodes/fragment/24/position = Vector2( -480, -460 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 5, 0, 7, 0, 5, 1, 10, 0, 2, 0, 11, 0, 0, 3, 12, 0, 0, 4, 14, 0, 13, 0, 15, 0, 0, 9, 13, 0, 0, 8, 5, 0, 17, 0, 16, 0, 17, 1, 17, 0, 0, 5, 22, 0, 23, 1, 24, 0, 23, 0, 23, 0, 18, 0, 21, 0, 20, 2, 20, 0, 0, 0, 5, 0, 20, 0, 18, 0, 20, 1 )

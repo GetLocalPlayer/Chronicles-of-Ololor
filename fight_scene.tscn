@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://models/characters/emma/emma.tscn" type="PackedScene" id=1]
 [ext_resource path="res://models/environment/platform/platform.tscn" type="PackedScene" id=2]
@@ -32,10 +32,20 @@
 [ext_resource path="res://shaders/ss_outline.tscn" type="PackedScene" id=30]
 [ext_resource path="res://shaders/grayscale.gdshader" type="Shader" id=31]
 [ext_resource path="res://shaders/radial_blur.gdshader" type="Shader" id=32]
+[ext_resource path="res://textures/sky.png" type="Texture" id=33]
+
+[sub_resource type="PanoramaSky" id=39]
+panorama = ExtResource( 33 )
 
 [sub_resource type="Environment" id=30]
-background_color = Color( 1, 1, 1, 1 )
-background_energy = 0.0
+background_mode = 2
+background_sky = SubResource( 39 )
+background_sky_custom_fov = 58.5
+background_sky_orientation = Basis( -0.535252, 0.464298, -0.705644, 0, 0.835385, 0.549665, 0.844693, 0.294209, -0.447142 )
+background_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
+background_energy = 2.64
+ambient_light_color = Color( 0.301961, 0.0941176, 0, 1 )
+ambient_light_energy = 0.71
 glow_intensity = 1.01
 glow_strength = 0.72
 glow_blend_mode = 0
@@ -321,18 +331,20 @@ environment = SubResource( 30 )
 [node name="OutlineShader" parent="." instance=ExtResource( 30 )]
 
 [node name="SkyLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.621353, -0.577716, -0.529306, -3.22295e-08, -0.675539, 0.737324, -0.783531, -0.458139, -0.419748, -14.2136, 6.32253, -17.8166 )
-light_color = Color( 0.909804, 0.0313726, 0.0980392, 1 )
-light_energy = 0.313
+transform = Transform( 0.534582, -0.841362, -0.0795727, -0.316705, -0.286737, 0.904146, -0.783531, -0.458139, -0.419748, -14.2136, 6.32253, -17.8166 )
+light_color = Color( 0.53, 0.0159, 0.0330366, 1 )
+light_energy = 0.13
 light_specular = 1.0
+light_bake_mode = 2
+directional_shadow_mode = 0
 
 [node name="LavaLight" type="DirectionalLight" parent="."]
 transform = Transform( -2.08961e-08, 0.878334, 0.478048, 3.83932e-08, 0.478048, -0.878334, -1, 1.77636e-15, -4.37114e-08, 23.6573, 12.588, -17.8166 )
-light_color = Color( 0.870588, 0.745098, 0.172549, 1 )
-light_energy = 0.168
+light_color = Color( 0.6, 0.392157, 0, 1 )
+light_energy = 0.153
 light_specular = 0.25
 shadow_enabled = true
-shadow_contact = 1.0
+directional_shadow_mode = 0
 
 [node name="Sky" parent="." instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35204, -2.20454, 2.7731 )
@@ -374,9 +386,6 @@ script = ExtResource( 11 )
 
 [node name="Nhizi" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76802, 6.22573, -7.77483 )
-
-[node name="Skeleton" parent="Nhizi" index="2"]
-bones/92/bound_children = [ NodePath("DownGraspAttachment") ]
 
 [node name="Mesh" parent="Nhizi/Skeleton" index="0"]
 material/5 = SubResource( 31 )
